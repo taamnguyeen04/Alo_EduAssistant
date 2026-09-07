@@ -1,0 +1,17 @@
+{
+  "id": "hs_a",
+  "history": [
+    {
+      "role": "user",
+      "content": "Tại sao 1/2 + 1/3 = 2/5 vậy thầy?"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào em! Thầy rất vui khi em thắc mắc về phép cộng phân số. Đây là một câu hỏi rất hay, nhưng **1/2 + 1/3 không bằng 2/5** đâu nha! Thầy sẽ giải thích cụ thể nhé:\n\n## 🔍 Phân tích lỗi sai\n\nEm cộng **tử số với tử số** và **mẫu số với mẫu số**:\n- Tử: 1 + 1 = 2\n- Mẫu: 2 + 3 = 5\n- → Ra 2/5 ❌ (Sai!)\n\nCách này **chỉ đúng** khi hai phân số có **cùng mẫu số**, ví dụ: 1/5 + 1/5 = 2/5 ✅\n\n## ✅ Cách làm đúng\n\nKhi cộng hai phân số **khác mẫu số**, em phải **quy đồng mẫu số** trước:\n\n**Bước 1:** Tìm mẫu số chung (bội chung nhỏ nhất của 2 và 3)\n- Bội của 2: 2, 4, **6**, 8...\n- Bội của 3: 3, **6**, 9...\n- → Mẫu số chung là **6**\n\n**Bước 2:** Quy đổi hai phân số về mẫu số 6\n- 1/2 = 3/6 (nhân cả tử và mẫu với 3)\n- 1/3 = 2/6 (nhân cả tử và mẫu với 2)\n\n**Bước 3:** Cộng hai phân số cùng mẫu\n- 3/6 + 2/6 = (3+2)/6 = **5/6**\n\n## 🎯 Kết luận\n$$\\frac{1}{2} + \\frac{1}{3} = \\frac{5}{6}$$\n\nCòn 2/5 chỉ bằng 0.4, trong khi 5/6 ≈ 0.833. Hai kết quả này khác nhau hoàn toàn!\n\n## 💡 Quy tắc vàng\n> **Muốn cộng (hoặc trừ) hai phân số khác mẫu, phải quy đồng mẫu số trước, rồi mới cộng (hoặc trừ) tử số, giữ nguyên mẫu số.**\n\nEm làm thử bài tập này để nhớ lâu hơn nha:\n- 1/4 + 1/2 = ?\n- 2/5 + 1/3 = ?\n\nNếu em còn thắc mắc, cứ hỏi thầy nhé! 😊"
+    }
+  ],
+  "weaknesses": [
+    "nhầm quy tắc cộng phân số khác mẫu - cộng cả tử lẫn mẫu thay vì phải quy đồng mẫu số trước",
+    "chưa nắm vững khái niệm quy đồng mẫu số và bội chung nhỏ nhất"
+  ]
+}

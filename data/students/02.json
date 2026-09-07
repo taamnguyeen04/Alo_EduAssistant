@@ -1,0 +1,23 @@
+{
+  "history": [
+    {
+      "role": "user",
+      "content": "1/2 + 1/3 = 2/5 đúng không ạ"
+    },
+    {
+      "role": "assistant",
+      "content": "Không đúng ạ. Đáp án đúng là **5/6**.\n\nCách tính:\n- Quy đồng mẫu số: 1/2 = 3/6, 1/3 = 2/6\n- Cộng tử số: 3/6 + 2/6 = 5/6\n\n**Lỗi sai phổ biến:** Nhiều người (đặc biệt là học sinh mới học) cộng tử số với tử số và mẫu số với mẫu số, nên ra 2/5. Tuy nhiên, muốn cộng hai phân số khác mẫu, **bắt buộc phải quy đồng mẫu số trước**, rồi mới cộng tử số.\n\nQuy tắc đúng: a/c + d/c = (a+d)/c"
+    },
+    {
+      "role": "user",
+      "content": "1 + 1 * 5 = 10 đúng không vậy"
+    },
+    {
+      "role": "assistant",
+      "content": "Không đúng ạ. Đáp án đúng là **6**.\n\nLý do:\nTheo thứ tự phép tính, **nhân chia trước, cộng trừ sau**:\n- Bước 1: Tính phép nhân trước: 1 × 5 = 5\n- Bước 2: Sau đó tính cộng: 1 + 5 = 6\n\n**Lỗi sai phổ biến:** Tính từ trái sang phải (1+1=2, rồi 2×5=10). Cách này sai vì phép nhân có độ ưu tiên cao hơn phép cộng.\n\nQuy tắc cần nhớ: Trong biểu thức có cả cộng/trừ và nhân/chia, luôn làm **nhân/chia trước**, rồi mới đến **cộng/trừ**."
+    }
+  ],
+  "weaknesses": [
+    "Chưa nắm vững quy tắc cộng hai phân số khác mẫu số: phải quy đồng mẫu số trước khi cộng, không được cộng trực tiếp tử với tử, mẫu với mẫu"
+  ]
+}

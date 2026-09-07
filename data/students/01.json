@@ -1,0 +1,24 @@
+{
+  "id": "01",
+  "history": [
+    {
+      "role": "user",
+      "content": "Tính giúp em bài này với: 2 + 3 x 4 = 20 đúng không ạ?"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào em! Câu trả lời là **chưa đúng** nhé. Em bị nhầm lẫn về **thứ tự thực hiện các phép tính** rồi.\n\n📌 **Quy tắc cần nhớ:**\nTrong một biểu thức có cộng, trừ, nhân, chia, ta thực hiện:\n1. **Nhân, chia** trước\n2. **Cộng, trừ** sau\n\nNếu có ngoặc thì tính trong ngoặc trước.\n\n✅ **Cách làm đúng:**\n- Bước 1: Tính phép nhân trước: 3 × 4 = 12\n- Bước 2: Tính phép cộng: 2 + 12 = **14**\n\n➡️ Vậy kết quả đúng là **14**, không phải 20 nhé.\n\n💡 **Mẹo để không nhầm:**\n- Nhân/chia là \"VIP\", được làm trước cộng/trừ.\n- Em có thể đọc biểu thức là \"2 cộng với (3 nhân 4)\" → tính 3×4 trước.\n\nThử làm lại bài tương tự nhé: **5 + 2 × 3 = ?**\n(Đáp án: 2×3 = 6, rồi 5+6 = 11 nhé! 😊)"
+    },
+    {
+      "role": "user",
+      "content": "Cho em hỏi 1/2 + 1/3 thì mình lấy tử cộng tử, mẫu cộng mẫu ra 2/5 đúng không ạ?"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào em! Lần này em làm **chưa đúng** nhé! Sai lầm này rất phổ biến, nhưng có cách làm đúng đơn giản lắm! 😊\n\n---\n\n## 📌 Quy tắc cộng hai phân số:\n\n**Bước 1:** Quy đồng mẫu số (tìm mẫu chung)\n**Bước 2:** Giữ nguyên mẫu, **chỉ cộng tử số**\n\n⚠️ **Không được** cộng mẫu với mẫu nhé! Vì phân số là \"chia tử cho mẫu\", mẫu khác nhau thì ý nghĩa khác nhau, không cộng được.\n\n---\n\n## ✅ Cách làm đúng với 1/2 + 1/3:\n\n**Bước 1:** Quy đồng mẫu số\n- Mẫu chung = 6 (vì 6 chia hết cho cả 2 và 3)\n- 1/2 = **3/6**\n- 1/3 = **2/6**\n\n**Bước 2:** Cộng tử số, giữ nguyên mẫu\n- 3/6 + 2/6 = (3+2)/6 = **5/6**\n\n➡️ Vậy kết quả đúng là **5/6**, không phải 2/5.\n\n---\n\n## 🍕 Mẹo hình dung bằng hình:\n\nTưởng tượng em có:\n- 1 cái bánh cắt làm 2 phần bằng nhau → lấy **1 phần** (= 1/2)\n- 1 cái bánh cắt làm 3 phần bằng nhau → lấy **1 phần** (= 1/3)\n\n➡️ Hai phần này **khác kích thước**, không thể cộng trực tiếp được! Phải cắt lại thành **nhiều miếng nhỏ bằng nhau** (mẫu chung) thì mới cộng được.\n\n---\n\n## 🌟 Mẹo tìm mẫu chung nhanh:\n\nTìm **Bội chung nhỏ nhất (BCNN)** của hai mẫu số. Nếu hai mẫu \"không có quan hệ gì\", em có thể lấy **tích của chúng**:\n- 1/2 + 1/3 → mẫu chung = 2 × 3 = 6 ✅\n\nThử làm bài này nhé: **1/4 + 1/5 = ?**\n(Đáp án: mẫu chung = 20, 1/4 = 5/20, 1/5 = 4/20, kết quả = **9/20**)"
+    }
+  ],
+  "weaknesses": [
+    "nhầm thứ tự thực hiện phép tính (chưa tính nhân/chia trước cộng/trừ)"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "hs_b",
+  "history": [
+    {
+      "role": "user",
+      "content": "Em không hiểu phân số là gì"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào em! Thầy/cô sẽ giải thích thật dễ hiểu nhé! 😊\n\n## Phân số là gì?\n\n**Phân số** là cách biểu thị một phần của một cái gì đó. Nó gồm **2 phần**:\n\n```\n   Tử số (số ở trên)  →  cho biết mình lấy bao nhiêu phần\n   ─────────\n   Mẫu số (số ở dưới) →  cho biết tổng cộng có bao nhiêu phần bằng nhau\n```\n\n### Ví dụ đời thường cho dễ hình dung:\n\n🍕 **Chia bánh pizza:** Mẹ chia cái bánh thành **4 miếng bằng nhau**. Em ăn **1 miếng**.\n\n→ Em đã ăn được **1/4** cái bánh (đọc là \"một phần tư\").\n\n- **1** (tử số) = số miếng em lấy\n- **4** (mẫu số) = tổng số miếng bị chia\n\n### Một số ví dụ khác:\n\n| Phân số | Đọc là | Ý nghĩa |\n|---------|--------|----------|\n| 1/2 | một phần hai | Chia đôi, lấy 1 phần |\n| 3/5 | ba phần năm | Chia 5 phần, lấy 3 phần |\n| 2/7 | hai phần bảy | Chia 7 phần, lấy 2 phần |\n\n### Mẹo nhớ:\n- 🔼 **Tử số ở trên** (tử = \"trên\" — mẹo: Tờ ở **trên** cùng)\n- 🔽 **Mẫu số ở dưới** (mẫu = \"mẫu\" của phép chia)\n\n### Lưu ý quan trọng:\n- **Mẫu số phải khác 0**, vì không ai có thể chia một cái gì đó thành 0 phần cả!\n\n---\n\nEm có thể thử nói cho thầy/cô nghe: **1/3** nghĩa là gì không? Nếu vẫn chưa rõ phần nào, em cứ hỏi tiếp nhé! 💪"
+    },
+    {
+      "role": "user",
+      "content": "Tại sao 1/2 + 1/4 không bằng 2/4?"
+    },
+    {
+      "role": "assistant",
+      "content": "Câu hỏi rất hay! Em đang thắc mắc đúng chỗ mà nhiều bạn cũng nhầm lẫn. Thầy/cô sẽ giải thích cặn kẽ nhé! 😊\n\n## Thử nghĩ bằng hình ảnh nhé:\n\n🍫 Em có **1 thanh sô-cô-la**, chia đôi → em ăn **1 miếng** (= **1/2**).\n\n🍫 Em có **1 thanh sô-cô-la khác** (bằng thanh trên), chia làm **4 phần** → em ăn **1 miếng** (= **1/4**).\n\n→ Tổng cộng em ăn được bao nhiêu?\n\n**Rõ ràng là KHÔNG THỂ bằng 2/4 (chỉ nửa thanh) được**, vì em ăn từ **2 thanh khác nhau** mà! 😄\n\n---\n\n## Cách giải thích \"chuẩn toán học\":\n\n### ✅ Làm đúng:\nĐể cộng hai phân số, em phải **quy đồng mẫu số** (đưa về cùng mẫu số):\n\n```\n1/2 = 2/4  (vì 1/2 = (1×2)/(2×2) = 2/4)\n```\n\nSau đó cộng tử số, **giữ nguyên mẫu số**:\n\n```\n2/4 + 1/4 = (2+1)/4 = 3/4\n```\n\n→ Vậy **1/2 + 1/4 = 3/4** ✅\n\n### ❌ Sai ở đâu nếu em tính 1/2 + 1/4 = 2/4?\nEm đã **chỉ cộng tử số** (1 + 1 = 2) mà **quên cộng phần \"thừa\"** của 1/2. Vì:\n\n```\n1/2 = 2/4 (lớn hơn 1/4 nhiều, gấp đôi cơ mà!)\n```\n\nEm cộng 1/4 (bé) với 1/2 (lớn gấp đôi) → kết quả phải **lớn hơn 1/4**, sao lại chỉ bằng 2/4 được?\n\n---\n\n## Mẹo nhớ dễ dàng:\n\n> 🔑 **Muốn cộng phân số → mẫu số phải giống nhau trước đã!**\n> (Giống như muốn cộng táo với táo, cam với cam vậy — không cộng táo với cam được 😄)\n\n### Quy tắc vàng:\n```\na/c + b/c = (a+b)/c     (cùng mẫu số → cộng tử, giữ mẫu)\n\na/b + c/d = ?\nBước 1: Quy đồng: a/b = (a×d)/(b×d),  c/d = (c×b)/(d×b)\nBước 2: Cộng tử số, giữ mẫu số mới\n```\n\n---\n\nEm thử làm bài này xem sao nhé: **1/4 + 1/4 = ?** 🤔\n\nGợi ý: hai phân số này đã **cùng mẫu số** rồi, em chỉ cần làm gì với tử số thôi!"
+    }
+  ],
+  "weaknesses": [
+    "chưa hiểu khái niệm phân số",
+    "chưa phân biệt được tử số và mẫu số",
+    "chưa nắm vững quy tắc cộng phân số",
+    "chưa hiểu cần quy đồng mẫu số trước khi cộng",
+    "hiểu nhầm có thể cộng tử số trực tiếp khi khác mẫu số"
+  ]
+}

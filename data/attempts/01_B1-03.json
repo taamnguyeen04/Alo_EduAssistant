@@ -1,0 +1,16 @@
+{
+  "sid": "01",
+  "cau_id": "B1-03",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Chứng minh sin^2x + cos^2x = 1 từ đường tròn lượng giác.",
+  "cac_buoc": [
+    "tôi không biết câu này hãy hướng dẫn tôi"
+  ],
+  "dung_sai_tung_buoc": [
+    false
+  ],
+  "sai_o_buoc": 1,
+  "goi_y_sua": "Theo định nghĩa, tọa độ điểm trên đường tròn đơn vị x^2+y^2=1 là (cos x, sin x), bạn có thể xác định điều này không?",
+  "diem_yeu_moi": [],
+  "dung_het": false
+}

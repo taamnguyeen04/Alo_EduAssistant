@@ -1,0 +1,6 @@
+{"template_id":"DH_01_secant_to_tangent","beats":[
+{"id":"B1","goal":"Vẽ f và cố định P=(a,f(a))","max_labels":3},
+{"id":"B2","goal":"Đặt Q=(a+h,f(a+h)) và tạo cát tuyến PQ","max_labels":4},
+{"id":"B3","goal":"Cho h giảm; Q tiến về P; hệ số góc cập nhật","max_labels":5},
+{"id":"B4","goal":"Cát tuyến tiến tới tiếp tuyến","max_labels":4},
+{"id":"B5","goal":"Chốt định nghĩa giới hạn","max_labels":3}]}

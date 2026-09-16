@@ -1,0 +1,10 @@
+{
+  "template_id":"LTG_01_unit_circle",
+  "beats":[
+    {"id":"B1","goal":"Nhận diện đường tròn đơn vị","visible":["axes","circle","O","R=1"],"cleanup":["R=1"],"max_labels":2},
+    {"id":"B2","goal":"Tạo góc α và điểm M","visible":["circle","radius OM","angle arc","M"],"cleanup":[],"max_labels":2},
+    {"id":"B3","goal":"Nhìn thấy hai hình chiếu","visible":["M","projection x","projection y","cos α","sin α"],"cleanup":["angle numeric"],"max_labels":4},
+    {"id":"B4","goal":"Biến M(x,y) thành M(cos α,sin α)","visible":["diagram","formula card"],"cleanup":["projection labels"],"max_labels":3},
+    {"id":"B5","goal":"Kết luận ngắn gọn","visible":["M(cos α,sin α)","cos=hoành độ","sin=tung độ"],"cleanup":[],"max_labels":3}
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "history": [
+    {
+      "role": "user",
+      "content": "giá trị lượng giác là gì"
+    },
+    {
+      "role": "assistant",
+      "content": "\n\nChào em! Đây là lần đầu tiên em hỏi về chủ đề này, nên mình sẽ bắt đầu từ khái niệm nền tảng nhất để em hình dung dễ dàng nha.\n\n**Chẩn đoán:** Em đang ở giai đoạn làm quen với chủ đề \"Giá trị lượng giác của góc lượng giác\", có thể em chưa rõ khái niệm góc lượng giác là gì trước. Mình sẽ dẫn dắt em từng bước nhỏ, bằng hình ảnh trực quan.\n\n---\n\n### Bước 1: Hiểu về Góc lượng giác\n\nHình dung một chiếc đồng hồ tròn. Khi kim đồng hồ quay, nó đã tạo ra một **góc**.\n\n- **Tia đầu (tia ban đầu):** Vị trí của kim lúc 12 giờ.\n- **Tia cuối (tia kết thúc):** Vị trí của kim sau khi quay một đoạn thời gian.\n\n**Quy ước quan trọng:**\n- Kim đồng hồ quay **thuận chiều kim đồng hồ** → Góc đó là **góc âm**.\n- Kim đồng hồ quay **ngược chiều kim đồng hồ** → Góc đó là **góc dương**.\n\n👉 **Ví dụ:** Quay từ 12 giờ đến 3 giờ (ngược chiều kim đồng hồ) → ta được góc $+90^\\circ$. Quay từ 12 giờ đến 9 giờ (thuận chiều kim đồng hồ) → ta được góc $-90^\\circ$.\n\n---\n\n### Bước 2: Từ góc lượng giác đến giá trị lượng giác\n\nBây giờ, giả sử em có một đường tròn đơn vị (bán kính = 1). Khi góc lượng giác quay đến một vị trí nào đó, tia cuối sẽ cắt đường tròn tại một điểm.\n\n- Tọa độ điểm đó là $(x, y)$.\n- **Giá trị lượng giác** chính là các tỉ số liên quan đến tọa độ này và bán kính.\n\nCác giá trị chính:\n- $\\sin(\\text{góc}) = y$ (tọa độ tung)\n- $\\cos(\\text{góc}) = x$ (tọa độ hoành)\n- $\\tan(\\text{góc}) = \\dfrac{y}{x}$ (nếu $x \\neq 0$)\n\n👉 **Ví dụ cụ thể:** Với góc $90^\\circ$, điểm trên đường tròn đơn vị là $(0, 1)$. Do đó:\n- $\\sin 90^\\circ = 1$\n- $\\cos 90^\\circ = 0$\n- $\\tan 90^\\circ$ không xác định (vì chia cho 0).\n\n---\n\n### Bước 3: Luyện tập nhỏ\n\nĐể củng cố, mình có một câu hỏi nhỏ đây:\n\n> Dựa vào đường tròn đơn vị, tìm tọa độ điểm tương ứng với góc $180^\\circ$. Sau đó, điền giá trị $\\sin 180^\\circ$ và $\\cos 180^\\circ$.\n\nEm hãy thử trả lời xem sao, mình sẽ cùng em kiểm tra lại."
+    }
+  ],
+  "weaknesses": [],
+  "id": "hs_001",
+  "ten": "An (yếu)",
+  "lop": "11A1",
+  "mon": "Toán",
+  "trinh_do_toan": "yếu",
+  "manh": [
+    "chăm chỉ"
+  ],
+  "yeu": [],
+  "bai_hien_tai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "video_da_xem": [
+    "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG"
+  ],
+  "phong_cach": "thích ví dụ hình ảnh, từng bước nhỏ",
+  "tkb": {},
+  "bai_de_xuat": [],
+  "viec_da_xong": [],
+  "video_goi_y_count": {},
+  "moc_attempt": 0,
+  "conversations": [
+    {
+      "id": "cuoc-1789483703108",
+      "tieu_de": "B1: giá trị lượng giác là gì",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": [
+        {
+          "role": "user",
+          "content": "giá trị lượng giác là gì"
+        },
+        {
+          "role": "assistant",
+          "content": "\n\nChào em! Đây là lần đầu tiên em hỏi về chủ đề này, nên mình sẽ bắt đầu từ khái niệm nền tảng nhất để em hình dung dễ dàng nha.\n\n**Chẩn đoán:** Em đang ở giai đoạn làm quen với chủ đề \"Giá trị lượng giác của góc lượng giác\", có thể em chưa rõ khái niệm góc lượng giác là gì trước. Mình sẽ dẫn dắt em từng bước nhỏ, bằng hình ảnh trực quan.\n\n---\n\n### Bước 1: Hiểu về Góc lượng giác\n\nHình dung một chiếc đồng hồ tròn. Khi kim đồng hồ quay, nó đã tạo ra một **góc**.\n\n- **Tia đầu (tia ban đầu):** Vị trí của kim lúc 12 giờ.\n- **Tia cuối (tia kết thúc):** Vị trí của kim sau khi quay một đoạn thời gian.\n\n**Quy ước quan trọng:**\n- Kim đồng hồ quay **thuận chiều kim đồng hồ** → Góc đó là **góc âm**.\n- Kim đồng hồ quay **ngược chiều kim đồng hồ** → Góc đó là **góc dương**.\n\n👉 **Ví dụ:** Quay từ 12 giờ đến 3 giờ (ngược chiều kim đồng hồ) → ta được góc $+90^\\circ$. Quay từ 12 giờ đến 9 giờ (thuận chiều kim đồng hồ) → ta được góc $-90^\\circ$.\n\n---\n\n### Bước 2: Từ góc lượng giác đến giá trị lượng giác\n\nBây giờ, giả sử em có một đường tròn đơn vị (bán kính = 1). Khi góc lượng giác quay đến một vị trí nào đó, tia cuối sẽ cắt đường tròn tại một điểm.\n\n- Tọa độ điểm đó là $(x, y)$.\n- **Giá trị lượng giác** chính là các tỉ số liên quan đến tọa độ này và bán kính.\n\nCác giá trị chính:\n- $\\sin(\\text{góc}) = y$ (tọa độ tung)\n- $\\cos(\\text{góc}) = x$ (tọa độ hoành)\n- $\\tan(\\text{góc}) = \\dfrac{y}{x}$ (nếu $x \\neq 0$)\n\n👉 **Ví dụ cụ thể:** Với góc $90^\\circ$, điểm trên đường tròn đơn vị là $(0, 1)$. Do đó:\n- $\\sin 90^\\circ = 1$\n- $\\cos 90^\\circ = 0$\n- $\\tan 90^\\circ$ không xác định (vì chia cho 0).\n\n---\n\n### Bước 3: Luyện tập nhỏ\n\nĐể củng cố, mình có một câu hỏi nhỏ đây:\n\n> Dựa vào đường tròn đơn vị, tìm tọa độ điểm tương ứng với góc $180^\\circ$. Sau đó, điền giá trị $\\sin 180^\\circ$ và $\\cos 180^\\circ$.\n\nEm hãy thử trả lời xem sao, mình sẽ cùng em kiểm tra lại."
+        }
+      ]
+    },
+    {
+      "id": "cuoc-1789483690945",
+      "tieu_de": "B1: Thắc mắc mới",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": []
+    },
+    {
+      "id": "cuoc-1789475337674",
+      "tieu_de": "B1: Thắc mắc mới",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": []
+    },
+    {
+      "id": "cuoc-1789475335972",
+      "tieu_de": "B1: Thắc mắc mới",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": []
+    },
+    {
+      "id": "cuoc-1789475333885",
+      "tieu_de": "B4: Thắc mắc mới",
+      "bai": "Bài 4. Phương trình lượng giác cơ bản",
+      "messages": []
+    }
+  ]
+}

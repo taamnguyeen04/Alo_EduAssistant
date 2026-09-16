@@ -1,0 +1,4 @@
+[
+{"prompt":"Giải thích đồ thị y=2sin(2x+pi/4)+1 thay đổi thế nào từ y=sin x.","params":{"a":2,"b":2,"c":0.7853981634,"d":1}},
+{"prompt":"Minh họa y=0.5sin(3x)-1.","params":{"a":0.5,"b":3,"c":0,"d":-1}}
+]

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "N-001",
+    "bai": "Bài 1. X",
+    "thanh_vien": [
+      "test_p4_hs"
+    ],
+    "muc_tieu": "nhom test",
+    "trang_thai": "xong",
+    "tao_luc": "2026-09-14"
+  },
+  {
+    "id": "N-002",
+    "bai": "Bài 1. X",
+    "thanh_vien": [
+      "test_p4_hs"
+    ],
+    "muc_tieu": "nhom test",
+    "trang_thai": "xong",
+    "tao_luc": "2026-09-15"
+  },
+  {
+    "id": "N-003",
+    "bai": "Bài 1. X",
+    "thanh_vien": [
+      "test_p4_hs"
+    ],
+    "muc_tieu": "nhom test",
+    "trang_thai": "xong",
+    "tao_luc": "2026-09-15"
+  },
+  {
+    "id": "N-004",
+    "bai": "Bài 1. X",
+    "thanh_vien": [
+      "test_p4_hs"
+    ],
+    "muc_tieu": "nhom test",
+    "trang_thai": "xong",
+    "tao_luc": "2026-09-15"
+  },
+  {
+    "id": "N-005",
+    "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+    "thanh_vien": [
+      "001",
+      "hs_001",
+      "hs_002"
+    ],
+    "muc_tieu": "Ôn Bài 1. Giá trị lượng giác của góc lượng giác",
+    "trang_thai": "mo",
+    "tao_luc": "2026-09-15"
+  }
+]

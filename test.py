@@ -1,22 +1,29 @@
+"""Test nhanh API OpenRouter. Key đọc từ .env (KHÔNG hardcode)."""
 import os
+import sys
+
 import requests
-from dotenv import load_dotenv
 
-load_dotenv()
+sys.stdout.reconfigure(encoding="utf-8")
 
-resp = requests.post(
+try:
+    from dotenv import load_dotenv
+
+    load_dotenv()
+except ImportError:
+    pass
+
+KEY = os.getenv("OPENROUTER_API_KEY", "")
+if not KEY:
+    sys.exit("Thiếu OPENROUTER_API_KEY trong .env (xem .env.example nếu có).")
+
+q = input("Ask: ")
+r = requests.post(
     "https://openrouter.ai/api/v1/chat/completions",
-    headers={
-        "Authorization": f"Bearer {os.getenv('OPENROUTER_API_KEY')}",
-        "Content-Type": "application/json",
-    },
-    json={
-        "model": "minimax/minimax-m3:free",
-        "messages": [
-            {"role": "system", "content": "You are a helpful assistant."},
-            {"role": "user", "content": input("Ask: ")},
-        ],
-    },
+    headers={"Authorization": f"Bearer {KEY}"},
+    json={"model": os.getenv("OPENROUTER_MODEL", "dots-studio/dots-3-note-preview:free"),
+          "messages": [{"role": "user", "content": q}]},
+    timeout=60,
 )
-resp.raise_for_status() # bắt lỗi nếu API trả về kết quả không ổn (lỗi mạng hoặc lỗi hết tiền)
-print(resp.json()["choices"][0]["message"]["content"])
+tra_loi = r.json()["choices"][0]["message"]["content"]
+print("AI:", tra_loi)

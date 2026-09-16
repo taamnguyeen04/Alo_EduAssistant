@@ -1,0 +1,17 @@
+{
+  "sid": "1",
+  "cau_id": "B1-TL-003",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Đổi các số đo sau từ rađian sang độ:\na) $\\frac{3\\pi}{4}$; b) $\\frac{5\\pi}{6}$; c) $\\frac{32\\pi}{3}$; d) $\\frac{3\\pi}{7}$; e) $2{,}3$; f) $5{,}6$.",
+  "cac_buoc": [
+    "a)135o"
+  ],
+  "che_do": "cham",
+  "dung_sai_tung_buoc": [
+    true
+  ],
+  "sai_o_buoc": null,
+  "goi_y_sua": "Làm rất tốt! Hãy thử đổi 5,6 rad sang độ để luyện tập.",
+  "diem_yeu_moi": [],
+  "dung_het": true
+}

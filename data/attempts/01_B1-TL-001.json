@@ -1,0 +1,18 @@
+{
+  "sid": "01",
+  "cau_id": "B1-TL-001",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Hoàn thành bảng sau: Số đo độ 15° ? 0° 900° ? ? Số đo rađian ? π ? ? −π − π",
+  "cac_buoc": [
+    "tôi không biết làm"
+  ],
+  "dung_sai_tung_buoc": [
+    false
+  ],
+  "sai_o_buoc": 1,
+  "goi_y_sua": "Hãy tự hỏi: Biết 180° = π rad, thì 15° bằng bao nhiêu radian?",
+  "diem_yeu_moi": [
+    "quên áp dụng hệ số chuyển đổi π/180"
+  ],
+  "dung_het": false
+}

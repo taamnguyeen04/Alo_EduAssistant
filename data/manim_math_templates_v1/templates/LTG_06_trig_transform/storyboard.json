@@ -1,0 +1,7 @@
+{"template_id":"LTG_06_trig_transform","beats":[
+{"id":"B1","goal":"Mốc tham chiếu y=sin x","max_labels":2},
+{"id":"B2","goal":"Chỉ thay a và giải thích biên độ","max_labels":4},
+{"id":"B3","goal":"Chỉ thêm b và giải thích chu kỳ","max_labels":4},
+{"id":"B4","goal":"Chỉ thêm c và giải thích dịch ngang","max_labels":4},
+{"id":"B5","goal":"Chỉ thêm d và giải thích dịch dọc","max_labels":4},
+{"id":"B6","goal":"Kết luận bốn vai trò","max_labels":5}]}

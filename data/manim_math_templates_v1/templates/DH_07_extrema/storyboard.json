@@ -1,0 +1,6 @@
+{"template_id":"DH_07_extrema","beats":[
+{"id":"B1","goal":"Vẽ hàm và cho điểm chuyển động ở vùng tăng","max_labels":4},
+{"id":"B2","goal":"Dừng tại cực trị thứ nhất, tiếp tuyến ngang","max_labels":4},
+{"id":"B3","goal":"Đi qua vùng giảm rồi dừng tại cực trị thứ hai","max_labels":4},
+{"id":"B4","goal":"So sánh dấu f' ở các khoảng","max_labels":5},
+{"id":"B5","goal":"Chốt quy tắc đổi dấu","max_labels":4}]}

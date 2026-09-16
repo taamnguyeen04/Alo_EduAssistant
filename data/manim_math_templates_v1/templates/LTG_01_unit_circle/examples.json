@@ -1,0 +1,5 @@
+[
+  {"prompt":"Minh họa góc 60 độ trên đường tròn lượng giác và giải thích sin cos.","params":{"angle_deg":60,"show_numeric":true}},
+  {"prompt":"Cho góc 135 độ, chỉ cần giải thích tọa độ M(cos α, sin α).","params":{"angle_deg":135,"show_numeric":false}},
+  {"prompt":"Minh họa góc -30 độ trên đường tròn đơn vị.","params":{"angle_deg":-30,"show_numeric":true}}
+]

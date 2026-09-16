@@ -1,0 +1,8 @@
+{
+  "template_id":"LTG_06_trig_transform","name_vi":"Biến đổi đồ thị y = a sin(bx+c)+d","version":"1.0.0","scene_class":"TrigTransformTemplate","subject":"Toán",
+  "topics":["lượng giác","biến đổi đồ thị","biên độ","chu kỳ","tịnh tiến"],
+  "intent_patterns":["giải thích a b c d trong hàm sin","biên độ chu kỳ dịch ngang dịch dọc","biến đổi y=sin x thành a sin(bx+c)+d"],
+  "best_for":["giải thích từng tham số của hàm sin tổng quát"],"not_for":["đường tròn lượng giác","tan có tiệm cận"],
+  "slots":{"a":{"type":"number","default":2,"min":-4,"max":4},"b":{"type":"number","default":2,"min":-4,"max":4,"nonzero":true},"c":{"type":"number","default":0.7853981634,"min":-6.2832,"max":6.2832},"d":{"type":"number","default":1,"min":-3,"max":3},"duration_scale":{"type":"number","default":1.0,"min":0.6,"max":2.0}},
+  "ai_may_modify":["a","b","c","d","duration_scale"],"ai_must_not_modify":["one-parameter-at-a-time pedagogy","formula panel position"]
+}

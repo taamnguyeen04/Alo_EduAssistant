@@ -1,0 +1,10 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/tam/Documents/GitHub/Alo_EduAssistant/data/manim_math_templates_v1/_media/videos/scene/480p15/partial_movie_files/SineFromCircleTemplate/696602358_2889620530_223132457.mp4'
+file 'file:C:/Users/tam/Documents/GitHub/Alo_EduAssistant/data/manim_math_templates_v1/_media/videos/scene/480p15/partial_movie_files/SineFromCircleTemplate/1545908646_1152459202_3490216449.mp4'
+file 'file:C:/Users/tam/Documents/GitHub/Alo_EduAssistant/data/manim_math_templates_v1/_media/videos/scene/480p15/partial_movie_files/SineFromCircleTemplate/1545908646_2396997833_847289492.mp4'
+file 'file:C:/Users/tam/Documents/GitHub/Alo_EduAssistant/data/manim_math_templates_v1/_media/videos/scene/480p15/partial_movie_files/SineFromCircleTemplate/1545908646_754649535_4030437939.mp4'
+file 'file:C:/Users/tam/Documents/GitHub/Alo_EduAssistant/data/manim_math_templates_v1/_media/videos/scene/480p15/partial_movie_files/SineFromCircleTemplate/1545908646_112826161_1246821119.mp4'
+file 'file:C:/Users/tam/Documents/GitHub/Alo_EduAssistant/data/manim_math_templates_v1/_media/videos/scene/480p15/partial_movie_files/SineFromCircleTemplate/1545908646_2703718465_3095958097.mp4'
+file 'file:C:/Users/tam/Documents/GitHub/Alo_EduAssistant/data/manim_math_templates_v1/_media/videos/scene/480p15/partial_movie_files/SineFromCircleTemplate/1545908646_246331876_706200022.mp4'
+file 'file:C:/Users/tam/Documents/GitHub/Alo_EduAssistant/data/manim_math_templates_v1/_media/videos/scene/480p15/partial_movie_files/SineFromCircleTemplate/1545908646_3167591173_1899574593.mp4'
+file 'file:C:/Users/tam/Documents/GitHub/Alo_EduAssistant/data/manim_math_templates_v1/_media/videos/scene/480p15/partial_movie_files/SineFromCircleTemplate/1545908646_3924634300_3005108871.mp4'

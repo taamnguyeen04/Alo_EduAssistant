@@ -1,0 +1,269 @@
+[
+  {
+    "template_id": "LTG_01_unit_circle",
+    "name_vi": "Đường tròn lượng giác cơ bản",
+    "topics": [
+      "lượng giác",
+      "đường tròn lượng giác",
+      "sin",
+      "cos",
+      "tọa độ điểm"
+    ],
+    "intent_patterns": [
+      "minh họa sin cos trên đường tròn",
+      "tọa độ điểm M trên đường tròn lượng giác",
+      "góc alpha và hình chiếu lên hai trục"
+    ],
+    "best_for": [
+      "giới thiệu M(cos α, sin α)",
+      "giải thích sin là tung độ, cos là hoành độ",
+      "minh họa một góc cụ thể trên đường tròn đơn vị"
+    ],
+    "not_for": [
+      "giải phương trình lượng giác nhiều nghiệm",
+      "đồ thị sin theo thời gian",
+      "hình học 3D"
+    ],
+    "slots": {
+      "angle_deg": {
+        "type": "number",
+        "default": 60,
+        "min": -720,
+        "max": 720
+      },
+      "show_numeric": {
+        "type": "boolean",
+        "default": true
+      },
+      "show_radius_label": {
+        "type": "boolean",
+        "default": true
+      },
+      "show_final_summary": {
+        "type": "boolean",
+        "default": true
+      },
+      "duration_scale": {
+        "type": "number",
+        "default": 1.0,
+        "min": 0.6,
+        "max": 2.0
+      }
+    }
+  },
+  {
+    "template_id": "LTG_05_sine_graph",
+    "name_vi": "Từ đường tròn lượng giác đến đồ thị sin",
+    "topics": [
+      "lượng giác",
+      "đồ thị sin",
+      "đường tròn lượng giác",
+      "hàm tuần hoàn"
+    ],
+    "intent_patterns": [
+      "từ điểm quay trên đường tròn tạo ra đồ thị sin",
+      "giải thích vì sao y=sin x có dạng sóng",
+      "liên hệ tung độ điểm M và đồ thị sin"
+    ],
+    "best_for": [
+      "hình thành đồ thị y=sin x",
+      "liên hệ góc quay với tung độ"
+    ],
+    "not_for": [
+      "biến đổi a sin(bx+c)+d",
+      "giải phương trình sin"
+    ],
+    "slots": {
+      "cycles": {
+        "type": "number",
+        "default": 1,
+        "min": 1,
+        "max": 2
+      },
+      "duration_scale": {
+        "type": "number",
+        "default": 1.0,
+        "min": 0.6,
+        "max": 2.0
+      },
+      "show_connector": {
+        "type": "boolean",
+        "default": true
+      },
+      "show_phase_markers": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  {
+    "template_id": "LTG_06_trig_transform",
+    "name_vi": "Biến đổi đồ thị y = a sin(bx+c)+d",
+    "topics": [
+      "lượng giác",
+      "biến đổi đồ thị",
+      "biên độ",
+      "chu kỳ",
+      "tịnh tiến"
+    ],
+    "intent_patterns": [
+      "giải thích a b c d trong hàm sin",
+      "biên độ chu kỳ dịch ngang dịch dọc",
+      "biến đổi y=sin x thành a sin(bx+c)+d"
+    ],
+    "best_for": [
+      "giải thích từng tham số của hàm sin tổng quát"
+    ],
+    "not_for": [
+      "đường tròn lượng giác",
+      "tan có tiệm cận"
+    ],
+    "slots": {
+      "a": {
+        "type": "number",
+        "default": 2,
+        "min": -4,
+        "max": 4
+      },
+      "b": {
+        "type": "number",
+        "default": 2,
+        "min": -4,
+        "max": 4,
+        "nonzero": true
+      },
+      "c": {
+        "type": "number",
+        "default": 0.7853981634,
+        "min": -6.2832,
+        "max": 6.2832
+      },
+      "d": {
+        "type": "number",
+        "default": 1,
+        "min": -3,
+        "max": 3
+      },
+      "duration_scale": {
+        "type": "number",
+        "default": 1.0,
+        "min": 0.6,
+        "max": 2.0
+      }
+    }
+  },
+  {
+    "template_id": "DH_01_secant_to_tangent",
+    "name_vi": "Đạo hàm là giới hạn hệ số góc cát tuyến",
+    "topics": [
+      "đạo hàm",
+      "tiếp tuyến",
+      "cát tuyến",
+      "giới hạn",
+      "hệ số góc"
+    ],
+    "intent_patterns": [
+      "đạo hàm là hệ số góc tiếp tuyến",
+      "cho Q tiến về P để cát tuyến thành tiếp tuyến",
+      "minh họa định nghĩa đạo hàm bằng giới hạn"
+    ],
+    "best_for": [
+      "ý nghĩa hình học của đạo hàm",
+      "difference quotient",
+      "h tiến về 0"
+    ],
+    "not_for": [
+      "quy tắc đạo hàm tích",
+      "bảng biến thiên"
+    ],
+    "slots": {
+      "function": {
+        "type": "choice",
+        "default": "x^2",
+        "allowed": [
+          "x^2",
+          "x^3",
+          "sin(x)",
+          "cos(x)",
+          "e^x"
+        ]
+      },
+      "a": {
+        "type": "number",
+        "default": 1,
+        "min": -3,
+        "max": 3
+      },
+      "h_start": {
+        "type": "number",
+        "default": 2,
+        "min": 0.6,
+        "max": 3
+      },
+      "h_end": {
+        "type": "number",
+        "default": 0.12,
+        "min": 0.05,
+        "max": 0.3
+      },
+      "duration_scale": {
+        "type": "number",
+        "default": 1.0,
+        "min": 0.6,
+        "max": 2.0
+      },
+      "camera_zoom": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  },
+  {
+    "template_id": "DH_07_extrema",
+    "name_vi": "Cực trị qua dấu của đạo hàm và tiếp tuyến",
+    "topics": [
+      "đạo hàm",
+      "cực trị",
+      "tăng giảm",
+      "tiếp tuyến",
+      "bảng dấu"
+    ],
+    "intent_patterns": [
+      "minh họa cực đại cực tiểu bằng đạo hàm",
+      "điểm chạy trên đồ thị và tiếp tuyến thay đổi",
+      "giải thích f' đổi dấu tại cực trị"
+    ],
+    "best_for": [
+      "liên hệ tăng giảm với dấu f'",
+      "trực quan cực đại cực tiểu"
+    ],
+    "not_for": [
+      "tối ưu hóa hình học có ràng buộc",
+      "định nghĩa đạo hàm bằng giới hạn"
+    ],
+    "slots": {
+      "function": {
+        "type": "choice",
+        "default": "x^3-3x",
+        "allowed": [
+          "x^3-3x",
+          "sin(x)"
+        ]
+      },
+      "duration_scale": {
+        "type": "number",
+        "default": 1.0,
+        "min": 0.6,
+        "max": 2.0
+      },
+      "show_sign_chart": {
+        "type": "boolean",
+        "default": true
+      },
+      "show_slope_value": {
+        "type": "boolean",
+        "default": true
+      }
+    }
+  }
+]

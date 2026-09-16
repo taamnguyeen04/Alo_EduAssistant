@@ -1,0 +1,14 @@
+{
+  "template_id":"LTG_05_sine_graph",
+  "name_vi":"Từ đường tròn lượng giác đến đồ thị sin",
+  "version":"1.0.0",
+  "scene_class":"SineFromCircleTemplate",
+  "subject":"Toán",
+  "topics":["lượng giác","đồ thị sin","đường tròn lượng giác","hàm tuần hoàn"],
+  "intent_patterns":["từ điểm quay trên đường tròn tạo ra đồ thị sin","giải thích vì sao y=sin x có dạng sóng","liên hệ tung độ điểm M và đồ thị sin"],
+  "best_for":["hình thành đồ thị y=sin x","liên hệ góc quay với tung độ"],
+  "not_for":["biến đổi a sin(bx+c)+d","giải phương trình sin"],
+  "slots":{"cycles":{"type":"number","default":1,"min":1,"max":2},"duration_scale":{"type":"number","default":1.0,"min":0.6,"max":2.0},"show_connector":{"type":"boolean","default":true},"show_phase_markers":{"type":"boolean","default":true}},
+  "ai_may_modify":["slot values","optional text labels"],
+  "ai_must_not_modify":["split-screen layout","synchronized tracker","final relationship"]
+}

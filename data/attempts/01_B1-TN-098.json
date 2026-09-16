@@ -1,0 +1,19 @@
+{
+  "sid": "01",
+  "cau_id": "B1-TN-098",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Biểu thức $B=\\frac{\\cos^2x-\\sin^2y}{\\sin^2x\\sin^2y}-\\cot^2x\\cot^2y$ không phụ thuộc $x,y$ trên miền xác định và bằng\nA. $2$.\nB. $-2$.\nC. $1$.\nD. $-1$.",
+  "cac_buoc": [
+    "kết hợp lại rồi sao nữa"
+  ],
+  "che_do": "cham",
+  "dung_sai_tung_buoc": [
+    false
+  ],
+  "sai_o_buoc": 1,
+  "goi_y_sua": "Bạn có thể biểu diễn $\\cot^2 x \\cot^2 y$ dưới dạng phân thức với mẫu số $\\sin^2 x \\sin^2 y$ không?",
+  "diem_yeu_moi": [
+    "Cẩn trọng với thứ tự thực hiện phép tính trong các biểu thức lượng giác tổng hợp"
+  ],
+  "dung_het": false
+}

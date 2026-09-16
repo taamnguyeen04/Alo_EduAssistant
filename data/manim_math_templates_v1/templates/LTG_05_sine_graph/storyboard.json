@@ -1,0 +1,5 @@
+{"template_id":"LTG_05_sine_graph","beats":[
+{"id":"B1","goal":"Đặt đường tròn và hệ trục đồ thị cạnh nhau","max_labels":3},
+{"id":"B2","goal":"Cho M quay và P chạy đồng bộ trên y=sin x","max_labels":4},
+{"id":"B3","goal":"Để lại quỹ đạo sin bằng TracedPath","max_labels":4},
+{"id":"B4","goal":"Chốt sin α là tung độ của M","max_labels":3}]}

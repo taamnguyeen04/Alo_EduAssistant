@@ -1,0 +1,8 @@
+{
+  "template_id":"DH_01_secant_to_tangent","name_vi":"Đạo hàm là giới hạn hệ số góc cát tuyến","version":"1.0.1","scene_class":"SecantToTangentTemplate","subject":"Toán",
+  "topics":["đạo hàm","tiếp tuyến","cát tuyến","giới hạn","hệ số góc"],
+  "intent_patterns":["đạo hàm là hệ số góc tiếp tuyến","cho Q tiến về P để cát tuyến thành tiếp tuyến","minh họa định nghĩa đạo hàm bằng giới hạn"],
+  "best_for":["ý nghĩa hình học của đạo hàm","difference quotient","h tiến về 0"],"not_for":["quy tắc đạo hàm tích","bảng biến thiên"],
+  "slots":{"function":{"type":"choice","default":"x^2","allowed":["x^2","x^3","sin(x)","cos(x)","e^x"]},"a":{"type":"number","default":1,"min":-3,"max":3},"h_start":{"type":"number","default":2,"min":0.6,"max":3},"h_end":{"type":"number","default":0.12,"min":0.05,"max":0.3},"duration_scale":{"type":"number","default":1.0,"min":0.6,"max":2.0},"camera_zoom":{"type":"boolean","default":true}},
+  "ai_may_modify":["function","a","h_start","h_end","duration_scale","camera_zoom"],"ai_must_not_modify":["P fixed","Q approaches P","difference quotient meaning","final tangent"]
+}

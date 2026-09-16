@@ -1,0 +1,162 @@
+[
+    {
+        "chapter": "CHƯƠNG I: HÀM SỐ LƯỢNG GIÁC VÀ PHƯƠNG TRÌNH LƯỢNG GIÁC",
+        "title": "Bài 1. Giá trị lượng giác của góc lượng giác",
+        "link": "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG",
+        "content": [
+            "Khái niệm góc lượng giác: Định nghĩa góc lượng giác dựa trên tia đầu và tia cuối, với quy ước chiều dương (ngược chiều kim đồng hồ) và chiều âm (thuận chiều kim đồng hồ).",
+            "Số đo của góc lượng giác: Xác định số đo tổng quát của góc lượng giác và mối liên hệ giữa các góc cùng tia đầu, tia cuối.",
+            "Hệ thức Sắc-lơ: Vận dụng phép cộng các góc lượng giác và các hệ thức liên quan.",
+            "Đơn vị đo: Tìm hiểu đơn vị radian và cách chuyển đổi giữa độ và radian.",
+            "Độ dài cung tròn: Vận dụng công thức tính độ dài cung theo số đo góc ở đơn vị radian.",
+            "Giá trị lượng giác: Tìm hiểu sin, cos, tan, cotan; các hệ thức lượng giác cơ bản và dấu của các giá trị lượng giác theo từng góc phần tư.",
+            "Ứng dụng thực tế: Giải các bài toán liên quan đến góc, cung tròn và chuyển động tròn."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG I: HÀM SỐ LƯỢNG GIÁC VÀ PHƯƠNG TRÌNH LƯỢNG GIÁC",
+        "title": "Bài 2. Công thức lượng giác",
+        "link": "https://youtu.be/w7EBXzzabtY?si=SI5X3NqQ6gFBwZtl",
+        "content": [
+            "Công thức cộng: Thiết lập và vận dụng công thức sin, cos, tan của tổng và hiệu hai góc.",
+            "Công thức nhân đôi: Sử dụng các công thức của sin 2a, cos 2a và tan 2a để biến đổi biểu thức.",
+            "Công thức hạ bậc: Biến đổi các biểu thức chứa bình phương sin, cos về dạng có góc gấp đôi.",
+            "Công thức biến đổi tích thành tổng: Chuyển tích các giá trị lượng giác thành tổng hoặc hiệu để thuận tiện tính toán.",
+            "Công thức biến đổi tổng thành tích: Biến đổi tổng hoặc hiệu các giá trị lượng giác thành tích.",
+            "Vận dụng: Rút gọn, chứng minh đẳng thức và tính giá trị của các biểu thức lượng giác."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG I: HÀM SỐ LƯỢNG GIÁC VÀ PHƯƠNG TRÌNH LƯỢNG GIÁC",
+        "title": "Bài 3. Hàm số lượng giác",
+        "link": "https://youtu.be/sx_xqaXx96Q?si=ph-MszdhkRpW2CSp",
+        "content": [
+            "Khái niệm hàm số lượng giác: Làm quen với các hàm số y = sin x, y = cos x, y = tan x và y = cot x.",
+            "Tập xác định: Xác định điều kiện của biến để các hàm số lượng giác có nghĩa.",
+            "Tính tuần hoàn: Nhận biết chu kì của từng hàm số và sử dụng tính tuần hoàn trong tính toán.",
+            "Tính chẵn, lẻ: Xác định tính chẵn hoặc lẻ của các hàm số lượng giác.",
+            "Đồ thị: Nhận biết và khai thác đặc điểm đồ thị của sin, cos, tan và cot.",
+            "Giá trị lớn nhất, nhỏ nhất và tính đơn điệu: Vận dụng đặc điểm của hàm số lượng giác để giải bài toán."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG I: HÀM SỐ LƯỢNG GIÁC VÀ PHƯƠNG TRÌNH LƯỢNG GIÁC",
+        "title": "Bài 4. Phương trình lượng giác cơ bản",
+        "link": "https://youtu.be/0xPgwneCusw?si=zirLUhMKIKTHwM5l",
+        "content": [
+            "Phương trình sin x = a: Điều kiện có nghiệm và cách viết nghiệm tổng quát.",
+            "Phương trình cos x = a: Điều kiện có nghiệm và các dạng nghiệm cơ bản.",
+            "Phương trình tan x = a: Xác định nghiệm theo chu kì của hàm tang.",
+            "Phương trình cot x = a: Xác định nghiệm theo chu kì của hàm côtang.",
+            "Kĩ năng chọn nghiệm: Biết sử dụng tính tuần hoàn và các giá trị lượng giác đặc biệt.",
+            "Vận dụng: Giải phương trình lượng giác cơ bản và các bài toán yêu cầu tìm nghiệm trong một khoảng hoặc đoạn cho trước."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG II: DÃY SỐ. CẤP SỐ CỘNG. CẤP SỐ NHÂN",
+        "title": "Bài 5. Dãy số",
+        "link": "https://youtu.be/MRUp8fgsaCU?si=3mhMGdBI5K6HFvsf",
+        "content": [
+            "Khái niệm dãy số: Dãy số được xem như một hàm số xác định trên tập hợp các số nguyên dương.",
+            "Cách cho một dãy số: Dãy số có thể được xác định bằng công thức số hạng tổng quát, bằng phương pháp mô tả hoặc bằng hệ thức truy hồi.",
+            "Số hạng tổng quát: Xác định u_n theo n và sử dụng công thức để tính các số hạng.",
+            "Dãy số tăng, giảm: So sánh các số hạng liên tiếp để xét tính đơn điệu.",
+            "Dãy số bị chặn: Nhận biết và kiểm tra các điều kiện để dãy số bị chặn trên, bị chặn dưới hoặc bị chặn.",
+            "Vận dụng: Mô hình hóa các tình huống thực tế bằng dãy số và tính các số hạng cần thiết."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG II: DÃY SỐ. CẤP SỐ CỘNG. CẤP SỐ NHÂN",
+        "title": "Bài 6. Cấp số cộng",
+        "link": "https://youtu.be/aMjVPCQ4VIc?si=WpSW2OIp6VU6RpSA",
+        "content": [
+            "Khái niệm cấp số cộng: Dãy số trong đó hiệu giữa hai số hạng liên tiếp luôn không đổi; hiệu đó gọi là công sai d.",
+            "Công thức số hạng tổng quát: u_n = u_1 + (n - 1)d.",
+            "Tính chất cấp số cộng: Mỗi số hạng, trừ số hạng đầu và cuối, có quan hệ với hai số hạng đứng liền trước và sau.",
+            "Tổng n số hạng đầu: S_n = n(u_1 + u_n)/2 = n[2u_1 + (n - 1)d]/2.",
+            "Nhận biết cấp số cộng: Kiểm tra hiệu hai số hạng liên tiếp hoặc sử dụng các tính chất đặc trưng.",
+            "Ứng dụng: Giải các bài toán tăng đều, giảm đều, chia khoảng cách hoặc lập kế hoạch theo quy luật cộng."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG II: DÃY SỐ. CẤP SỐ CỘNG. CẤP SỐ NHÂN",
+        "title": "Bài 7. Cấp số nhân",
+        "link": "https://youtu.be/rY_DaMplsRo?si=ljkrwhjjLaSU6tiN",
+        "content": [
+            "Khái niệm cấp số nhân: Dãy số mà tỉ số giữa hai số hạng liên tiếp không đổi; tỉ số đó gọi là công bội q.",
+            "Công thức số hạng tổng quát: u_n = u_1q^(n - 1).",
+            "Tính chất cấp số nhân: Số hạng ở giữa có quan hệ tích với hai số hạng đứng liền trước và sau.",
+            "Tổng n số hạng đầu: Với q khác 1, S_n = u_1(q^n - 1)/(q - 1), tương đương S_n = u_1(1 - q^n)/(1 - q).",
+            "Nhận biết cấp số nhân: Kiểm tra tỉ số giữa các số hạng liên tiếp.",
+            "Ứng dụng: Giải các bài toán tăng trưởng theo tỉ lệ, lãi suất, khấu hao và các quá trình nhân lặp lại."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG III: CÁC SỐ ĐẶC TRƯNG ĐO XU THẾ TRUNG TÂM CHO MẪU SỐ LIỆU GHÉP NHÓM",
+        "title": "Bài 8. Mẫu số liệu ghép nhóm",
+        "link": "https://youtu.be/rY_DaMplsRo?si=h4VoXWNVW1rr4Vkw",
+        "content": [
+            "Mẫu số liệu ghép nhóm: Dữ liệu được chia thành các nhóm/khoảng giá trị và đi kèm tần số của từng nhóm.",
+            "Nhóm dữ liệu: Xác định các khoảng nhóm, đầu mút và tần số tương ứng.",
+            "Cỡ mẫu: Tính tổng các tần số của các nhóm.",
+            "Giá trị đại diện: Với nhóm [a_i; a_(i+1)), giá trị đại diện thường được lấy là trung điểm của hai đầu mút.",
+            "Bảng tần số ghép nhóm: Biết đọc, lập và xử lí bảng số liệu ghép nhóm.",
+            "Hiệu chỉnh nhóm: Với dữ liệu rời rạc được cho dưới dạng các khoảng số nguyên, có thể hiệu chỉnh về các khoảng liên tục trước khi tính toán.",
+            "Ứng dụng: Tóm tắt một tập dữ liệu lớn thành bảng thuận tiện cho việc tính các số đặc trưng."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG III: CÁC SỐ ĐẶC TRƯNG ĐO XU THẾ TRUNG TÂM CHO MẪU SỐ LIỆU GHÉP NHÓM",
+        "title": "Bài 9. Các số đặc trưng đo xu thế trung tâm",
+        "link": "https://youtu.be/DBgmTPywBOk?si=hoyByUzqfv0keq-l",
+        "content": [
+            "Số trung bình của mẫu số liệu ghép nhóm: Dùng giá trị đại diện của mỗi nhóm và tần số để ước lượng số trung bình.",
+            "Công thức số trung bình: x̄ = (m_1x_1 + m_2x_2 + ... + m_kx_k)/n, trong đó n là cỡ mẫu.",
+            "Trung vị: Xác định nhóm chứa trung vị dựa trên tần số tích lũy rồi áp dụng công thức nội suy trong nhóm.",
+            "Tứ phân vị: Xác định nhóm chứa Q_1 và Q_3 dựa trên các vị trí n/4 và 3n/4, sau đó tính theo công thức tương ứng.",
+            "Mốt: Xác định nhóm có tần số lớn nhất và ước lượng giá trị mốt của mẫu số liệu ghép nhóm.",
+            "So sánh các số đặc trưng: Biết lựa chọn số trung bình, trung vị, tứ phân vị hoặc mốt phù hợp với mục đích phân tích.",
+            "Ứng dụng: Phân tích điểm số, thời gian, chiều cao, doanh thu và các dữ liệu thực tế được chia nhóm."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG IV: QUAN HỆ SONG SONG TRONG KHÔNG GIAN",
+        "title": "Bài 10. Đường thẳng và mặt phẳng trong không gian",
+        "link": "https://youtu.be/5MDMV-eDijE?si=njgdg3qj0PSjsFkw",
+        "content": [
+            "Điểm, đường thẳng và mặt phẳng trong không gian: Sử dụng các kí hiệu và cách biểu diễn hình học không gian.",
+            "Quan hệ thuộc: Nhận biết điểm thuộc đường thẳng, điểm thuộc mặt phẳng và đường thẳng nằm trong mặt phẳng.",
+            "Cách xác định mặt phẳng: Một mặt phẳng được xác định bởi ba điểm không thẳng hàng; hoặc bởi một đường thẳng và một điểm không thuộc đường thẳng; hoặc bởi hai đường thẳng cắt nhau.",
+            "Giao tuyến của hai mặt phẳng: Xác định đường thẳng chung của hai mặt phẳng khi chúng cắt nhau.",
+            "Giao điểm của đường thẳng và mặt phẳng: Xác định vị trí tương đối và tìm giao điểm khi có.",
+            "Hình chóp và thiết diện: Vận dụng quan hệ điểm – đường – mặt phẳng để giải các bài toán hình học không gian."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG IV: QUAN HỆ SONG SONG TRONG KHÔNG GIAN",
+        "title": "Bài 11. Hai đường thẳng song song",
+        "link": "https://youtu.be/5MDMV-eDijE?si=zzPFnR1v2FQiA5Uc",
+        "content": [
+            "Vị trí tương đối của hai đường thẳng trong không gian: Hai đường thẳng có thể trùng nhau, cắt nhau, song song hoặc chéo nhau.",
+            "Hai đường thẳng đồng phẳng: Nếu cùng nằm trong một mặt phẳng thì chúng có thể cắt nhau, song song hoặc trùng nhau.",
+            "Hai đường thẳng chéo nhau: Hai đường thẳng không cùng nằm trong bất kì mặt phẳng nào.",
+            "Hai đường thẳng song song: Hai đường thẳng đồng phẳng và không có điểm chung.",
+            "Tính chất song song: Qua một điểm nằm ngoài một đường thẳng có duy nhất một đường thẳng song song với đường thẳng đó.",
+            "Định lí ba đường giao tuyến: Vận dụng để suy ra các quan hệ song song trong hình học không gian.",
+            "Ứng dụng: Chứng minh hai đường thẳng song song, xác định vị trí tương đối của các đường trong hình chóp và hình hộp."
+        ]
+    },
+    {
+        "chapter": "CHƯƠNG IV: QUAN HỆ SONG SONG TRONG KHÔNG GIAN",
+        "title": "Bài 12. Đường thẳng và mặt phẳng song song",
+        "link": "https://youtu.be/UlC2BApz3FE?si=26peb56ONuqpVpYw",
+        "content": [
+            "Khái niệm: Đường thẳng song song với mặt phẳng khi đường thẳng không có điểm chung với mặt phẳng.",
+            "Điều kiện để đường thẳng song song với mặt phẳng: Nếu đường thẳng không nằm trong mặt phẳng và song song với một đường thẳng nằm trong mặt phẳng thì đường thẳng đó song song với mặt phẳng.",
+            "Tính chất: Khi một đường thẳng song song với một mặt phẳng, các quan hệ song song liên quan có thể được khai thác để tìm giao điểm hoặc chứng minh quan hệ hình học.",
+            "Giao tuyến: Vận dụng quan hệ giữa các mặt phẳng và các đường thẳng để xác định giao tuyến.",
+            "Thiết diện: Sử dụng các quan hệ song song để dựng và xác định hình dạng thiết diện của hình chóp, hình hộp và các hình không gian.",
+            "Vận dụng: Chứng minh đường thẳng song song mặt phẳng và giải các bài toán hình học không gian tổng hợp."
+        ]
+    }
+]

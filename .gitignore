@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Dự án Alo_EduAssistant: không commit tài liệu/pdf/docx (giữ lại README.md)
+*.pdf
+*.docx
+*.md
+!README.md

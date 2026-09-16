@@ -1,0 +1,20 @@
+{
+  "template_id": "LTG_01_unit_circle",
+  "name_vi": "Đường tròn lượng giác cơ bản",
+  "version": "1.0.0",
+  "scene_class": "UnitCircleTemplate",
+  "subject": "Toán",
+  "topics": ["lượng giác", "đường tròn lượng giác", "sin", "cos", "tọa độ điểm"],
+  "intent_patterns": ["minh họa sin cos trên đường tròn", "tọa độ điểm M trên đường tròn lượng giác", "góc alpha và hình chiếu lên hai trục"],
+  "best_for": ["giới thiệu M(cos α, sin α)", "giải thích sin là tung độ, cos là hoành độ", "minh họa một góc cụ thể trên đường tròn đơn vị"],
+  "not_for": ["giải phương trình lượng giác nhiều nghiệm", "đồ thị sin theo thời gian", "hình học 3D"],
+  "slots": {
+    "angle_deg": {"type":"number","default":60,"min":-720,"max":720},
+    "show_numeric": {"type":"boolean","default":true},
+    "show_radius_label": {"type":"boolean","default":true},
+    "show_final_summary": {"type":"boolean","default":true},
+    "duration_scale": {"type":"number","default":1.0,"min":0.6,"max":2.0}
+  },
+  "ai_may_modify": ["slot values", "optional text labels"],
+  "ai_must_not_modify": ["scene order", "layout zones", "max visible labels", "core formula"]
+}

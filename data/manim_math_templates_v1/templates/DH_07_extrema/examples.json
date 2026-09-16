@@ -1,0 +1,4 @@
+[
+{"prompt":"Giải thích cực đại cực tiểu của y=x^3-3x bằng điểm chạy và tiếp tuyến.","params":{"function":"x^3-3x"}},
+{"prompt":"Dùng đồ thị sin để cho thấy cực trị xảy ra khi tiếp tuyến nằm ngang.","params":{"function":"sin(x)"}}
+]

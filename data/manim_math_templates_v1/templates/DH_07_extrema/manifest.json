@@ -1,0 +1,8 @@
+{
+  "template_id":"DH_07_extrema","name_vi":"Cực trị qua dấu của đạo hàm và tiếp tuyến","version":"1.0.1","scene_class":"ExtremaTemplate","subject":"Toán",
+  "topics":["đạo hàm","cực trị","tăng giảm","tiếp tuyến","bảng dấu"],
+  "intent_patterns":["minh họa cực đại cực tiểu bằng đạo hàm","điểm chạy trên đồ thị và tiếp tuyến thay đổi","giải thích f' đổi dấu tại cực trị"],
+  "best_for":["liên hệ tăng giảm với dấu f'","trực quan cực đại cực tiểu"],"not_for":["tối ưu hóa hình học có ràng buộc","định nghĩa đạo hàm bằng giới hạn"],
+  "slots":{"function":{"type":"choice","default":"x^3-3x","allowed":["x^3-3x","sin(x)"]},"duration_scale":{"type":"number","default":1.0,"min":0.6,"max":2.0},"show_sign_chart":{"type":"boolean","default":true},"show_slope_value":{"type":"boolean","default":true}},
+  "ai_may_modify":["function","duration_scale","show_sign_chart","show_slope_value"],"ai_must_not_modify":["critical points from function spec","sign-change logic","one checkpoint at a time"]
+}

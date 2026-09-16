@@ -1,0 +1,20 @@
+{
+  "sid": "01",
+  "cau_id": "B1-02",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Tính sin(pi/6) + cos(pi/3).",
+  "cac_buoc": [
+    "sin(pi/6)=1/2",
+    "cos(pi/3)=1/2",
+    "tổng = 1"
+  ],
+  "dung_sai_tung_buoc": [
+    true,
+    true,
+    true
+  ],
+  "sai_o_buoc": null,
+  "goi_y_sua": "Chúc mừng! Bạn đã làm đúng tất cả các bước. Thách thức: Hãy tính sin(pi/4) + cos(pi/4) + tan(pi/6).",
+  "diem_yeu_moi": [],
+  "dung_het": true
+}

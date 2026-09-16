@@ -1,0 +1,4 @@
+[
+{"prompt":"Giải thích đạo hàm của y=x^2 tại x=1 bằng cát tuyến tiến về tiếp tuyến.","params":{"function":"x^2","a":1,"h_start":2}},
+{"prompt":"Minh họa f'(0) của sin x bằng định nghĩa hình học.","params":{"function":"sin(x)","a":0,"h_start":1.6}}
+]

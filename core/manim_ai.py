@@ -309,6 +309,7 @@ def _range_literal_qua_lon(node: ast.Call) -> bool:
 
 def kiem_tra_code(code: str) -> Tuple[bool, str]:
     """Static safety + minimum-quality checks before render."""
+    # Cửa chặn cuối trước khi render: code bẩn thì dừng, không cho chạy.
     code = (code or "").strip()
     if not code:
         return False, "Code rỗng."
@@ -681,6 +682,7 @@ def _doc_plan(raw: str, output: str) -> Dict[str, Any]:
 
 
 def lap_ke_hoach(mo_ta: str, bai: str = "", mon: str = "toan11", output: str = "video", timeout: int = 180) -> Dict[str, Any]:
+    # Bước 1 pipeline: mô tả tiếng Việt -> storyboard JSON (chưa viết code).
     cap = _capabilities()
     latex_ok = bool(cap.get("latex"))
     system = _system_planner(mon, output, latex_ok)
@@ -697,6 +699,7 @@ def lap_ke_hoach(mo_ta: str, bai: str = "", mon: str = "toan11", output: str = "
 
 
 def sinh_code_tu_ke_hoach(plan: Dict[str, Any], mo_ta: str, bai: str = "", mon: str = "toan11", timeout: int = 180) -> str:
+    # Bước 2 pipeline: storyboard đã duyệt -> code Manim (không tự đổi nội dung).
     cap = _capabilities()
     latex_ok = bool(cap.get("latex"))
     user = (
@@ -709,6 +712,7 @@ def sinh_code_tu_ke_hoach(plan: Dict[str, Any], mo_ta: str, bai: str = "", mon: 
 
 
 def danh_gia_code(plan: Dict[str, Any], code: str, mo_ta: str, timeout: int = 180) -> Dict[str, Any]:
+    # Bước 3 (chế độ quality): AI khác chấm code theo 5 tiêu chí sư phạm/kỹ thuật.
     user = (
         f"MÔ TẢ GỐC:\n{mo_ta}\n\n"
         "STORYBOARD:\n" + json.dumps(plan, ensure_ascii=False, indent=2) +
@@ -826,6 +830,7 @@ def sinh_hoc_lieu_tu_mo_ta(
     """
     mo_ta = (mo_ta or "").strip()
     if not mo_ta:
+        # Chưa nhập mô tả thì dừng ngay để khỏi tốn token gọi AI.
         return {"mp4": "", "png": "", "code": "", "log": "GV chưa nhập mô tả.", "cached": False}
     if output not in {"video", "image"}:
         return {"mp4": "", "png": "", "code": "", "log": "output chỉ nhận 'video' hoặc 'image'.", "cached": False}

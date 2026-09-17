@@ -1,0 +1,17 @@
+{
+  "sid": "quang",
+  "cau_id": "B1-TL-001",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Hoàn thành bảng đổi đơn vị sau; các phần tử cùng cột tương ứng với cùng một số đo góc:\n$\\begin{array}{ccccccc}\\text{Độ}&15^\\circ&?&0^\\circ&900^\\circ&?&?\\\\\\hline\\text{Rađian}&?&\\frac{3\\pi}{8}&?&?&-\\frac{7\\pi}{12}&-\\frac{11\\pi}{8}\\end{array}$",
+  "cac_buoc": [
+    "j"
+  ],
+  "che_do": "cham",
+  "dung_sai_tung_buoc": [
+    false
+  ],
+  "sai_o_buoc": 1,
+  "goi_y_sua": "15° bằng bao nhiêu radian khi biết 180° = π rad?",
+  "diem_yeu_moi": [],
+  "dung_het": false
+}

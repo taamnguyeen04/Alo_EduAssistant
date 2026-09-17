@@ -21,6 +21,7 @@ def ds_giaobai():
 
 
 def them_giaobai(bai, so_cau, han, ghi_chu=""):
+    # Mã tăng dần theo số lượng đã có (xóa rồi thêm có thể trùng — chấp nhận ở demo).
     ds = ds_giaobai()
     ma = f"GB-{len(ds) + 1:03d}"
     ds.append({"id": ma, "bai": bai, "so_cau": int(so_cau), "han": han,
@@ -35,6 +36,7 @@ def xoa_giaobai(ma):
 
 def viec_cua_hs(sid):
     """Giao bài kèm trạng thái của 1 HS: xong / quá hạn / còn hạn."""
+    # Join danh sách giao chung với việc HS đã tick để ra trạng thái riêng từng em.
     hs = store.doc_hs(sid)
     xong = set(hs.get("viec_da_xong", []))
     hom = _hom_nay()
@@ -134,6 +136,7 @@ def _attempts(sid):
 
 def canh_bao_hoc_sinh():
     """HS sai >NGUONG_SAI_LAP lần trong cùng 1 Bài -> cảnh báo đỏ."""
+    # Chỉ đếm attempt rớt (dung_het False) theo từng Bài.
     ra = []
     for h in store.danh_sach_hs():
         dem = {}
@@ -158,6 +161,7 @@ def _chuan_hoa_tv(thanh_vien):
 
 def goi_y_nhom(co_nhom=3):
     """Ghép HS cùng bài hiện tại thành nhóm 2-3 (bỏ qua em đã có nhóm mở)."""
+    # Em đã ở nhóm mở thì bỏ qua để không bị xếp 2 nhóm cùng lúc.
     dang_nhom = {_chuan_hoa_sid(m) for n in ds_nhom()
                  if n.get("trang_thai") == "mo" for m in n.get("thanh_vien", [])}
     theo_bai = {}
@@ -198,6 +202,7 @@ def dong_nhom(ma):
 
 
 def nhom_cua_hs(sid):
+    # Khớp mã không phân biệt hoa/thường, chỉ lấy nhóm đang mở.
     sid_c = _chuan_hoa_sid(sid)
     ra = []
     for n in ds_nhom():

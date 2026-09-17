@@ -1,0 +1,63 @@
+{
+  "history": [
+    {
+      "role": "user",
+      "content": "sin²x + cos²x = ? Giải thích từ đường tròn lượng giác."
+    },
+    {
+      "role": "assistant",
+      "content": "Chào em, câu hỏi này là nền tảng của toàn bộ chương trình lượng giác đó. Em có biết tại sao chúng ta lại gọi nó là \"đường tròn đơn vị\" không?\n\nHãy cùng bắt đầu từ định nghĩa cơ bản nhất:\n\n1. **Đường tròn đơn vị** là đường tròn tâm tại gốc tọa độ O(0,0) và có bán kính bằng 1.\n2. Gọi $P(x; y)$ là một điểm bất kỳ trên đường tròn này. Theo định nghĩa, tọa độ của $P$ chính là $(\\cos\\alpha; \\sin\\alpha)$, với $\\alpha$ là góc lượng giác.\n3. Bây giờ, em thấy điểm $P$ nằm trên đường tròn $x^2 + y^2 = 1$ rồi phải không?\n\nVậy ta có thể kết nối điều gì giữa hai điều trên đây?"
+    },
+    {
+      "role": "user",
+      "content": "giúp tôi luyện tập"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào em, em muốn luyện tập, nhưng em có biết cần luyện tập phần nào không? Em có thể tập trung vào 3 dạng bài cơ bản sau đây:\n\n1. **Áp dụng hệ thức $\\sin^2x + \\cos^2x = 1$ để tìm giá trị còn biết một lượng giác.** \n Ví dụ: Biết $\\sin x = \\frac{3}{5}$ và $x$ là góc nhọn. Tính $\\cos x$, $\\tan x$, $\\cot x$. \n *Gợi ý:* Dùng hệ thức để tìm $\\cos x$, sau đó dùng $\\tan x = \\frac{\\sin x}{\\cos x}$.\n\n2. **Chứng minh biểu thức lượng giác đồng dạng.** \n Ví dụ: Chứng minh $\\frac{\\sin x}{1+\\cos x} = \\frac{1-\\cos x}{\\sin x}$. \n *Gợi ý:* Bắt đầu từ vế phải, nhân tử chung hoặc dùng hệ thức $\\sin^2x + \\cos^2x = 1$ để biến đổi.\n\n3. **Giải phương trình lượng giác đơn giản.** \n Ví dụ: $\\sin^2x - \\cos^2x = 0$. \n *Gợi ý:* Dùng công thức $\\cos^2x = 1 - \\sin^2x$ để về một lượng giác, hoặc nhận ra hiệu hai bình phương.\n\nEm muốn làm dạng nào trước? Hoặc em có đề bài cụ thể nào cần hỗ trợ không? \nNếu em cần xem lại lý thuyết, mình có video này để ôn lại khái niệm đường tròn đơn vị và hệ thức cơ bản: \n[Video: Bài 1. Giá trị lượng giác của góc lượng giác](https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG)"
+    }
+  ],
+  "weaknesses": [],
+  "id": "28",
+  "ten": "28",
+  "lop": "11A1",
+  "mon": "Toán",
+  "trinh_do_toan": "khá",
+  "manh": [],
+  "yeu": [],
+  "bai_hien_tai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "video_da_xem": [],
+  "phong_cach": "",
+  "tkb": {},
+  "bai_de_xuat": [],
+  "viec_da_xong": [],
+  "video_goi_y_count": {
+    "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG": 2
+  },
+  "moc_attempt": 0,
+  "conversations": [
+    {
+      "id": "cuoc-1789553765374",
+      "tieu_de": "B1: sin²x + cos²x = ? Giải thích từ ",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": [
+        {
+          "role": "user",
+          "content": "sin²x + cos²x = ? Giải thích từ đường tròn lượng giác."
+        },
+        {
+          "role": "assistant",
+          "content": "Chào em, câu hỏi này là nền tảng của toàn bộ chương trình lượng giác đó. Em có biết tại sao chúng ta lại gọi nó là \"đường tròn đơn vị\" không?\n\nHãy cùng bắt đầu từ định nghĩa cơ bản nhất:\n\n1. **Đường tròn đơn vị** là đường tròn tâm tại gốc tọa độ O(0,0) và có bán kính bằng 1.\n2. Gọi $P(x; y)$ là một điểm bất kỳ trên đường tròn này. Theo định nghĩa, tọa độ của $P$ chính là $(\\cos\\alpha; \\sin\\alpha)$, với $\\alpha$ là góc lượng giác.\n3. Bây giờ, em thấy điểm $P$ nằm trên đường tròn $x^2 + y^2 = 1$ rồi phải không?\n\nVậy ta có thể kết nối điều gì giữa hai điều trên đây?"
+        },
+        {
+          "role": "user",
+          "content": "giúp tôi luyện tập"
+        },
+        {
+          "role": "assistant",
+          "content": "Chào em, em muốn luyện tập, nhưng em có biết cần luyện tập phần nào không? Em có thể tập trung vào 3 dạng bài cơ bản sau đây:\n\n1. **Áp dụng hệ thức $\\sin^2x + \\cos^2x = 1$ để tìm giá trị còn biết một lượng giác.** \n Ví dụ: Biết $\\sin x = \\frac{3}{5}$ và $x$ là góc nhọn. Tính $\\cos x$, $\\tan x$, $\\cot x$. \n *Gợi ý:* Dùng hệ thức để tìm $\\cos x$, sau đó dùng $\\tan x = \\frac{\\sin x}{\\cos x}$.\n\n2. **Chứng minh biểu thức lượng giác đồng dạng.** \n Ví dụ: Chứng minh $\\frac{\\sin x}{1+\\cos x} = \\frac{1-\\cos x}{\\sin x}$. \n *Gợi ý:* Bắt đầu từ vế phải, nhân tử chung hoặc dùng hệ thức $\\sin^2x + \\cos^2x = 1$ để biến đổi.\n\n3. **Giải phương trình lượng giác đơn giản.** \n Ví dụ: $\\sin^2x - \\cos^2x = 0$. \n *Gợi ý:* Dùng công thức $\\cos^2x = 1 - \\sin^2x$ để về một lượng giác, hoặc nhận ra hiệu hai bình phương.\n\nEm muốn làm dạng nào trước? Hoặc em có đề bài cụ thể nào cần hỗ trợ không? \nNếu em cần xem lại lý thuyết, mình có video này để ôn lại khái niệm đường tròn đơn vị và hệ thức cơ bản: \n[Video: Bài 1. Giá trị lượng giác của góc lượng giác](https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG)"
+        }
+      ]
+    }
+  ]
+}

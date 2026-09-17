@@ -119,11 +119,12 @@ MON_HOC = {
     },
 }
 
-MON_MAC_DINH = "toan11"
+MON_MAC_DINH = "toan11"  # môn duy nhất hiện có đủ bank + video + wiki.
 
 
 def lay_mon(mon):
     """Trả về config môn, fallback về Toán 11 nếu mã lạ."""
+    # Mã lạ/None thì về Toán 11 để không bao giờ kẹt trang trắng.
     return MON_HOC.get(mon or "", MON_HOC[MON_MAC_DINH])
 
 

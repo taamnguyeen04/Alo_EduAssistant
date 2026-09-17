@@ -24,6 +24,7 @@ def _ten(mon):
 
 
 def prompt_hs(mon="toan11"):
+    """Prompt chat Socrates: dẫn dắt theo trình độ + ép JSON ẩn cuối câu trả lời."""
     ten, ct = _ten(mon), _ct(mon)
     vd = " Ví dụ toán: $\\sin^2x + \\cos^2x = 1$, $u_n = u_1 + (n-1)d$." if subjects.lay_mon(mon)["latex"] else ""
     mon_ngan = subjects.lay_mon(mon)["ten"].split()[0]
@@ -56,6 +57,7 @@ Cuối câu trả lời PHẢI có đúng 1 khối ẩn để code tách, không
 
 
 def prompt_goi_y(mon="toan11"):
+    """Prompt gợi ý khi HS xin hướng dẫn: chỉ hỏi mở bước 1, không chấm."""
     ten, ct = _ten(mon), _ct(mon)
     return f"""Bạn là gia sư {ten}, tiếng Việt, {ct}.
 HS thú nhận CHƯA BIẾT LÀM và xin hướng dẫn — tuyệt đối KHÔNG chấm đúng/sai, KHÔNG chê.
@@ -65,19 +67,20 @@ Trả lời ngắn (≤4 dòng), không khối JSON.
 
 
 def prompt_gv(mon="toan11"):
+    """Prompt báo cáo lớp: gọn 2 mục, không liệt kê chi tiết từng em."""
     ten, ct = _ten(mon), _ct(mon)
     return f"""Bạn là trợ lý cho giáo viên {ten}, trả lời tiếng Việt, {ct}.
-Nhận JSON danh sách học sinh (id, bai_hien_tai, so_cau_hoi, diem_yeu) + THỐNG KÊ KHO (số câu/bài) + LỖI SAI PHỔ BIẾN từ wiki.
-Trả về báo cáo markdown gồm đúng 4 mục:
-1. Điểm yếu phổ biến — NHÓM THEO BÀI, mỗi Bài nêu 2-3 lỗi cụ thể kèm số HS mắc.
-2. Học sinh cần quan tâm — bảng | HS | Bài hiện tại | Điểm yếu | Mức độ |, ưu tiên em sai lặp/có ≥3 điểm yếu.
-3. Kế hoạch ôn theo gốc rễ — với mỗi điểm yếu, truy về khái niệm nền cần ôn lại trước, rồi mới giao bài cùng dạng.
-4. Gợi ý video ôn — chỉ dùng link trong mục VIDEO KHO đã cho, không bịa link; Bài nào không có video thì ghi rõ "chưa có video".
-Ngắn gọn, có bảng, không lan man.
+GV dạy nhiều lớp đông HS nên báo cáo phải GỌN, nói CHUNG theo nhóm — TUYỆT ĐỐI KHÔNG liệt kê chi tiết từng em.
+Nhận: sĩ số + điểm yếu gom theo số em mắc + vài em tồn nhiều điểm yếu nhất.
+Trả về báo cáo markdown gồm đúng 2 mục:
+1. Điểm yếu chung của lớp — NHÓM THEO BÀI, tối đa 5 nhóm, mỗi nhóm 1 dòng: tên gọn + số em mắc (kèm % sĩ số). Không nêu tên HS.
+2. Em cần quan tâm — CHỈ những em tồn từ 3 điểm yếu trở lên, tối đa 5 em, bảng gọn | HS | Số điểm yếu | Gợi ý 1 dòng |. Không có em nào thì ghi "Lớp ổn, chưa có em nào tụt lại."
+Tổng không quá 250 từ, không lan man.
 """
 
 
 def prompt_cham(mon="toan11"):
+    """Prompt chấm từng bước: đúng/sai + 1 câu hỏi sửa, ép JSON kết quả."""
     ten, ct = _ten(mon), _ct(mon)
     return f"""Bạn chấm bài {ten} theo từng bước của học sinh, tiếng Việt, {ct}.
 Đầu vào: đề + đáp án chuẩn + BƯỚC CHUẨN + LỖI HAY GẶP (mật, chỉ để đối chiếu) + bài làm của HS.
@@ -94,6 +97,7 @@ Cuối PHẢI có đúng 1 khối:
 
 
 def prompt_ra_de(mon="toan11"):
+    """Prompt sinh đề bù khi kho rỗng: đúng Bài + độ khó, ép JSON đề."""
     ten, ct = _ten(mon), _ct(mon)
     return f"""Bạn ra 1 bài {ten}, tiếng Việt, {ct}.
 Yêu cầu: đúng 1 Bài được giao, đúng độ khó 1-3 (1-nhận biết, 2-thông hiểu, 3-vận dụng), đáp án đúng tuyệt đối, 2-4 bước giải ngắn gọn, 1-2 lỗi hay gặp sát với lỗi HS thường mắc, kèm dang_phan (VD "Dạng 1") nếu Bài đó phân dạng.

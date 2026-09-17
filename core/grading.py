@@ -18,6 +18,7 @@ _RE_TOAN = re.compile(r"[0-9=+\-*/^√π]|\\[a-z]+|\$|sin|cos|tan|log|lim|dx|dy"
 
 def tach_json_cham(raw):
     """Tách JSON chấm bài: có fence thì dùng chung, không thì moi object chứa key chấm."""
+    # Thử đường chuẩn trước; AI hay quên fence nên có đường moi regex dự phòng.
     tra_loi, data = tach_json_cuoi(raw)
     if isinstance(data, dict) and "dung_sai_tung_buoc" in data:
         return tra_loi, data
@@ -45,6 +46,7 @@ def lam_sach_goi_y(raw):
 
 def la_xin_goi_y(tin_nhan):
     """True khi HS nhờ hướng dẫn mà chưa nộp bước giải nào (đừng chấm sai oan)."""
+    # Tin dài quá 300 ký tự coi như bài làm thật, không phải lời xin gợi ý.
     t = (tin_nhan or "").strip()
     if not t or len(t) > 300:
         return False
@@ -103,7 +105,7 @@ def cham_tung_buoc(sid, cau, cac_buoc_hs, mon="toan11"):
         "diem_yeu_moi": yeu_moi,
     }
     kq["dung_het"] = bool(kq["dung_sai_tung_buoc"]) and all(kq["dung_sai_tung_buoc"])
-    # Lưu attempt
+    # Lưu attempt ngay để làm bằng chứng báo cáo + chống giao lặp về sau.
     os.makedirs(ATTEMPT_DIR, exist_ok=True)
     store.ghi_json(os.path.join(ATTEMPT_DIR, f"{sid}_{cau.get('id')}.json"), {
         "sid": sid, "cau_id": cau.get("id"), "bai": cau.get("bai"),
@@ -119,9 +121,9 @@ def cham_tung_buoc(sid, cau, cac_buoc_hs, mon="toan11"):
                 hs["weaknesses"].append(w)
                 da_co.add(w.lower())
         store.luu_hs(sid, hs)
-    # Tự lên/xuống trình độ theo 5 bài gần nhất
+    # Điểm đệm trình độ: đúng +1 / sai -1, đủ ±5 ròng mới đổi bậc
     from .student import tu_dong_cap_nhat_trinh_do
-    cu, moi = tu_dong_cap_nhat_trinh_do(sid)
+    cu, moi = tu_dong_cap_nhat_trinh_do(sid, kq["dung_het"])
     if moi != cu:
         kq["trinh_do_moi"] = {"cu": cu, "moi": moi}
     return kq, raw

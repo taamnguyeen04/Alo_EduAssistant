@@ -86,6 +86,7 @@ def _wrap_math_segments(text):
 def tach_phuong_an(de):
     """Tách 'đề ... A. ... B. ...' -> (thân đề, [(nhãn, nội dung)]).
     Không đủ 2 phương án thì trả (de, []) để hiện nguyên văn."""
+    # Đề trích thiếu (< 2 phương án) thì giữ nguyên văn để GV sửa tay.
     text = (de or "").strip()
     matches = [(m.group(1).upper(), m.group(2).strip(" .;\n")) for m in _RE_PA.finditer(text)]
     if len(matches) < 2:
@@ -114,6 +115,7 @@ def lam_dep(text):
 
 def lam_dep_hien_thi(text):
     """Làm đẹp + tự wrap toán unicode → $...$  cho st.markdown render KaTeX."""
+    # Chỉ phục vụ hiển thị — không bao giờ sửa dữ liệu gốc trong JSON.
     t = lam_dep(text)
     t = _wrap_math_segments(t)
     return t

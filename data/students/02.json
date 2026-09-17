@@ -15,9 +15,102 @@
     {
       "role": "assistant",
       "content": "Không đúng ạ. Đáp án đúng là **6**.\n\nLý do:\nTheo thứ tự phép tính, **nhân chia trước, cộng trừ sau**:\n- Bước 1: Tính phép nhân trước: 1 × 5 = 5\n- Bước 2: Sau đó tính cộng: 1 + 5 = 6\n\n**Lỗi sai phổ biến:** Tính từ trái sang phải (1+1=2, rồi 2×5=10). Cách này sai vì phép nhân có độ ưu tiên cao hơn phép cộng.\n\nQuy tắc cần nhớ: Trong biểu thức có cả cộng/trừ và nhân/chia, luôn làm **nhân/chia trước**, rồi mới đến **cộng/trừ**."
+    },
+    {
+      "role": "user",
+      "content": "Cho mình 5 câu trắc nghiệm về các cũng liên ket"
+    },
+    {
+      "role": "assistant",
+      "content": "Dưới đây là các câu trắc nghiệm về các liên hệ lượng giác được chọn từ kho GV, phù hợp với trình độ trung bình. Bạn có thể thử làm để củng cố kiến thức. Lưu ý rằng đây là các câu trắc nghiệm, hãy tự suy nghĩ trước khi đối chiếu đáp án.\n\n1. **B1-TN-049**: Giá trị của $\\tan180^\\circ$ là \nA. $1$. \nB. $0$. \nC. $-1$. \nD. Không xác định.\n\n2. **B1-TN-056**: Tập nghiệm của phương trình $\\cos\\alpha=1$ được biểu diễn bởi công thức nào? Trong các phương án, $k\\in\\mathbb{Z}$. \nA. $\\alpha=k\\pi$. \nB. $\\alpha=2k\\pi$. \nC. $\\alpha=\\frac\\pi2+2k\\pi$. \nD. $\\alpha=-\\pi+2k\\pi$.\n\n3. **B4-TN-102**: Phương trình $\\sin x = \\cos x$ có số nghiệm thuộc đoạn $[-\\pi; \\pi]$ là: \nA. 3 \nB. 5 \nC. 2 \nD. 4\n\n4. **B1-TN-051**: Chứng minh $\\frac{\\sin x+\\cos x-1}{1-\\cos x}=\\frac{2\\cos x}{\\sin x-\\cos x+1}$ trên miền xác định chung của hai vế. \n*(Lưu ý: Đây là câu dạng chứng minh, bạn cần chọn các bước biến đổi đúng)*\n\nBạn có thấy các câu này có độ khó phù hợp không? Nếu cần giải thích thêm, hãy nói rõ câu nào."
+    },
+    {
+      "role": "user",
+      "content": "5 câu mức dô nhân biẹt về cung liên ket"
+    },
+    {
+      "role": "assistant",
+      "content": "Dựa trên trình độ trung bình của bạn và điểm yếu cần củng cố về **các liên hệ lượng giác (công thức cơ bản)**, dưới đây là **5 câu trắc nghiệm ở mức độ nhận biết (nhận biết công thức)** để bạn luyện tập:\n\n---\n\n### **5 câu trắc nghiệm về các liên hệ lượng giác (công thức cơ bản)**\n\n**Câu 1:** Công thức liên hệ nào sau đây là đúng với mọi $x$ có $\\cos x \\neq 0$?\nA. $\\tan x = \\frac{\\sin x}{\\cos x}$ \nB. $\\tan x = \\frac{\\cos x}{\\sin x}$ \nC. $\\cot x = \\frac{\\sin x}{\\cos x}$ \nD. $\\tan x = \\sin x \\cdot \\cos x$\n\n**Câu 2:** Công thức lượng giác nào sau đây là một công thức đúng với mọi $x \\in \\mathbb{R}$?\nA. $\\sin^2 x + \\cos^2 x = 1$ \nB. $\\sin^2 x - \\cos^2 x = 1$ \nC. $\\sin x + \\cos x = 1$ \nD. $\\sin x \\cdot \\cos x = 1$\n\n**Câu 3:** Biết $\\tan x = a$ ($a \\neq 0$). Giá trị của tích $\\tan x \\cdot \\cot x$ bằng:\nA. $a$ \nB. $\\frac{1}{a}$ \nC. $1$ \nD. $0$\n\n**Câu 4:** Công thức $1 + \\tan^2 x$ được viết equivalently dưới dạng:\nA. $\\frac{1}{\\sin^2 x}$ \nB. $\\frac{1}{\\cos^2 x}$ \nC. $\\tan^2 x$ \nD. $\\cot^2 x$\n\n**Câu 5:** Nếu $\\sin x = \\frac{3}{5}$ và $\\cos x = \\frac{4}{5}$, giá trị của $\\tan x$ là:\nA. $\\frac{4}{3}$ \nB. $\\frac{3}{4}$ \nC. $\\frac{5}{3}$ \nD. $\\frac{5}{4}$\n\n---\n\n### **Đáp án tham khảo (giải thích nhanh):**\n\n* **Câu 1: A** (Định nghĩa $\\tan x = \\frac{\\sin x}{\\cos x}$).\n* **Câu 2: A** (Đây là hệ thức lượng giác cơ bản $\\sin^2 x + \\cos^2 x = 1$).\n* **Câu 3: C** (Luôn có $\\tan x \\cdot \\cot x = 1$ với mọi $x$ có $\\sin x \\neq 0$ và $\\cos x \\neq 0$).\n* **Câu 4: B** (Công thức biến đổi $1 + \\tan^2 x = \\frac{1}{\\cos^2 x}$).\n* **Câu 5: B** ($\\tan x = \\frac{\\sin x}{\\cos x} = \\frac{3/5}{4/5} = \\frac{3}{4}$).\n\nBạn làm tốt không? Nếu có câu nào chưa hiểu rõ cách biến đổi, hãy comment để mình hướng dẫn thêm!"
     }
   ],
   "weaknesses": [
-    "Chưa nắm vững quy tắc cộng hai phân số khác mẫu số: phải quy đồng mẫu số trước khi cộng, không được cộng trực tiếp tử với tử, mẫu với mẫu"
+    "Chưa nắm vững quy tắc cộng hai phân số khác mẫu số: phải quy đồng mẫu số trước khi cộng, không được cộng trực tiếp tử với tử, mẫu với mẫu",
+    "HS chủ động yêu cầu luyện tập về liên hệ lượng giác, cần củng cố các công thức cơ bản"
+  ],
+  "id": "02",
+  "ten": "02",
+  "lop": "11A1",
+  "mon": "Toán",
+  "trinh_do_toan": "trung bình",
+  "diem_trinh_do": 0,
+  "manh": [],
+  "yeu": [],
+  "mon_can_ho_tro": [],
+  "muc_tieu": "",
+  "gio_tu_hoc": "",
+  "muc_tieu_giai_doan": {},
+  "ke_hoach": {},
+  "bai_hien_tai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "video_da_xem": [],
+  "phong_cach": "",
+  "tkb": {},
+  "bai_de_xuat": [
+    "B1-TN-049",
+    "B1-TN-056",
+    "B4-TN-102",
+    "B1-TN-051"
+  ],
+  "viec_da_xong": [],
+  "video_goi_y_count": {
+    "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG": 2
+  },
+  "moc_attempt": 0,
+  "conversations": [
+    {
+      "id": "cuoc-1789643183671",
+      "tieu_de": "B1: Cho mình 5 câu trắc nghiệm về cá",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Cho mình 5 câu trắc nghiệm về các cũng liên ket"
+        },
+        {
+          "role": "assistant",
+          "content": "Dưới đây là các câu trắc nghiệm về các liên hệ lượng giác được chọn từ kho GV, phù hợp với trình độ trung bình. Bạn có thể thử làm để củng cố kiến thức. Lưu ý rằng đây là các câu trắc nghiệm, hãy tự suy nghĩ trước khi đối chiếu đáp án.\n\n1. **B1-TN-049**: Giá trị của $\\tan180^\\circ$ là \nA. $1$. \nB. $0$. \nC. $-1$. \nD. Không xác định.\n\n2. **B1-TN-056**: Tập nghiệm của phương trình $\\cos\\alpha=1$ được biểu diễn bởi công thức nào? Trong các phương án, $k\\in\\mathbb{Z}$. \nA. $\\alpha=k\\pi$. \nB. $\\alpha=2k\\pi$. \nC. $\\alpha=\\frac\\pi2+2k\\pi$. \nD. $\\alpha=-\\pi+2k\\pi$.\n\n3. **B4-TN-102**: Phương trình $\\sin x = \\cos x$ có số nghiệm thuộc đoạn $[-\\pi; \\pi]$ là: \nA. 3 \nB. 5 \nC. 2 \nD. 4\n\n4. **B1-TN-051**: Chứng minh $\\frac{\\sin x+\\cos x-1}{1-\\cos x}=\\frac{2\\cos x}{\\sin x-\\cos x+1}$ trên miền xác định chung của hai vế. \n*(Lưu ý: Đây là câu dạng chứng minh, bạn cần chọn các bước biến đổi đúng)*\n\nBạn có thấy các câu này có độ khó phù hợp không? Nếu cần giải thích thêm, hãy nói rõ câu nào."
+        },
+        {
+          "role": "user",
+          "content": "5 câu mức dô nhân biẹt về cung liên ket"
+        },
+        {
+          "role": "assistant",
+          "content": "Dựa trên trình độ trung bình của bạn và điểm yếu cần củng cố về **các liên hệ lượng giác (công thức cơ bản)**, dưới đây là **5 câu trắc nghiệm ở mức độ nhận biết (nhận biết công thức)** để bạn luyện tập:\n\n---\n\n### **5 câu trắc nghiệm về các liên hệ lượng giác (công thức cơ bản)**\n\n**Câu 1:** Công thức liên hệ nào sau đây là đúng với mọi $x$ có $\\cos x \\neq 0$?\nA. $\\tan x = \\frac{\\sin x}{\\cos x}$ \nB. $\\tan x = \\frac{\\cos x}{\\sin x}$ \nC. $\\cot x = \\frac{\\sin x}{\\cos x}$ \nD. $\\tan x = \\sin x \\cdot \\cos x$\n\n**Câu 2:** Công thức lượng giác nào sau đây là một công thức đúng với mọi $x \\in \\mathbb{R}$?\nA. $\\sin^2 x + \\cos^2 x = 1$ \nB. $\\sin^2 x - \\cos^2 x = 1$ \nC. $\\sin x + \\cos x = 1$ \nD. $\\sin x \\cdot \\cos x = 1$\n\n**Câu 3:** Biết $\\tan x = a$ ($a \\neq 0$). Giá trị của tích $\\tan x \\cdot \\cot x$ bằng:\nA. $a$ \nB. $\\frac{1}{a}$ \nC. $1$ \nD. $0$\n\n**Câu 4:** Công thức $1 + \\tan^2 x$ được viết equivalently dưới dạng:\nA. $\\frac{1}{\\sin^2 x}$ \nB. $\\frac{1}{\\cos^2 x}$ \nC. $\\tan^2 x$ \nD. $\\cot^2 x$\n\n**Câu 5:** Nếu $\\sin x = \\frac{3}{5}$ và $\\cos x = \\frac{4}{5}$, giá trị của $\\tan x$ là:\nA. $\\frac{4}{3}$ \nB. $\\frac{3}{4}$ \nC. $\\frac{5}{3}$ \nD. $\\frac{5}{4}$\n\n---\n\n### **Đáp án tham khảo (giải thích nhanh):**\n\n* **Câu 1: A** (Định nghĩa $\\tan x = \\frac{\\sin x}{\\cos x}$).\n* **Câu 2: A** (Đây là hệ thức lượng giác cơ bản $\\sin^2 x + \\cos^2 x = 1$).\n* **Câu 3: C** (Luôn có $\\tan x \\cdot \\cot x = 1$ với mọi $x$ có $\\sin x \\neq 0$ và $\\cos x \\neq 0$).\n* **Câu 4: B** (Công thức biến đổi $1 + \\tan^2 x = \\frac{1}{\\cos^2 x}$).\n* **Câu 5: B** ($\\tan x = \\frac{\\sin x}{\\cos x} = \\frac{3/5}{4/5} = \\frac{3}{4}$).\n\nBạn làm tốt không? Nếu có câu nào chưa hiểu rõ cách biến đổi, hãy comment để mình hướng dẫn thêm!"
+        }
+      ]
+    },
+    {
+      "id": "cuoc-cu",
+      "tieu_de": "Đoạn chat cũ",
+      "bai": "",
+      "messages": [
+        {
+          "role": "user",
+          "content": "1/2 + 1/3 = 2/5 đúng không ạ"
+        },
+        {
+          "role": "assistant",
+          "content": "Không đúng ạ. Đáp án đúng là **5/6**.\n\nCách tính:\n- Quy đồng mẫu số: 1/2 = 3/6, 1/3 = 2/6\n- Cộng tử số: 3/6 + 2/6 = 5/6\n\n**Lỗi sai phổ biến:** Nhiều người (đặc biệt là học sinh mới học) cộng tử số với tử số và mẫu số với mẫu số, nên ra 2/5. Tuy nhiên, muốn cộng hai phân số khác mẫu, **bắt buộc phải quy đồng mẫu số trước**, rồi mới cộng tử số.\n\nQuy tắc đúng: a/c + d/c = (a+d)/c"
+        },
+        {
+          "role": "user",
+          "content": "1 + 1 * 5 = 10 đúng không vậy"
+        },
+        {
+          "role": "assistant",
+          "content": "Không đúng ạ. Đáp án đúng là **6**.\n\nLý do:\nTheo thứ tự phép tính, **nhân chia trước, cộng trừ sau**:\n- Bước 1: Tính phép nhân trước: 1 × 5 = 5\n- Bước 2: Sau đó tính cộng: 1 + 5 = 6\n\n**Lỗi sai phổ biến:** Tính từ trái sang phải (1+1=2, rồi 2×5=10). Cách này sai vì phép nhân có độ ưu tiên cao hơn phép cộng.\n\nQuy tắc cần nhớ: Trong biểu thức có cả cộng/trừ và nhân/chia, luôn làm **nhân/chia trước**, rồi mới đến **cộng/trừ**."
+        }
+      ]
+    }
   ]
 }

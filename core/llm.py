@@ -59,6 +59,7 @@ def che_do():
 
 def _chuoi_model(task=None):
     """Thứ tự model sẽ thử cho 1 task (phần tử đầu = chính)."""
+    # Test: giữ đúng thứ tự model free cũ. Prod: PRO trước cho task cần đúng.
     task = task if task is not None else _TASK_HIEN_TAI.get()
     if che_do() != "prod":
         return [MODEL, *FALLBACKS]
@@ -144,6 +145,7 @@ def _co_the_thu_lai(err):
 def chat(messages, timeout=60):
     global LAST_MODEL
     loi_cuoi = None
+    # Thử lần lượt từng model; lỗi tạm thời (429/5xx/mạng) thì qua con tiếp theo.
     for model in _chuoi_model():
         try:
             out = _goi_model(model, messages, timeout)
@@ -174,11 +176,13 @@ def _goi_theo_task(task, messages, timeout):
 
 def chat_pro(messages, timeout=None):
     """Task cần hay + đúng (hỏi đáp, gợi ý, chấm, sinh đề, audit). Prod -> PRO."""
+    # HS nhìn thấy kết quả nên ưu tiên model mạnh nhất.
     return _goi_theo_task("pro", messages, timeout)
 
 
 def chat_flash(messages, timeout=None):
     """Task ngầm/nhanh/rẻ (báo cáo, planner/coder Manim, vision). Prod -> FLASH."""
+    # Việc ngầm/dài dùng model rẻ để tiết kiệm chi phí.
     return _goi_theo_task("flash", messages, timeout)
 
 

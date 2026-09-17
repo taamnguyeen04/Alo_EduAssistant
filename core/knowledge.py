@@ -28,6 +28,7 @@ STOPWORDS = {
 
 def tach_tu(text):
     """Tách từ khóa: thường hóa, bỏ stopword, giữ token toán (sin, u_n...)."""
+    # Token ngắn hơn 2 ký tự toàn từ nối vô nghĩa nên bỏ.
     toks = re.findall(r"[a-z0-9_]+", (text or "").lower())
     return {t for t in toks if len(t) >= 2 and t not in STOPWORDS}
 
@@ -47,6 +48,7 @@ def _wiki_dir(mon):
 @lru_cache(maxsize=8)
 def tai_bank(mon="toan11"):
     """Nạp toàn bộ bank của 1 môn: {id: cau_d đầy đủ}. Cache theo môn."""
+    # Nạp 1 lần rồi cache để tìm kiếm mỗi lượt chat không quét lại đĩa.
     kho = {}
     for f in glob.glob(_bank_glob(mon)):
         try:
@@ -70,6 +72,7 @@ def _diem(trung, do_dai_de):
 
 def tim_cau_lien_quan(cau_hoi, bai=None, n=3, chi_ok=True, bo_id_da_dung=frozenset(), mon="toan11"):
     """Tìm n câu liên quan nhất bằng trùng từ khóa. Trả về list dict đầy đủ."""
+    # Không tách được từ khóa thì trả rỗng ngay để khỏi quét bank vô ích.
     khoa = tach_tu(cau_hoi)
     if not khoa:
         return []
@@ -114,6 +117,7 @@ def loi_sai_cua_bai(bai, n=5, mon="toan11"):
 
 def doc_concept(bai, max_chars=1500, mon="toan11"):
     """Đọc trang khái niệm wiki của Bài (truy gốc điểm yếu). Không có -> ''."""
+    # Bài chưa có trang wiki thì trả rỗng để prompt vẫn chạy bình thường.
     p = os.path.join(_wiki_dir(mon), "concepts", _safe_stem(bai) + ".md")
     if not os.path.exists(p):
         return ""

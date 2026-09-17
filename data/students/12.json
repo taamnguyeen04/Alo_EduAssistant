@@ -1,0 +1,47 @@
+{
+  "history": [
+    {
+      "role": "user",
+      "content": "Giúp tôi luyện tập"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào bạn! Rất vui được đồng hành cùng bạn trong phần luyện tập Bài 1: **Giá trị lượng giác của góc lượng giác**.\n\nĐể bắt đầu, bạn muốn luyện tập phần nào trước? Có thể là:\n\n1. **Khái niệm góc lượng giác** (nhận biết tia đầu, tia cuối, chiều dương/âm).\n2. **Số đo của góc** (liên hệ giữa các góc cùng tia đầu, tia cuối).\n3. **Hệ thức Sắc-lơ** (phép cộng các góc).\n4. **Đơn vị đo** (chuyển đổi giữa độ và radian).\n\nHãy nói với mình là bạn muốn tập trung vào chủ đề nào, hoặc nếu bạn đã có một đề bài cụ thể nào đó cần giải thì có thể gửi lại nhé! Chúng ta sẽ cùng phân tích từng bước nhỏ."
+    }
+  ],
+  "weaknesses": [],
+  "id": "12",
+  "ten": "12",
+  "lop": "11A1",
+  "mon": "Toán",
+  "trinh_do_toan": "trung bình",
+  "manh": [],
+  "yeu": [],
+  "bai_hien_tai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "video_da_xem": [],
+  "phong_cach": "",
+  "tkb": {},
+  "bai_de_xuat": [],
+  "viec_da_xong": [],
+  "video_goi_y_count": {
+    "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG": 1
+  },
+  "moc_attempt": 0,
+  "conversations": [
+    {
+      "id": "cuoc-1789555882110",
+      "tieu_de": "B1: Giúp tôi luyện tập",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Giúp tôi luyện tập"
+        },
+        {
+          "role": "assistant",
+          "content": "Chào bạn! Rất vui được đồng hành cùng bạn trong phần luyện tập Bài 1: **Giá trị lượng giác của góc lượng giác**.\n\nĐể bắt đầu, bạn muốn luyện tập phần nào trước? Có thể là:\n\n1. **Khái niệm góc lượng giác** (nhận biết tia đầu, tia cuối, chiều dương/âm).\n2. **Số đo của góc** (liên hệ giữa các góc cùng tia đầu, tia cuối).\n3. **Hệ thức Sắc-lơ** (phép cộng các góc).\n4. **Đơn vị đo** (chuyển đổi giữa độ và radian).\n\nHãy nói với mình là bạn muốn tập trung vào chủ đề nào, hoặc nếu bạn đã có một đề bài cụ thể nào đó cần giải thì có thể gửi lại nhé! Chúng ta sẽ cùng phân tích từng bước nhỏ."
+        }
+      ]
+    }
+  ]
+}

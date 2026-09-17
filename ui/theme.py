@@ -14,7 +14,7 @@ def apply_theme():
     html, body, [class*="css"] {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, sans-serif;
         color: #1E293B;
-        font-size: 21px;
+        font-size: 19px;
     }
 
     [data-testid="stAppViewContainer"] {
@@ -25,15 +25,53 @@ def apply_theme():
     #MainMenu { display: none !important; visibility: hidden !important; }
     footer { display: none !important; visibility: hidden !important; }
     [data-testid="stFooter"] { display: none !important; }
-    [data-testid="stToolbar"] { display: none !important; visibility: hidden !important; }
+    /* Toolbar chứa nút » mở menu khi sidebar thu gọn → TUYỆT ĐỐI KHÔNG
+       display:none (sẽ nuốt luôn nút). Chỉ làm trong suốt + ẩn từng nút
+       hành động bên trong. */
+    [data-testid="stToolbar"] {
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+    [data-testid="stMainMenu"] { display: none !important; visibility: hidden !important; }
     [data-testid="stDecoration"] { display: none !important; }
     [data-testid="stStatusWidget"] { display: none !important; visibility: hidden !important; }
     .stDeployButton { display: none !important; visibility: hidden !important; }
     [data-testid="stAppDeployButton"] { display: none !important; }
     [data-testid="stHeaderActionElements"] { display: none !important; }
-    /* Ẩn hẳn thanh header mặc định (chứa menu góc phải + nút Deploy) */
-    [data-testid="stHeader"] { display: none !important; }
-    .stApp > header { display: none !important; }
+    /* Giữ thanh header trong suốt (KHÔNG display:none) để nút » mở lại menu
+       vẫn hiện khi sidebar bị thu gọn. Các nút Deploy/menu mặc định
+       vẫn bị ẩn ở trên. */
+    [data-testid="stHeader"] { background: transparent !important; }
+    .stApp > header { background: transparent !important; }
+    /* Nút » mở lại menu khi sidebar đang ẩn — luôn hiện, dễ bấm.
+       (Streamlit ≥1.44 dùng stExpandSidebarButton; giữ collapsedControl
+       cho bản cũ. Nút chỉ xuất hiện khi sidebar đang thu gọn.) */
+    [data-testid="stExpandSidebarButton"],
+    [data-testid="collapsedControl"] {
+        display: inline-flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        z-index: 999990 !important;
+        background: #ffffff !important;
+        border: 1px solid #bfdbfe !important;
+        border-radius: 10px !important;
+        box-shadow: 0 2px 8px rgba(15,23,42,0.12) !important;
+        padding: 6px 10px !important;
+        margin: 8px 0 0 8px !important;
+        align-items: center !important;
+        gap: 4px !important;
+    }
+    [data-testid="stExpandSidebarButton"] svg,
+    [data-testid="collapsedControl"] svg { color: #2563eb !important; }
+    /* Thêm chữ "Menu" cạnh icon » để HS/GV dễ thấy */
+    [data-testid="stExpandSidebarButton"]::after,
+    [data-testid="collapsedControl"]::after {
+        content: "Menu";
+        font-size: 14px;
+        font-weight: 700;
+        color: #2563eb;
+    }
     /* Bỏ padding mặc định do header để lại */
     [data-testid="stAppViewContainer"] > .main { padding-top: 0 !important; }
     .main .block-container {
@@ -43,38 +81,38 @@ def apply_theme():
     }
 
     h1, h2, h3, h4 { color: #1E293B; letter-spacing: -0.3px; }
-    h1 { font-size: 2.5rem !important; }
-    h2 { font-size: 2.0rem !important; }
-    h3 { font-size: 1.6rem !important; }
-    h4 { font-size: 1.35rem !important; }
+    h1 { font-size: 2.3rem !important; }
+    h2 { font-size: 1.85rem !important; }
+    h3 { font-size: 1.45rem !important; }
+    h4 { font-size: 1.25rem !important; }
 
     /* ───────────── Tăng cỡ chữ toàn trang (nội dung đọc chính) ───────────── */
     [data-testid="stMarkdownContainer"] p,
     [data-testid="stMarkdownContainer"] li,
     [data-testid="stMarkdownContainer"] div,
     .stMarkdown p, .stMarkdown li {
-        font-size: 1.3rem !important;
+        font-size: 1.18rem !important;
         line-height: 1.8 !important;
     }
     [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p,
     [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] li {
-        font-size: 1.35rem !important;
+        font-size: 1.22rem !important;
         line-height: 1.85 !important;
     }
     [data-testid="stExpander"] [data-testid="stMarkdownContainer"] p,
     [data-testid="stExpander"] [data-testid="stMarkdownContainer"] li {
-        font-size: 1.3rem !important;
+        font-size: 1.18rem !important;
         line-height: 1.8 !important;
     }
     [data-testid="stDataFrame"], [data-testid="stTable"], table {
-        font-size: 1.25rem !important;
+        font-size: 1.13rem !important;
     }
 
     /* ───────────── SaaS Login brand ───────────── */
     .saas-logo { display: flex; justify-content: center; margin: 6px 0 14px 0; }
     .saas-title {
         text-align: center;
-        font-size: 46px;
+        font-size: 41px;
         font-weight: 700;
         color: #1E293B;
         letter-spacing: -0.5px;
@@ -83,20 +121,20 @@ def apply_theme():
     }
     .saas-tagline {
         text-align: center;
-        font-size: 21px;
+        font-size: 19px;
         font-weight: 400;
         color: #64748B;
         margin: 8px 0 24px 0;
         line-height: 1.5;
     }
     .saas-card-title {
-        font-size: 24px;
+        font-size: 22px;
         font-weight: 700;
         color: #1E293B;
         margin: 2px 0 4px 0;
     }
     .saas-card-sub {
-        font-size: 19px;
+        font-size: 17.5px;
         color: #64748B;
         margin: 0 0 18px 0;
     }
@@ -106,7 +144,7 @@ def apply_theme():
         border-radius: 12px;
         padding: 13px 16px;
         margin-top: 14px;
-        font-size: 18.5px;
+        font-size: 17px;
         color: #475569;
         line-height: 1.8;
         box-shadow: 0 1px 3px rgba(15,23,42,0.04);
@@ -116,13 +154,13 @@ def apply_theme():
         align-items: center;
         gap: 7px;
         font-weight: 600;
-        font-size: 18.5px;
+        font-size: 17px;
         color: #1E293B;
         margin-bottom: 4px;
     }
     .saas-support {
         text-align: center;
-        font-size: 17px;
+        font-size: 15.5px;
         color: #94A3B8;
         margin-top: 14px;
     }
@@ -139,7 +177,7 @@ def apply_theme():
     [data-testid="stSelectbox"] label,
     [data-testid="stTextInput"] label,
     [data-testid="stRadio"] > label {
-        font-size: 18.5px !important;
+        font-size: 17px !important;
         font-weight: 600 !important;
         color: #334155 !important;
     }
@@ -150,7 +188,7 @@ def apply_theme():
         background: #F8FAFC;
         border: 1px solid #E2E8F0;
         border-radius: 10px;
-        font-size: 19.5px;
+        font-size: 18px;
         color: #1E293B;
     }
     [data-testid="stSelectbox"] div[data-baseweb="select"]:hover > div {
@@ -166,7 +204,7 @@ def apply_theme():
         background: #F8FAFC;
         border: 1px solid #E2E8F0;
         border-radius: 10px;
-        font-size: 19.5px;
+        font-size: 18px;
         color: #1E293B;
         padding: 0 14px;
     }
@@ -188,7 +226,7 @@ def apply_theme():
     [data-testid="stRadio"] input[type="radio"] { accent-color: #2563EB; }
     [data-testid="stRadio"] label {
         font-weight: 500;
-        font-size: 1.25rem;
+        font-size: 1.13rem;
         color: #334155;
     }
 
@@ -217,7 +255,7 @@ def apply_theme():
         border: 1px solid #bfdbfe;
     }
     [data-testid="stSidebar"] label[data-baseweb="radio"] div {
-        font-size: 20px;
+        font-size: 18px;
         color: #475569;
         margin: 0 !important;
     }
@@ -230,7 +268,7 @@ def apply_theme():
     .stButton > button {
         border-radius: 10px;
         font-weight: 600;
-        font-size: 1.25rem;
+        font-size: 1.13rem;
         min-height: 56px;
         letter-spacing: 0.1px;
     }
@@ -241,7 +279,7 @@ def apply_theme():
         border: 1px solid #2563EB;
         color: #FFFFFF;
         font-weight: 600;
-        font-size: 20px;
+        font-size: 18px;
         border-radius: 10px;
         transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
@@ -268,8 +306,8 @@ def apply_theme():
         border: 1px solid #E6ECF3;
         box-shadow: 0 4px 20px rgba(15,23,42,0.06);
     }
-    .hero h2 { color: #1E293B; margin: 0 0 6px 0; font-size: 1.9rem; font-weight: 700; }
-    .hero p { color: #64748B; margin: 0; font-size: 1.3rem; }
+    .hero h2 { color: #1E293B; margin: 0 0 6px 0; font-size: 1.7rem; font-weight: 700; }
+    .hero p { color: #64748B; margin: 0; font-size: 1.18rem; }
     .card {
         background: #ffffff;
         border: 1px solid #E6ECF3;
@@ -277,9 +315,9 @@ def apply_theme():
         padding: 20px 22px;
         margin-bottom: 16px;
         box-shadow: 0 1px 4px rgba(15,23,42,0.05);
-        font-size: 1.28rem;
+        font-size: 1.16rem;
     }
-    .card h4 { margin: 0 0 10px 0; font-weight: 600; font-size: 1.3rem; color: #1e293b; }
+    .card h4 { margin: 0 0 10px 0; font-weight: 600; font-size: 1.18rem; color: #1e293b; }
 
     /* ───────────── Metrics / Sidebar / misc (trang trong) ───────────── */
     [data-testid="stMetric"] {
@@ -289,18 +327,18 @@ def apply_theme():
         padding: 14px 16px;
     }
     [data-testid="stMetricLabel"] {
-        font-size: 1.08rem; font-weight: 500; color: #64748b;
+        font-size: 1.0rem; font-weight: 500; color: #64748b;
         text-transform: uppercase; letter-spacing: 0.5px;
     }
-    [data-testid="stMetricValue"] { font-size: 2.15rem; font-weight: 700; color: #0f172a; }
+    [data-testid="stMetricValue"] { font-size: 1.95rem; font-weight: 700; color: #0f172a; }
     [data-testid="stSidebar"] { background: #FFFFFF; border-right: 1px solid #e2e8f0; }
     [data-testid="stSidebar"] .block-container { padding-top: 1.2rem; }
-    .side-title { font-weight: 800; font-size: 22px; color: #0f172a; margin-bottom: 2px; }
-    .side-sub { color: #64748b; font-size: 17px; margin-bottom: 10px; }
+    .side-title { font-weight: 800; font-size: 20px; color: #0f172a; margin-bottom: 2px; }
+    .side-sub { color: #64748b; font-size: 15.5px; margin-bottom: 10px; }
     .side-badge {
         display: inline-block; background: #eff6ff; color: #1d4ed8;
         border: 1px solid #bfdbfe; border-radius: 6px;
-        font-size: 16px; font-weight: 600; padding: 2px 8px; margin-bottom: 8px;
+        font-size: 15px; font-weight: 600; padding: 2px 8px; margin-bottom: 8px;
     }
     /* ───────────── Course Modules (Expanders) ───────────── */
     [data-testid="stExpander"] { 
@@ -322,7 +360,7 @@ def apply_theme():
     }
     [data-testid="stExpander"] summary p {
         font-weight: 700 !important;
-        font-size: 20px !important;
+        font-size: 18px !important;
         color: #0f172a !important;
         margin: 0;
     }
@@ -330,18 +368,18 @@ def apply_theme():
         border-bottom-color: #e2e8f0;
     }
     hr { border-color: #e2e8f0; margin: 12px 0; }
-    [data-testid="stChatMessage"] { border-radius: 10px; border: 1px solid #f1f5f9; margin-bottom: 6px; font-size: 1.3rem; }
-    [data-testid="stAlert"] { border-radius: 10px; font-size: 1.25rem; }
-    button[data-baseweb="tab"] { font-weight: 600; font-size: 1.2rem; color: #64748b; }
+    [data-testid="stChatMessage"] { border-radius: 10px; border: 1px solid #f1f5f9; margin-bottom: 6px; font-size: 1.18rem; }
+    [data-testid="stAlert"] { border-radius: 10px; font-size: 1.13rem; }
+    button[data-baseweb="tab"] { font-weight: 600; font-size: 1.1rem; color: #64748b; }
     button[data-baseweb="tab"][aria-selected="true"] { color: #2563EB; }
-    .stCaption, small { color: #64748b; font-size: 1.1rem; }
-    [data-testid="stCaptionContainer"] { font-size: 1.15rem !important; }
-    [data-testid="stChatInput"] textarea { font-size: 1.3rem !important; }
+    .stCaption, small { color: #64748b; font-size: 1.0rem; }
+    [data-testid="stCaptionContainer"] { font-size: 1.05rem !important; }
+    [data-testid="stChatInput"] textarea { font-size: 1.18rem !important; }
 
     /* ───────────── Responsive ───────────── */
     @media (max-width: 640px) {
-        .saas-title { font-size: 36px; }
-        .saas-tagline { font-size: 19.5px; margin-bottom: 18px; }
+        .saas-title { font-size: 32px; }
+        .saas-tagline { font-size: 18px; margin-bottom: 18px; }
         .main .block-container { padding-left: 1rem !important; padding-right: 1rem !important; }
     }
     </style>
@@ -376,11 +414,98 @@ def chon_bai_va_di(sid, bai, tab):
     goto(tab)
 
 
+def goto_gv(tab):
+    """Nhảy tab GV từ bất kỳ trang nào (dùng với st.rerun ở nơi gọi).
+
+    Tương tự goto() bản HS: đặt cờ để app.py áp dụng TRƯỚC khi widget
+    radio sidebar được tạo. Tab lạ bị bỏ qua.
+    """
+    if tab not in GV_TABS:
+        return
+    st.session_state["_tab_gv_pending"] = tab
+
+
+_LS_HS, _LAST_HS = "_lich_su_hs", "_tab_cuoi_hs"
+_LS_GV, _LAST_GV = "_lich_su_gv", "_tab_cuoi_gv"
+
+
+def _khoa_lich_su(vai_tro):
+    return (_LS_HS, _LAST_HS) if vai_tro == "hs" else (_LS_GV, _LAST_GV)
+
+
+def ghi_nhan_tab(vai_tro, tab_hien_tai):
+    """Ghi nhận tab hiện tại vào lịch sử (gọi 1 lần/lượt chạy, TRƯỚC khi vẽ header).
+
+    Khi tab đổi (bấm menu sidebar hay goto()/chon_bai_va_di()), tab cũ được
+    đẩy vào ngăn xếp lịch sử (tối đa 20) để nút Quay lại dùng.
+    """
+    key_ls, key_last = _khoa_lich_su(vai_tro)
+    cuoi = st.session_state.get(key_last)
+    if cuoi is None:
+        st.session_state[key_last] = tab_hien_tai
+        return
+    if tab_hien_tai != cuoi:
+        ls = st.session_state.get(key_ls, [])
+        ls.append(cuoi)
+        st.session_state[key_ls] = ls[-20:]
+        st.session_state[key_last] = tab_hien_tai
+
+
+def trang_truoc(vai_tro):
+    """Tên trang trước đó ("" nếu không có lịch sử)."""
+    key_ls, _ = _khoa_lich_su(vai_tro)
+    ls = st.session_state.get(key_ls, [])
+    return ls[-1] if ls else ""
+
+
+def quay_lai(vai_tro):
+    """Quay về trang trước đó trong lịch sử. Trả về True nếu đã nhảy (nơi gọi nên st.rerun())."""
+    key_ls, key_last = _khoa_lich_su(vai_tro)
+    ls = st.session_state.get(key_ls, [])
+    if not ls:
+        return False
+    prev = ls.pop()
+    st.session_state[key_ls] = ls
+    st.session_state[key_last] = prev
+    if vai_tro == "hs":
+        st.session_state["_tab_hs_pending"] = prev
+    else:
+        st.session_state["_tab_gv_pending"] = prev
+    return True
+
+
+def ve_nut_quay_lai(vai_tro):
+    """Vẽ nút ← Quay lại nếu có lịch sử. Dùng trong header các trang trong."""
+    prev = trang_truoc(vai_tro)
+    if not prev:
+        return
+    c_back, _c_trong = st.columns([1, 4])
+    with c_back:
+        if st.button(f"← {prev}", key=f"nut_quay_lai_{vai_tro}",
+                     help=f"Quay lại {prev}", use_container_width=True):
+            if quay_lai(vai_tro):
+                st.rerun()
+
+
+def chon_mon_va_di(mon, tab):
+    """Đổi môn đang học + nhảy tab (dùng với st.rerun ở nơi gọi).
+
+    Môn là session_state thường (không phải widget) nên gán trực tiếp được.
+    Môn lạ bị bỏ qua để khỏi kẹt trang trắng.
+    """
+    from core import subjects
+    if mon not in subjects.MON_HOC:
+        return
+    st.session_state.mon = mon
+    goto(tab)
+
+
 def page_header(tieu_de, phu_de=""):
-    phu = f"<p style='margin:6px 0 0 0;color:#64748b;font-size:1.25rem;'>{phu_de}</p>" if phu_de else ""
+    phu = f"<p style='margin:10px 0 0 0;color:#64748b;font-size:1.15rem;'>{phu_de}</p>" if phu_de else ""
     st.markdown(
-        f"""<div style='border-left:4px solid #2563EB;padding-left:16px;margin:8px 0 20px 0;'>
-        <h2 style='margin:0;font-size:1.95rem;font-weight:800;color:#0f172a;letter-spacing:-0.4px;'>{tieu_de}</h2>
+        f"""<div style='text-align:center;margin:14px 0 22px 0;'>
+        <h2 style='margin:0;font-size:2.4rem;font-weight:800;color:#0f172a;letter-spacing:-0.5px;'>{tieu_de}</h2>
+        <div style='width:72px;height:4px;border-radius:2px;margin:12px auto 0 auto;background:linear-gradient(90deg,#3b82f6,#8b5cf6);'></div>
         {phu}</div>""",
         unsafe_allow_html=True,
     )

@@ -12,6 +12,7 @@ ATTEMPT_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 def _da_gap(sid):
     """Set id mọi câu sid đã từng mở/chấm (đúng + sai) để tránh giao lặp."""
+    # Quét file attempts vì attempt là bằng chứng duy nhất câu đã giao.
     gap = set()
     if not os.path.isdir(ATTEMPT_DIR):
         return gap
@@ -49,6 +50,7 @@ def ra_bai(sid, bai, do_kho=2, mon="toan11", loai_tru=None, cau_hien_tai_id=None
     kho = [c for c in kho_all
            if not c.get("cho_duyet") and c.get("chat_luong", "ok") == "ok"]
     if not kho:
+        # Bài chưa có câu đạt chuẩn thì nới ra câu thường (vẫn trừ câu chờ duyệt).
         kho = [c for c in kho_all if not c.get("cho_duyet")]
     da_gap = _da_gap(sid) | set(loai_tru or set())
     if cau_hien_tai_id:
@@ -65,6 +67,7 @@ def ra_bai(sid, bai, do_kho=2, mon="toan11", loai_tru=None, cau_hien_tai_id=None
 
     moi_cung_do_kho = [c for c in kho if _dk(c) == dk and c.get("id") not in da_gap]
     if moi_cung_do_kho:
+        # Ưu tiên 1: câu mới đúng độ khó đang cần.
         return {**random.choice(moi_cung_do_kho), "nguon": "kho GV"}
     # Nới lỏng: cùng bài, độ khó gần nhất, chưa gặp
     moi = [c for c in kho if c.get("id") not in da_gap]
@@ -114,6 +117,7 @@ def lay_cau_theo_id(sid, cid, mon="toan11"):
 
 
 def doi_kho_hien_tai(sid, bai, do_kho, lam_dung):
+    # Thích ứng độ khó: đúng +1 bậc, sai −1 bậc, kẹp trong 1–3.
     if lam_dung:
         return min(3, int(do_kho) + 1)
     return max(1, int(do_kho) - 1)

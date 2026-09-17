@@ -39,29 +39,34 @@ hs2 = store.doc_hs(SID)
 check("hs-luu-truong-moi", hs2["yeu"] == ["sợ hình không gian"] and hs2["tkb"] == {"T2": ["Toán", "Văn"]}
       and hs2["bai_hien_tai"] == "Bài 1. X")
 
-# 2. Tự lên trình độ: 5 bài đúng hết
-os.makedirs("data/attempts", exist_ok=True)
-base = time.time() - 100
-for i in range(5):
-    p = os.path.join("data", "attempts", f"{SID}_c{i}.json")
-    store.ghi_json(p, {"sid": SID, "cau_id": f"c{i}", "dung_het": True})
-    os.utime(p, (base + i, base + i))
-store.luu_hs(SID, {**store.doc_hs(SID), "trinh_do_toan": "trung bình", "moc_attempt": 0})
-cu, moi = student.tu_dong_cap_nhat_trinh_do(SID)
-check("tu-len-trinh-do", (cu, moi) == ("trung bình", "khá"), f"{cu}->{moi}")
+# 2. Điểm đệm trình độ: đúng +1/sai -1, đủ +5 ròng mới lên 1 bậc
+store.luu_hs(SID, {**store.doc_hs(SID), "trinh_do_toan": "trung bình", "diem_trinh_do": 0})
+for _ in range(4):
+    cu, moi = student.tu_dong_cap_nhat_trinh_do(SID, True)
+check("4-dung-chua-len", (cu, moi) == ("trung bình", "trung bình")
+      and store.doc_hs(SID)["diem_trinh_do"] == 4)
+cu, moi = student.tu_dong_cap_nhat_trinh_do(SID, False)
+check("1-sai-tru-ve-3", (cu, moi) == ("trung bình", "trung bình")
+      and store.doc_hs(SID)["diem_trinh_do"] == 3)
+for _ in range(2):
+    cu, moi = student.tu_dong_cap_nhat_trinh_do(SID, True)
+check("du-5-rong-len-kha", (cu, moi) == ("trung bình", "khá")
+      and store.doc_hs(SID)["diem_trinh_do"] == 0)
 check("tu-len-luu", store.doc_hs(SID)["trinh_do_toan"] == "khá")
 
-# 3. Tự xuống trình độ: thêm 5 bài sai hết (mốc đã là 5)
-for i in range(5, 10):
-    p = os.path.join("data/attempts", f"{SID}_c{i}.json")
-    store.ghi_json(p, {"sid": SID, "cau_id": f"c{i}", "dung_het": False})
-    os.utime(p, (base + i, base + i))
-cu, moi = student.tu_dong_cap_nhat_trinh_do(SID)
-check("tu-xuong-trinh-do", (cu, moi) == ("khá", "trung bình"), f"{cu}->{moi}")
+# 3. Đủ -5 ròng mới xuống 1 bậc
+for _ in range(4):
+    cu, moi = student.tu_dong_cap_nhat_trinh_do(SID, False)
+check("4-sai-chua-xuong", (cu, moi) == ("khá", "khá"))
+cu, moi = student.tu_dong_cap_nhat_trinh_do(SID, False)
+check("tu-xuong-trinh-do", (cu, moi) == ("khá", "trung bình"))
 
-# 4. Chưa đủ 3 bài mới thì giữ nguyên, không ghi đè mốc lung tung
-cu, moi = student.tu_dong_cap_nhat_trinh_do(SID)
-check("giu-nguyen", (cu, moi) == ("trung bình", "trung bình"))
+# 4. Đúng/sai xen kẽ quanh 0 thì giữ nguyên bậc
+store.luu_hs(SID, {**store.doc_hs(SID), "trinh_do_toan": "trung bình", "diem_trinh_do": 0})
+for kq in (True, False, True, True, False, False, True):
+    cu, moi = student.tu_dong_cap_nhat_trinh_do(SID, kq)
+check("xen-ke-giu-nguyen", (cu, moi) == ("trung bình", "trung bình")
+      and store.doc_hs(SID)["diem_trinh_do"] == 1)
 
 # 5. Video: tay vào ngay; tự động sau 3 lần gợi ý
 check("video-tay", student.ghi_nhan_video(SID, "linkA") is True)

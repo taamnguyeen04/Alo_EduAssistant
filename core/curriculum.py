@@ -27,6 +27,7 @@ KEYWORDS = [
 
 @lru_cache(maxsize=8)
 def load_videos(mon="toan11"):
+    # Cache theo môn để mỗi lượt chat không đọc lại file video.
     path = subjects.lay_mon(mon)["video_file"]
     if not os.path.exists(path):
         return []
@@ -37,6 +38,7 @@ def load_videos(mon="toan11"):
 
 def tim_bai(cau_hoi, bai_hien_tai="", mon="toan11"):
     """Trả về dict video khớp nhất hoặc None. Ưu tiên keyword, không bịa bài."""
+    # Không khớp keyword nào thì bám bài hiện tại; cùng không có thì None.
     cau = (cau_hoi or "").lower()
     keywords = subjects.lay_mon(mon).get("keywords", KEYWORDS)
     for keys, title_part in keywords:

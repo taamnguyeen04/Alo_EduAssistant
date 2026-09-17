@@ -6,6 +6,27 @@
       "hs_003"
     ],
     "diem_danh": {},
-    "vi_pham": []
+    "vi_pham": [
+      {
+        "sid": "hs_001",
+        "ly_do": "quay bài",
+        "ngay": "2026-09-17"
+      },
+      {
+        "sid": "hs_001",
+        "ly_do": "quay bài",
+        "ngay": "2026-09-17"
+      },
+      {
+        "sid": "hs_001",
+        "ly_do": "quay bài",
+        "ngay": "2026-09-17"
+      },
+      {
+        "sid": "hs_001",
+        "ly_do": "quay bài",
+        "ngay": "2026-09-17"
+      }
+    ]
   }
 }

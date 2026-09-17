@@ -1,0 +1,78 @@
+{
+  "history": [
+    {
+      "role": "user",
+      "content": "cho 3 bài dễ nhất"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào em! Em muốn tìm những phần dễ nhất trong **Bài 1: Giá trị lượng giác của góc lượng giác** để làm quen và củng cố nền tảng, phải không? Thật là một chiến lược học tập rất thông minh! Dưới đây là 3 phần kiến thức cơ bản nhất (dễ nhất) của Bài 1 mà em cần thành thạo trước khi đi vào các bài toán phức tạp hơn:\n\n1. **Khái niệm góc lượng giác và chiều quay (Độ/Radian):** Chỉ cần hiểu quy ước chiều dương (ngược chiều kim đồng hồ) và chiều âm (thuận chiều kim đồng hồ), cùng với việc chuyển đổi đơn vị $\\pi \\text{ rad} = 180^\\circ$. Đây là nền tảng cực kỳ đơn giản nhưng rất quan trọng.\n2. **Các góc đặc biệt trên đường tròn đơn vị ($\\frac{\\pi}{6}, \\frac{\\pi}{4}, \\frac{\\pi}{3}$):** Nhớ các giá trị $\\sin, \\cos$ của các góc này. Chúng chỉ gồm các con số đẹp đẽ như $\\frac{1}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}$.\n3. **Xác định các giá trị lượng giác trong các góc phần tư:** Dùng các dấu của $\\sin, \\cos, \\tan$ trong từng quadrant để tính nhanh.\n\nTrong số các bài tập đã có trong kho, hai bài tập tính giá trị lượng giác trực tiếp của các góc đặc biệt như **[B1-02]** và **[AI-DEMO-001]** là những bài tập cơ bản, gần gũi nhất để em luyện tập đầu tiên.\n\nĐể bắt đầu, em có còn nhớ quy ước chiều dương của góc là chiều nào không? Hay chúng ta cùng thử một ví dụ nhỏ về việc chuyển đổi $\\frac{\\pi}{3}$ sang độ trước khi làm bài tập `[B1-02]` nhé?"
+    },
+    {
+      "role": "user",
+      "content": "bài tập"
+    },
+    {
+      "role": "assistant",
+      "content": "Dưới đây là **3 bài tập cơ bản (dễ nhất)** trong chương **Bài 1: Giá trị lượng giác của góc lượng giác**, giúp em làm chủ những khái niệm nền tảng đầu tiên. Em có thể thử làm các bài này để củng cố kiến thức nhé!\n\n---\n\n### 🟢 Bài tập 1: Chuyển đổi đơn vị góc (Độ $\\leftrightarrow$ Radian)\n* **Đề bài:** Chuyển góc $\\alpha = 135^\\circ$ sang radian, sau đó tìm góc tương đương của $\\alpha$ trong khoảng từ $0$ đến $2\\pi$.\n* **Lời giải hướng dẫn:**\n * Recall công thức chuyển đổi: $180^\\circ = \\pi \\text{ rad} \\Rightarrow 1^\\circ = \\frac{\\pi}{180} \\text{ rad}$.\n * Suy ra $135^\\circ = 135 \\times \\frac{\\pi}{180} = \\frac{3\\pi}{4} \\text{ rad}$.\n * Vì $\\frac{3\\pi}{4}$ đã nằm trong khoảng $[0; 2\\pi]$, góc tương đương chính là $\\frac{3\\pi}{4}$ (nằm ở góc phần tư thứ II).\n\n### 🟢 Bài tập 2: Tính giá trị lượng giác của các góc đặc biệt\n* **Đề bài:** Tính giá trị của biểu thức sau: \n $$A = \\cos 0^\\circ - \\sin 90^\\circ + 2\\tan 45^\\circ$$\n* **Lời giải hướng dẫn:**\n * Nhớ bảng giá trị đặc biệt: $\\cos 0^\\circ = 1$, $\\sin 90^\\circ = 1$, $\\tan 45^\\circ = 1$.\n * Thay vào biểu thức: $A = 1 - 1 + 2 \\times 1 = 2$.\n\n### 🟢 Bài tập 3: Xác định dấu và tính giá trị góc phần tư (Dùng công thức giảm góc)\n* **Đề bài:** \n 1. Xác định dấu của $\\sin 150^\\circ$, $\\cos 225^\\circ$ và $\\tan 300^\\circ$.\n 2. Tính giá trị cụ thể của $\\sin 150^\\circ$.\n* **Lời giải hướng dẫn:**\n * *Phân tích dấu:*\n * $150^\\circ$ ở góc phần tư II $\\Rightarrow \\sin > 0$.\n * $225^\\circ$ ở góc phần tư III $\\Rightarrow \\cos < 0$.\n * $300^\\circ$ ở góc phần tư IV $\\Rightarrow \\tan < 0$.\n * *Tính $\\sin 150^\\circ$:* Dùng công thức giảm góc $\\sin(180^\\circ - x) = \\sin x$. \n $$\\sin 150^\\circ = \\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$$\n\n---\n\nEm thấy 3 bài tập trên có phần nào là em chưa làm chủ được không? Nếu muốn, em chọn một trong 3 bài trên, em tự làm phần đầu tiên và cùng mình kiểm tra kết quả xem sao!"
+    }
+  ],
+  "weaknesses": [],
+  "id": "quang",
+  "ten": "quang",
+  "lop": "11A1",
+  "mon": "Toán",
+  "trinh_do_toan": "trung bình",
+  "diem_trinh_do": -1,
+  "manh": [],
+  "yeu": [],
+  "mon_can_ho_tro": [],
+  "muc_tieu": "",
+  "gio_tu_hoc": "",
+  "muc_tieu_giai_doan": {},
+  "ke_hoach": {},
+  "bai_hien_tai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "video_da_xem": [],
+  "phong_cach": "",
+  "tkb": {},
+  "bai_de_xuat": [
+    "B1-02",
+    "AI-DEMO-001"
+  ],
+  "viec_da_xong": [],
+  "video_goi_y_count": {
+    "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG": 2
+  },
+  "moc_attempt": 0,
+  "conversations": [
+    {
+      "id": "cuoc-1789645363454",
+      "tieu_de": "B1: cho 3 bài dễ nhất",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": [
+        {
+          "role": "user",
+          "content": "cho 3 bài dễ nhất"
+        },
+        {
+          "role": "assistant",
+          "content": "Chào em! Em muốn tìm những phần dễ nhất trong **Bài 1: Giá trị lượng giác của góc lượng giác** để làm quen và củng cố nền tảng, phải không? Thật là một chiến lược học tập rất thông minh! Dưới đây là 3 phần kiến thức cơ bản nhất (dễ nhất) của Bài 1 mà em cần thành thạo trước khi đi vào các bài toán phức tạp hơn:\n\n1. **Khái niệm góc lượng giác và chiều quay (Độ/Radian):** Chỉ cần hiểu quy ước chiều dương (ngược chiều kim đồng hồ) và chiều âm (thuận chiều kim đồng hồ), cùng với việc chuyển đổi đơn vị $\\pi \\text{ rad} = 180^\\circ$. Đây là nền tảng cực kỳ đơn giản nhưng rất quan trọng.\n2. **Các góc đặc biệt trên đường tròn đơn vị ($\\frac{\\pi}{6}, \\frac{\\pi}{4}, \\frac{\\pi}{3}$):** Nhớ các giá trị $\\sin, \\cos$ của các góc này. Chúng chỉ gồm các con số đẹp đẽ như $\\frac{1}{2}, \\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{3}}{2}$.\n3. **Xác định các giá trị lượng giác trong các góc phần tư:** Dùng các dấu của $\\sin, \\cos, \\tan$ trong từng quadrant để tính nhanh.\n\nTrong số các bài tập đã có trong kho, hai bài tập tính giá trị lượng giác trực tiếp của các góc đặc biệt như **[B1-02]** và **[AI-DEMO-001]** là những bài tập cơ bản, gần gũi nhất để em luyện tập đầu tiên.\n\nĐể bắt đầu, em có còn nhớ quy ước chiều dương của góc là chiều nào không? Hay chúng ta cùng thử một ví dụ nhỏ về việc chuyển đổi $\\frac{\\pi}{3}$ sang độ trước khi làm bài tập `[B1-02]` nhé?"
+        },
+        {
+          "role": "user",
+          "content": "bài tập"
+        },
+        {
+          "role": "assistant",
+          "content": "Dưới đây là **3 bài tập cơ bản (dễ nhất)** trong chương **Bài 1: Giá trị lượng giác của góc lượng giác**, giúp em làm chủ những khái niệm nền tảng đầu tiên. Em có thể thử làm các bài này để củng cố kiến thức nhé!\n\n---\n\n### 🟢 Bài tập 1: Chuyển đổi đơn vị góc (Độ $\\leftrightarrow$ Radian)\n* **Đề bài:** Chuyển góc $\\alpha = 135^\\circ$ sang radian, sau đó tìm góc tương đương của $\\alpha$ trong khoảng từ $0$ đến $2\\pi$.\n* **Lời giải hướng dẫn:**\n * Recall công thức chuyển đổi: $180^\\circ = \\pi \\text{ rad} \\Rightarrow 1^\\circ = \\frac{\\pi}{180} \\text{ rad}$.\n * Suy ra $135^\\circ = 135 \\times \\frac{\\pi}{180} = \\frac{3\\pi}{4} \\text{ rad}$.\n * Vì $\\frac{3\\pi}{4}$ đã nằm trong khoảng $[0; 2\\pi]$, góc tương đương chính là $\\frac{3\\pi}{4}$ (nằm ở góc phần tư thứ II).\n\n### 🟢 Bài tập 2: Tính giá trị lượng giác của các góc đặc biệt\n* **Đề bài:** Tính giá trị của biểu thức sau: \n $$A = \\cos 0^\\circ - \\sin 90^\\circ + 2\\tan 45^\\circ$$\n* **Lời giải hướng dẫn:**\n * Nhớ bảng giá trị đặc biệt: $\\cos 0^\\circ = 1$, $\\sin 90^\\circ = 1$, $\\tan 45^\\circ = 1$.\n * Thay vào biểu thức: $A = 1 - 1 + 2 \\times 1 = 2$.\n\n### 🟢 Bài tập 3: Xác định dấu và tính giá trị góc phần tư (Dùng công thức giảm góc)\n* **Đề bài:** \n 1. Xác định dấu của $\\sin 150^\\circ$, $\\cos 225^\\circ$ và $\\tan 300^\\circ$.\n 2. Tính giá trị cụ thể của $\\sin 150^\\circ$.\n* **Lời giải hướng dẫn:**\n * *Phân tích dấu:*\n * $150^\\circ$ ở góc phần tư II $\\Rightarrow \\sin > 0$.\n * $225^\\circ$ ở góc phần tư III $\\Rightarrow \\cos < 0$.\n * $300^\\circ$ ở góc phần tư IV $\\Rightarrow \\tan < 0$.\n * *Tính $\\sin 150^\\circ$:* Dùng công thức giảm góc $\\sin(180^\\circ - x) = \\sin x$. \n $$\\sin 150^\\circ = \\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$$\n\n---\n\nEm thấy 3 bài tập trên có phần nào là em chưa làm chủ được không? Nếu muốn, em chọn một trong 3 bài trên, em tự làm phần đầu tiên và cùng mình kiểm tra kết quả xem sao!"
+        }
+      ]
+    },
+    {
+      "id": "cuoc-1789643028129",
+      "tieu_de": "B8: Thắc mắc mới",
+      "bai": "Bài 8. Mẫu số liệu ghép nhóm",
+      "messages": []
+    }
+  ]
+}

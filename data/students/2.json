@@ -8,12 +8,20 @@
   "trinh_do_toan": "trung bình",
   "manh": [],
   "yeu": [],
-  "bai_hien_tai": "",
+  "bai_hien_tai": "Bài 1. Giá trị lượng giác của góc lượng giác",
   "video_da_xem": [],
   "phong_cach": "",
   "tkb": {},
   "bai_de_xuat": [],
   "viec_da_xong": [],
   "video_goi_y_count": {},
-  "moc_attempt": 0
+  "moc_attempt": 0,
+  "conversations": [
+    {
+      "id": "cuoc-1789552968249",
+      "tieu_de": "B1: Thắc mắc mới",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": []
+    }
+  ]
 }

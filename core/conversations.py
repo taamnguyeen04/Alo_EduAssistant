@@ -10,6 +10,7 @@ from . import store
 
 def _chuyen_lich_su_cu(data):
     """Lần đầu dùng: gom history phẳng cũ thành 1 cuộc 'Đoạn chat cũ'."""
+    # Chạy 1 lần duy nhất cho file HS cũ chưa có key conversations.
     if "conversations" not in data:
         data["conversations"] = []
         if data.get("history"):
@@ -37,6 +38,7 @@ def lay_cuoc(sid, cid):
 def tao_cuoc(sid, bai="", cau_mo_dau=""):
     data = store.doc_hs(sid)
     ds = _chuyen_lich_su_cu(data)
+    # id theo mili-giây nên tạo 2 cuộc liên tiếp cũng không trùng.
     cid = f"cuoc-{int(time.time() * 1000)}"
     ten_bai = (bai or "").replace("Bài ", "B").split(".")[0].strip() or "Tự do"
     ds.insert(0, {
@@ -58,6 +60,7 @@ def xoa_cuoc(sid, cid):
 
 def them_tin_nhan(sid, cid, role, content):
     """Ghi 1 tin vào cuộc đang mở + sổ tổng history."""
+    # Ghi song song 2 nơi: cuộc mở để chat theo Bài, sổ tổng để báo cáo GV.
     data = store.doc_hs(sid)
     ds = _chuyen_lich_su_cu(data)
     for c in ds:

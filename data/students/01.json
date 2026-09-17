@@ -82,7 +82,7 @@
     "cần củng cố việc đổi đơn vị radian π/180 trước khi áp dụng công thức, cẩn trọng với thứ tự thực hiện phép tính trong các biểu thức lượng giác tổng hợp",
     "Cẩn trọng với thứ tự thực hiện phép tính trong các biểu thức lượng giác tổng hợp"
   ],
-  "ten": "01",
+  "ten": "Nguyễn Trần Minh Tâm",
   "lop": "11A1",
   "mon": "Toán",
   "trinh_do_toan": "trung bình",
@@ -92,8 +92,67 @@
   "video_da_xem": [
     "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG"
   ],
-  "phong_cach": "",
-  "tkb": {},
+  "phong_cach": "thích ví dụ thực tế",
+  "tkb": {
+    "nguon": "thoi_khoa_bieu_11A2.xlsx",
+    "lop": "11A2",
+    "hieu_luc": "07/09/2026",
+    "lich": {
+      "T3": {
+        "sáng": {
+          "1": "Tin học",
+          "2": "Tin học",
+          "3": "Ngữ văn",
+          "4": "Ngữ văn"
+        },
+        "chiều": {
+          "1": "Lịch sử",
+          "2": "Vật lí",
+          "3": "Vật lí"
+        }
+      },
+      "T4": {
+        "sáng": {
+          "1": "Hóa học",
+          "2": "Hóa học",
+          "3": "GDQP-AN",
+          "4": "GDĐP"
+        },
+        "chiều": {
+          "1": "Ngoại ngữ 1",
+          "2": "Ngoại ngữ 1"
+        }
+      },
+      "T5": {
+        "sáng": {
+          "1": "Hóa học",
+          "2": "Toán",
+          "3": "Giáo dục thể chất",
+          "4": "Giáo dục thể chất"
+        }
+      },
+      "T6": {
+        "sáng": {
+          "1": "Sinh học",
+          "2": "Sinh học",
+          "3": "Toán",
+          "4": "HĐTN QML"
+        }
+      },
+      "T2": {
+        "sáng": {
+          "2": "Vật lí",
+          "3": "Ngữ văn",
+          "4": "HĐTN CĐ"
+        },
+        "chiều": {
+          "1": "Toán",
+          "2": "Toán",
+          "3": "Ngoại ngữ 1"
+        }
+      }
+    }
+  },
   "bai_de_xuat": [
     "B1-TN-049",
     "B1-TL-034",
@@ -238,5 +297,74 @@
   "video_goi_y_count": {
     "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG": 3
   },
-  "moc_attempt": 4
+  "moc_attempt": 4,
+  "diem_trinh_do": 0,
+  "mon_can_ho_tro": [
+    "toan11"
+  ],
+  "muc_tieu": "đỗ HSG",
+  "gio_tu_hoc": "30–60 phút",
+  "muc_tieu_giai_doan": {
+    "GK1": {
+      "toan11": 10.0,
+      "ly11": 10.0,
+      "hoa11": 10.0,
+      "anh11": 8.0,
+      "van11": 6.0,
+      "sinh11": 8.0,
+      "su11": 7.0,
+      "dia11": 7.0
+    }
+  },
+  "ke_hoach": {
+    "tuan": {
+      "T2": [
+        "Ngữ văn: đọc trước bài học ngày T3 (30 phút)",
+        "Lịch sử: đọc trước bài học ngày T3 (30 phút)",
+        "Vật lí: ôn bài ngày T2 và đọc trước ngày T3 (45 phút)",
+        "Toán: ôn bài ngày T2 (30 phút)"
+      ],
+      "T3": [
+        "Hóa học: đọc trước bài học ngày T4 (30 phút)",
+        "Tiếng Anh: ôn từ vựng hoặc bài tập (30 phút)",
+        "Vật lí: ôn bài học ngày T3 (30 phút)",
+        "Toán: làm bài tập (30 phút)"
+      ],
+      "T4": [
+        "Hóa học: ôn bài ngày T4 và đọc trước ngày T5 (45 phút)",
+        "Toán: đọc trước bài học ngày T5 (30 phút)",
+        "Tiếng Anh: ôn bài học ngày T4 (30 phút)",
+        "Vật lí: làm bài tập (30 phút)"
+      ],
+      "T5": [
+        "Sinh học: đọc trước bài học ngày T6 (30 phút)",
+        "Toán: ôn bài ngày T5 và đọc trước ngày T6 (45 phút)",
+        "Hóa học: ôn bài học ngày T5 (30 phút)",
+        "Vật lí: làm bài tập (30 phút)"
+      ],
+      "T6": [
+        "Toán: ôn bài học ngày T6 (30 phút)",
+        "Vật lí: làm bài tập (30 phút)",
+        "Ngữ văn: đọc bài mới (30 phút)",
+        "Địa lí: học bài mới (30 phút)"
+      ],
+      "T7": [
+        "Hóa học: ôn bài tập (30 phút)",
+        "Sinh học: ôn bài học ngày T6 (30 phút)",
+        "Tiếng Anh: làm bài tập (30 phút)",
+        "Lịch sử: xem lại bài học (30 phút)"
+      ],
+      "CN": [
+        "Vật lí: đọc trước bài học ngày T2 (30 phút)",
+        "Ngữ văn: đọc trước bài học ngày T2 (30 phút)",
+        "Toán: đọc trước bài học ngày T2 (30 phút)",
+        "Tiếng Anh: ôn từ vựng (30 phút)"
+      ]
+    },
+    "trong_tam": "Tập trung ôn tập các môn có mục tiêu cao: Toán, Vật lí, Hóa học để đạt điểm 10.",
+    "loi_nhan": "Mỗi ngày một nỗ lực, thành công sẽ đến!",
+    "nguon": "ai",
+    "fingerprint": "9c1429dc022ea804",
+    "cap_nhat": "2026-09-17T05:06"
+  }
 }

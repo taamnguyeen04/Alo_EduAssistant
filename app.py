@@ -23,7 +23,7 @@ from ui import theme
 #   $env:LLM_MODE="prod"; streamlit run app.py
 os.environ.setdefault("LLM_MODE", LLM_MODE)
 
-st.set_page_config(page_title="Alo_EduAssistant — Trợ lí học tập", page_icon="🎓", layout="wide")
+st.set_page_config(page_title="Alo_EduAssistant — Trợ lí học tập", page_icon="🎓", layout="wide", initial_sidebar_state="expanded")
 theme.apply_theme()
 
 MON = st.session_state.get("mon", subjects.MON_MAC_DINH)
@@ -72,7 +72,7 @@ def trang_dang_nhap():
         }
         
         /* 5. Ẩn hoàn toàn menu, footer, deploy, header */
-        [data-testid="stSidebar"], [data-testid="collapsedControl"] { display: none !important; }
+        [data-testid="stSidebar"], [data-testid="collapsedControl"], [data-testid="stExpandSidebarButton"] { display: none !important; }
         header[data-testid="stHeader"] { display: none !important; }
         footer { display: none !important; }
         .stDeployButton { display: none !important; }
@@ -231,15 +231,13 @@ def trang_dang_nhap():
     with st.container(border=True):
         st.markdown(
             '<div class="saas-card-title">Chào mừng trở lại 👋</div>'
-            '<p class="saas-card-sub">Chọn môn học để bắt đầu</p>',
+            '<p class="saas-card-sub">Đăng nhập để bắt đầu học</p>',
             unsafe_allow_html=True,
         )
-        
-        _chon_mon("mon_login", label="Môn học")
-        
+
         st.markdown("<div style='height:4px'></div>", unsafe_allow_html=True)
         role = st.radio("Vai trò", ["Học sinh", "Giáo viên"], horizontal=True, label_visibility="collapsed")
-        
+
         if role == "Học sinh":
             sid_raw = st.text_input("Mã số học sinh", placeholder="Nhập mã truy cập (VD: hs_001)").strip()
             # Chuẩn hóa mã để khớp nhóm GV đã tạo (chống lệch hoa/thường, khoảng trắng)
@@ -254,6 +252,7 @@ def trang_dang_nhap():
                     st.session_state.auth_role = "hs"
                     st.session_state.auth_sid = sid
                     st.session_state.tab_hs = "🏠 Trang chủ"
+                    st.session_state.mon = subjects.MON_MAC_DINH
                     st.rerun()
         else:
             # Giáo viên
@@ -261,6 +260,7 @@ def trang_dang_nhap():
             if st.button("Bắt đầu học →", type="primary", use_container_width=True):
                 st.session_state.auth_role = "gv"
                 st.session_state.tab_gv = "Báo cáo lớp"
+                st.session_state.mon = subjects.MON_MAC_DINH
                 st.rerun()
 
     st.markdown(
@@ -274,7 +274,6 @@ def trang_dang_nhap():
           Hướng dẫn đăng nhập
         </div>
         <ol>
-            <li>Chọn môn học bạn muốn tham gia.</li>
             <li>Chọn vai trò tương ứng của bạn.</li>
             <li>Nhập mã truy cập được cấp để vào lớp.</li>
         </ol>
@@ -304,27 +303,32 @@ if vai_tro == "hs":
         st.session_state["header_bai"] = st.session_state.pop("_bai_moi")
     if "_tab_hs_pending" in st.session_state:
         st.session_state.tab_hs = st.session_state.pop("_tab_hs_pending")
+else:
+    if "_tab_gv_pending" in st.session_state:
+        st.session_state.tab_gv = st.session_state.pop("_tab_gv_pending")
+
+# ─── Ghi nhận lịch sử điều hướng (cho nút ← Quay lại) ───
+_tab_ss = st.session_state.get("tab_hs" if vai_tro == "hs" else "tab_gv")
+if _tab_ss:
+    theme.ghi_nhan_tab(vai_tro, _tab_ss)
 
 # ─── Header chính sau đăng nhập ───
 tab_hien_tai = st.session_state.get("tab_hs", "🏠 Trang chủ") if vai_tro == "hs" else st.session_state.get("tab_gv", "👥 Lớp học")
 if tab_hien_tai not in ["🏠 Trang chủ", "👤 Hồ sơ"]:
     st.markdown("<div style='height: 4px;'></div>", unsafe_allow_html=True)
-    c_title, c_empty, c_sel1, c_sel2 = st.columns([2, 0.5, 1, 1.5])
-    with c_title:
-        st.markdown(f"<h1 style='font-size: 38px; font-weight: 800; margin: 6px 0 0 0; color: #0f172a; letter-spacing: -1px;'>{tab_hien_tai}</h1>", unsafe_allow_html=True)
-    with c_sel1:
-        _chon_mon("mon_header", label="Môn đang học:")
-    with c_sel2:
-        videos = curriculum.load_videos(MON)
-        ds_bai = ["(Chưa chọn bài)"] + [v.get("title", "") for v in videos]
-        idx_bai = 0
-        if vai_tro == "hs" and hs.get("bai_hien_tai") in ds_bai:
-            idx_bai = ds_bai.index(hs.get("bai_hien_tai"))
-        bai_chon = st.selectbox("Chương/bài:", ds_bai, index=idx_bai, key="header_bai")
-        if vai_tro == "hs" and bai_chon != "(Chưa chọn bài)" and bai_chon != hs.get("bai_hien_tai"):
-            hs["bai_hien_tai"] = bai_chon
-            store.luu_hs(sid, hs)
-            st.rerun()
+    theme.ve_nut_quay_lai(vai_tro)
+    if vai_tro == "hs":
+        # HS: tiêu đề trang duy nhất — căn giữa, cỡ lớn
+        # (đổi môn ở 🏠 Trang chủ, đổi bài ở 📚 Bài học / 👤 Hồ sơ).
+        st.markdown(f"""<div style='text-align:center;margin:10px 0 4px 0;'>
+        <h1 style='font-size:40px;font-weight:800;margin:0;color:#0f172a;letter-spacing:-1px;'>{tab_hien_tai}</h1>
+        <div style='width:72px;height:4px;border-radius:2px;margin:10px auto 0 auto;background:linear-gradient(90deg,#3b82f6,#8b5cf6);'></div>
+        </div>""", unsafe_allow_html=True)
+    else:
+        # GV: bỏ hẳn ô "Môn đang học / Chương-bài" ở đầu trang cho gọn.
+        # (Môn đang xem mặc định theo MON_MAC_DINH; mỗi trang GV đã có
+        # tiêu đề + bộ lọc riêng bên trong.)
+        pass
     st.divider()
 
 with st.sidebar:
@@ -335,7 +339,7 @@ with st.sidebar:
           <path d="M26 11.5 L38.5 38 H34.4 L31.6 31.2 H20.4 L17.6 38 H13.5 L26 11.5 Z M26 18.2 L22.7 27.2 H29.3 L26 18.2 Z" fill="white"/>
           <circle cx="37" cy="14" r="2.6" fill="#BFDBFE"/>
         </svg>
-        <div style='font-weight: 800; font-size: 18px; color: #0f172a; letter-spacing: -0.3px;'>Trợ lý AI hỗ trợ học sinh và giáo viên trong học tập</div>
+        <div style='font-weight: 800; font-size: 16px; color: #0f172a; letter-spacing: -0.3px;'>Trợ lý AI hỗ trợ học sinh và giáo viên trong học tập</div>
         </div>""",
         unsafe_allow_html=True
     )
@@ -392,7 +396,12 @@ with st.sidebar:
     if st.button("⎋ Đăng xuất", use_container_width=True):
         for k in ("auth_role", "auth_sid", "tab_hs", "tab_gv", "sid",
                   "cau_hien_tai", "cau_da_hien", "kq_cuoi", "goiy_cauhoi", "bc_gv",
-                  "luyen_messages", "luyen_ids", "cid", "cid_chon"):
+                  "luyen_messages", "luyen_ids", "cid", "cid_chon",
+                  "_tab_hs_pending", "_tab_gv_pending", "_bai_moi",
+                  "_lich_su_hs", "_tab_cuoi_hs", "_lich_su_gv", "_tab_cuoi_gv",
+                  "_pf_sid", "tkb_file_da_xu_ly"):
+            st.session_state.pop(k, None)
+        for k in [k for k in list(st.session_state.keys()) if k.startswith("pf_")]:
             st.session_state.pop(k, None)
         st.rerun()
 

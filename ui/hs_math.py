@@ -35,6 +35,25 @@ def render(sid, mon="toan11"):
     cfg = subjects.lay_mon(mon)
     hs = store.doc_hs(sid)
 
+    nhom = curriculum.danh_sach_chuong(mon)
+    if not nhom:
+        # Môn chưa có dữ liệu: vẫn vào được trang, hiện trạng thái trống
+        st.html(f"""
+            <div style='text-align:center;padding:56px 24px;background:#ffffff;
+                 border:1px solid #e2e8f0;border-radius:20px;box-shadow:0 4px 15px rgba(0,0,0,0.03);'>
+                <div style='font-size:52px;margin-bottom:12px;'>{cfg.get('icon', '📚')}</div>
+                <div style='font-size:24px;font-weight:800;color:#0f172a;margin-bottom:8px;'>
+                    Môn {cfg.get('ten', '')} đang được soạn</div>
+                <div style='font-size:15px;color:#64748b;margin-bottom:24px;'>Thầy sẽ cập nhật bài giảng,
+                    video và bài tập trong thời gian tới.<br>Em quay lại sau nhé!</div>
+            </div>
+        """)
+        st.markdown("<div style='height:16px;'></div>", unsafe_allow_html=True)
+        if st.button("🏠 Về Trang chủ", key="btn_baihoc_home"):
+            goto("🏠 Trang chủ")
+            st.rerun()
+        return
+
     # ── Thống kê nhanh ──
     so_da_xem = len(hs.get("video_da_xem", []))
     bai_hien = hs.get("bai_hien_tai") or "Chưa chọn"
@@ -51,11 +70,6 @@ def render(sid, mon="toan11"):
             f"📖 Đang học: <strong>{bai_hien}</strong></div>",
             unsafe_allow_html=True,
         )
-
-    nhom = curriculum.danh_sach_chuong(mon)
-    if not nhom:
-        st.error("Chưa thấy video_data.json")
-        return
 
     for chuong, ds in nhom.items():
         loc = [v for v in ds if not tk.strip() or tk.strip().lower() in

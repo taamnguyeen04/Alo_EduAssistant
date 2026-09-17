@@ -66,6 +66,7 @@ def cham_diem(mo_ta, muc):
 
 def chon_template(mo_ta):
     """Trả (muc_catalog, diem) tốt nhất, hoặc (None, 0.0) nếu không đủ ngưỡng."""
+    # Dưới ngưỡng thì trả None để pipeline chuyển sang sinh tự do bằng AI.
     tot, diem_tot = None, 0.0
     for muc in tai_catalog():
         d = cham_diem(mo_ta, muc)
@@ -107,6 +108,7 @@ def _trich_ham(mo_ta, allowed):
 
 def dien_slot(mo_ta, muc):
     """Điền slot từ mô tả + default manifest, có kẹp min/max và allowed."""
+    # Slot nào mô tả không nhắc tới thì lấy default trong manifest.
     slots = (muc.get("slots") or {})
     params = {}
     for ten, dinh_nghia in slots.items():
@@ -175,6 +177,7 @@ def render_template(template_id, params, quality="l", timeout=600):
 
     os.makedirs(CACHE_DIR, exist_ok=True)
     cache_path = os.path.join(CACHE_DIR, _khoa_cache(template_id, version, params, quality))
+    # Cùng template + params + quality thì dùng lại video cũ, không render.
     if os.path.exists(cache_path) and os.path.getsize(cache_path) > 5000:
         return {"mp4": cache_path, "log": "Dùng video template đã render trước đó.",
                 "cached": True}

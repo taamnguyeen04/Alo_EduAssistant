@@ -3,9 +3,9 @@ import streamlit as st
 import random
 import base64
 import urllib.parse
-from core import store, subjects, curriculum
+from core import store, subjects, curriculum, kehoach, tkb as tkb_core
 from ui import widgets
-from ui.theme import goto, chon_bai_va_di
+from ui.theme import goto, chon_bai_va_di, chon_mon_va_di
 
 ATTEMPT_DIR = os.path.join("data", "attempts")
 
@@ -111,6 +111,83 @@ def render(sid, mon="toan11"):
     _render_html("</div>")
     _render_html("<div style='height: 80px'></div>")
 
+    # ── 1b. KẾ HOẠCH HỌC TẬP HÔM NAY (AI theo mục tiêu + TKB) ──
+    co_mt = bool(kehoach.muc_tieu(hs))
+    co_tkb = bool((tkb_core.chuan_hoa_tkb(hs.get("tkb", {})).get("lich") or {}))
+    if co_mt or co_tkb:
+        if kehoach.can_tao_lai(hs):
+            with st.spinner("🤖 AI đang làm kế hoạch học tập mới cho em..."):
+                try:
+                    kehoach.tao_ke_hoach(sid)
+                except Exception as e:
+                    st.warning(f"AI bận ({e}), dùng kế hoạch tạm nhé.")
+            hs = store.doc_hs(sid)
+        nhac = kehoach.nhac_hom_nay(hs)
+        chips = "".join(
+            f"<span style='background:#eff6ff;border:1px solid #bfdbfe;color:#1d4ed8;padding:8px 16px;"
+            f"border-radius:20px;font-size:15px;font-weight:700;'>📚 {m}</span>"
+            for m in nhac["mon_truong"]) or \
+            "<span style='font-size:15px;color:#64748b;'>Hôm nay không có tiết ở trường — tranh thủ ôn nhé! 🎉</span>"
+        if nhac["viec"]:
+            viec_html = "".join(
+                f"<div style='display:flex;gap:12px;align-items:flex-start;margin-bottom:12px;'>"
+                f"<span style='background:#dcfce7;color:#15803d;font-weight:800;border-radius:8px;"
+                f"padding:2px 8px;font-size:15px;'>✓</span>"
+                f"<span style='font-size:17px;font-weight:600;color:#0f172a;line-height:1.6;'>{v}</span></div>"
+                for v in nhac["viec"])
+        else:
+            viec_html = "<div style='font-size:16px;color:#475569;'>Hôm nay nhẹ nhàng — đọc lại vở 15 phút nhé! 📖</div>"
+        trong_tam_html = (f"<div style='margin-top:16px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:12px;"
+                          f"padding:14px 18px;font-size:16px;color:#1e3a8a;'>🎯 <b>Trọng tâm:</b> {nhac['trong_tam']}</div>"
+                          if nhac["trong_tam"] else "")
+        loi_nhan_html = (f"<div style='margin-top:12px;font-size:15px;font-style:italic;color:#64748b;'>"
+                         f"💬 {nhac['loi_nhan']}</div>" if nhac["loi_nhan"] else "")
+        nguon_html = ("<div style='margin-top:8px;font-size:13px;color:#94a3b8;'>AI bận nên dùng kế hoạch tạm — "
+                      "bấm Làm lại để thử lại nhé.</div>" if nhac["nguon"] == "nen" else "")
+        _render_html(f"""
+            <div style='background:#ffffff;border:2px solid #fed7aa;border-radius:24px;
+                 padding:32px 36px;margin-bottom:40px;box-shadow:0 10px 30px rgba(245,158,11,0.15);'>
+                <div style='display:flex;justify-content:space-between;align-items:center;margin-bottom:4px;'>
+                    <div style='font-size:21px;font-weight:800;color:#0f172a;letter-spacing:-0.3px;'>
+                        📋 Kế hoạch học tập hôm nay • {nhac['ten_ngay']}</div>
+                    <div style='font-size:13px;color:#94a3b8;'>Cập nhật {nhac['cap_nhat'] or 'vừa xong'}</div>
+                </div>
+                <div style='width:72px;height:4px;border-radius:2px;background:linear-gradient(90deg,#f59e0b,#ef4444);margin:10px 0 16px 0;'></div>
+                <div style='display:flex;gap:10px;flex-wrap:wrap;margin:0 0 20px 0;'>{chips}</div>
+                <div>{viec_html}{trong_tam_html}{loi_nhan_html}{nguon_html}</div>
+            </div>
+        """)
+        c_kh1, c_kh2 = st.columns([1, 1])
+        with c_kh1:
+            if st.button("🔄 AI làm lại kế hoạch", key="btn_kh_lamlai", use_container_width=True):
+                with st.spinner("🤖 AI đang làm lại..."):
+                    try:
+                        kehoach.tao_ke_hoach(sid)
+                    except Exception as e:
+                        st.warning(f"AI bận ({e}), giữ kế hoạch cũ nhé.")
+                st.rerun()
+        with c_kh2:
+            if st.button("🎯 Sửa mục tiêu / TKB", key="btn_kh_hoso", use_container_width=True):
+                goto("👤 Hồ sơ")
+                st.rerun()
+        _render_html("<div style='height: 24px'></div>")
+    else:
+        _render_html("""
+            <div style='background:#ffffff;border:2px solid #fed7aa;border-radius:24px;
+                 padding:32px 36px;margin-bottom:40px;box-shadow:0 10px 30px rgba(245,158,11,0.15);'>
+                <div style='font-size:21px;font-weight:800;color:#0f172a;letter-spacing:-0.3px;
+                     margin-bottom:4px;'>📋 Kế hoạch học tập hôm nay</div>
+                <div style='width:72px;height:4px;border-radius:2px;background:linear-gradient(90deg,#f59e0b,#ef4444);margin:10px 0 16px 0;'></div>
+                <div style='font-size:17px;color:#334155;margin-bottom:8px;'>Em chưa đặt <b>mục tiêu</b> và chưa tải
+                    <b>thời khóa biểu</b> — AI chưa có gì để lên kế hoạch nhắc học mỗi ngày.</div>
+                <div style='font-size:15px;color:#64748b;'>Vào Hồ sơ làm 2 bước này, quay lại đây là có kế hoạch ngay! 🚀</div>
+            </div>
+        """)
+        if st.button("🎯 Đặt mục tiêu ngay", key="btn_kh_setup", use_container_width=False):
+            goto("👤 Hồ sơ")
+            st.rerun()
+        _render_html("<div style='height: 24px'></div>")
+
     # ── 2. CÁC MÔN HỌC CỦA BẠN ──
     _render_html("<h2 style='font-size:22px; font-weight:800; color:#0f172a; margin-bottom:24px;'>📚 Các môn học của bạn</h2>")
     ds_mon = subjects.MON_HOC
@@ -128,19 +205,23 @@ def render(sid, mon="toan11"):
                     bai_count = len(curriculum.load_videos(ma)) if m.get("co_du_lieu") else 0
                     is_active = (ma == mon)
                     active_border = "border: 2px solid #3b82f6;" if is_active else ""
-                    
+                    if m.get("co_du_lieu"):
+                        sub_mon = f"{bai_count} bài học" + (" • Đang học" if is_active else "")
+                    else:
+                        sub_mon = "Sắp có nội dung — vào xem trước"
+
                     _render_html(f"""
                         <div class='ed-card' style='{active_border}'>
                             <div style="height: 120px; background-image: url('{img_b64}'); background-size: cover; background-position: center;"></div>
                             <div style='padding: 16px;'>
                                 <h4 style='margin: 0 0 8px 0; font-size: 16px; font-weight: 700; color: #1e293b;'>{m['icon']} {m['ten']}</h4>
-                                <div style='font-size: 13px; color: #64748b; margin-bottom: 16px;'>{bai_count} bài học { "• Đang học" if is_active else "" }</div>
+                                <div style='font-size: 13px; color: #64748b; margin-bottom: 16px;'>{sub_mon}</div>
                             </div>
                         </div>
                     """)
                     _render_html("<div style='margin-top:-64px; padding: 0 16px 16px 16px;' class='btn-overlay'>")
                     if st.button("Vào học", key=f"btn_mon_{ma}", use_container_width=True):
-                        st.session_state.mon = ma
+                        chon_mon_va_di(ma, "📚 Bài học")
                         st.rerun()
                     _render_html("</div>")
     

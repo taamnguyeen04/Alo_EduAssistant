@@ -33,6 +33,7 @@ _NODE_CHO_PHEP = (
 
 
 def _kiem_tra_an_toan(bieu_thuc):
+    # Duyệt cây AST: node/tên hàm nào ngoài danh sách cho phép thì chặn ngay.
     try:
         tree = ast.parse(bieu_thuc, mode="eval")
     except SyntaxError as e:
@@ -49,6 +50,7 @@ def _kiem_tra_an_toan(bieu_thuc):
 
 def tinh_gia_tri(bieu_thuc, x):
     """Tính f(x), x là số hoặc mảng numpy. Ném ValueError nếu biểu thức bẩn."""
+    # Chấp nhận ^ viết tay của HS rồi mới kiểm tra an toàn trước khi eval.
     tree = _kiem_tra_an_toan(bieu_thuc.replace("^", "**"))
     code = compile(tree, "<bieu-thuc>", "eval")
     return eval(code, {"__builtins__": {}}, {**_HAM_CHO_PHEP, "x": x})  # noqa: S307
@@ -88,6 +90,7 @@ _HAM_LG = {"sin": np.sin, "cos": np.cos, "tan": np.tan, "cot": lambda x: 1 / np.
 
 def do_thi_ham_so(ham="sin", a=1.0, b=1.0, c=0.0, d=0.0, so_ky=2):
     """y = a·f(bx+c)+d trên [-so_ki·π, so_ki·π]. Tan/cot tự cắt điểm gián đoạn."""
+    # Tan/cot vọt vô cùng ở điểm gián đoạn nên cắt ngọn để đồ thị không xấu.
     import plotly.graph_objects as go
     f = _HAM_LG[ham]
     xs = np.linspace(-so_ky * math.pi, so_ky * math.pi, 1200)

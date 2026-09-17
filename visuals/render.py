@@ -196,6 +196,7 @@ def _render_file(
 
 
 def _cache_key(payload: Dict[str, Any]) -> str:
+    # Hash toàn bộ tham số: cùng tham số thì cùng tên file cache.
     return hashlib.sha1(json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")).hexdigest()[:16]
 
 
@@ -254,12 +255,14 @@ def _extract_preview_frames(mp4: str, cache_prefix: str, count: int = 4) -> List
 
 def render(preset, params, quality="l", timeout=300):
     """Render a trusted preset (backward compatible)."""
+    # Preset khóa sẵn nên chỉ kẹp tham số số, không sợ code bẩn.
     if quality not in _QUALITY_OK:
         raise ValueError("quality chỉ nhận 'l', 'm', 'h', 'p' hoặc 'k'")
     sach = validate(preset, params)
     key = _cache_key({"p": preset, "q": quality, "v": CODE_VERSION, **sach})
     os.makedirs(CACHE_DIR, exist_ok=True)
     mp4 = os.path.join(CACHE_DIR, f"{preset}_{key}.mp4")
+    # Có cache thì trả ngay để lần 2 không tốn vài phút render lại.
     if os.path.exists(mp4) and os.path.getsize(mp4) > 0:
         return {"mp4": mp4, "cached": True, "log": "Lấy từ cache, không render lại."}
     if _nhan_cache_cu(mp4, {"p": preset, "q": quality, "v": _V1_CODE_VERSION, **sach}, preset):
@@ -286,6 +289,7 @@ def render(preset, params, quality="l", timeout=300):
 
 def render_code(code, quality="l", timeout=300, ten="ai_tu_do", preview_count=0):
     """Render AI-generated Manim code after external AST validation."""
+    # Code AI phải qua kiem_tra_code() trước khi tới đây — hàm này chỉ render.
     if quality not in _QUALITY_OK:
         raise ValueError("quality chỉ nhận 'l', 'm', 'h', 'p' hoặc 'k'")
     key = _cache_key({"c": code, "q": quality, "v": CODE_VERSION, "mode": "video"})

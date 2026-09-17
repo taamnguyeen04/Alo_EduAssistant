@@ -77,11 +77,10 @@ def render(sid, mon="toan11"):
             ids.append(cau.get("id"))
         st.session_state.luyen_ids = ids[-200:]
         
-    # Header
+    # Header (tiêu đề trang đã có ở header chung app.py — ở đây chỉ giữ dòng mô tả)
     c_title, c_new = st.columns([3, 1])
     with c_title:
-        st.markdown("<h2 style='font-size:26px; font-weight:800; color:#0f172a; margin:0;'>✏ Luyện tập cùng AI</h2>", unsafe_allow_html=True)
-        st.markdown("<p style='font-size:14.5px; color:#64748b; margin:4px 0 16px 0;'>Thầy ra đề trong chat — em nhắn từng bước giải, mỗi bước 1 dòng</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-size:15px; color:#64748b; margin:8px 0 16px 0; text-align:center;'>Thầy ra đề trong chat — em nhắn từng bước giải, mỗi bước 1 dòng</p>", unsafe_allow_html=True)
     with c_new:
         st.markdown("<div style='height: 4px'></div>", unsafe_allow_html=True)
         cau_hien_tai = st.session_state.get("cau_hien_tai")
@@ -120,11 +119,18 @@ def render(sid, mon="toan11"):
     c_badge, c_settings = st.columns([3, 1])
     with c_badge:
         tl = round(dung/len(atts)*100) if atts else 0
+        hs0 = store.doc_hs(sid)
+        trinh0 = hs0.get("trinh_do_toan", "trung bình")
+        try:
+            diem0 = int(hs0.get("diem_trinh_do", 0) or 0)
+        except (TypeError, ValueError):
+            diem0 = 0
         st.html(f"""
             <div style='display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom: 24px;'>
                 <div style='background:#f1f5f9; color:#475569; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>📝 Đã luyện: {len(atts)}</div>
                 <div style='background:#dcfce7; color:#16a34a; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>✓ Đúng hết: {dung}</div>
                 <div style='background:#eff6ff; color:#2563eb; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>📈 Tỉ lệ đúng: {tl}%</div>
+                <div title='Đúng +1, sai -1; đủ +5 lên bậc, -5 xuống bậc' style='background:#fefce8; color:#a16207; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>🎚 {trinh0} ({diem0:+d})</div>
             </div>
         """)
         

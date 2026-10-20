@@ -27,21 +27,26 @@ def chay():
     opts = list(bai_box[0].options)
     assert len(opts) == 7, f"chi thay {len(opts)} bai: {opts}"
     assert any("31" in o for o in opts), "thieu Bai 31-33"
-    # Lọc Cần duyệt phải ra kết quả
-    chat_box = [s for s in at.selectbox if "Cần duyệt" in str(s.options)]
-    assert chat_box, "khong thay o loc chat luong"
-    chat_box[0].set_value("Cần duyệt").run()
+    # Lọc Mức độ phải có đủ Nhận biết / Thông hiểu / Vận dụng
+    muc_box = [s for s in at.selectbox if "Vận dụng" in str(s.options)]
+    assert muc_box, "khong thay o loc muc do"
+    muc_box[0].set_value("Nhận biết").run()
+    assert not at.exception, at.exception
+    # Lọc Dạng câu hỏi phải có Trắc nghiệm / Đúng – Sai / Trả lời ngắn
+    loai_box = [s for s in at.selectbox if "Trả lời ngắn" in str(s.options)]
+    assert loai_box, "khong thay o loc dang cau hoi"
+    loai_box[0].set_value("Trắc nghiệm").run()
     assert not at.exception, at.exception
     # Mở expander đầu tiên, bấm Sửa -> form hiện
-    assert len(at.expander) > 0, "loc Can duyet rong?"
+    assert len(at.expander) > 0, "loc Trach nghiem + Nhan biet rong?"
     sua = [b for b in at.button if str(b.label).startswith("✏️")]
     assert sua, "khong thay nut Sua"
     sua[0].click().run()
     assert not at.exception, at.exception
-    assert any("Lưu + đánh dấu" in str(b.label) for b in at.button), "form sua khong hien"
+    assert any("Lưu" in str(b.label) for b in at.button), "form sua khong hien"
     assert len(at.text_area) > 0, "thieu o nhap sua"
-    n_xanh = sum(1 for s in at.success if "đáp án đúng" in str(s.value))
-    print(f"THAT BAI: khong ({len(opts)} bai | loc + sua OK | {n_xanh} dap-an xanh)")
+    n_xanh = sum(1 for s in at.success if "✅" in str(s.value))
+    print(f"THAT BAI: khong ({len(opts)} bai | loc dang + muc do + sua OK | {n_xanh} dap-an xanh)")
 
 
 chay()

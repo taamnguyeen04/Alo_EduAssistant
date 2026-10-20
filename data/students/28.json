@@ -15,9 +15,27 @@
     {
       "role": "assistant",
       "content": "Chào em, em muốn luyện tập, nhưng em có biết cần luyện tập phần nào không? Em có thể tập trung vào 3 dạng bài cơ bản sau đây:\n\n1. **Áp dụng hệ thức $\\sin^2x + \\cos^2x = 1$ để tìm giá trị còn biết một lượng giác.** \n Ví dụ: Biết $\\sin x = \\frac{3}{5}$ và $x$ là góc nhọn. Tính $\\cos x$, $\\tan x$, $\\cot x$. \n *Gợi ý:* Dùng hệ thức để tìm $\\cos x$, sau đó dùng $\\tan x = \\frac{\\sin x}{\\cos x}$.\n\n2. **Chứng minh biểu thức lượng giác đồng dạng.** \n Ví dụ: Chứng minh $\\frac{\\sin x}{1+\\cos x} = \\frac{1-\\cos x}{\\sin x}$. \n *Gợi ý:* Bắt đầu từ vế phải, nhân tử chung hoặc dùng hệ thức $\\sin^2x + \\cos^2x = 1$ để biến đổi.\n\n3. **Giải phương trình lượng giác đơn giản.** \n Ví dụ: $\\sin^2x - \\cos^2x = 0$. \n *Gợi ý:* Dùng công thức $\\cos^2x = 1 - \\sin^2x$ để về một lượng giác, hoặc nhận ra hiệu hai bình phương.\n\nEm muốn làm dạng nào trước? Hoặc em có đề bài cụ thể nào cần hỗ trợ không? \nNếu em cần xem lại lý thuyết, mình có video này để ôn lại khái niệm đường tròn đơn vị và hệ thức cơ bản: \n[Video: Bài 1. Giá trị lượng giác của góc lượng giác](https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG)"
+    },
+    {
+      "role": "user",
+      "content": "tôi không hiểu"
+    },
+    {
+      "role": "assistant",
+      "content": "Xin lỗi vì có thể làm bạn cảm thấy khó hiểu! Dưới đây là phần dẫn dắt theo phong cách Socrates để bạn tự tìm ra điều mình chưa rõ. Hãy cùng bắt đầu với Bài 10: Đường thẳng và mặt phẳng trong không gian.\n\n**Bước 1: Chẩn đoán** \nHãy nói thêm về điều bạn không hiểu: \n- Bạn thấy khó ở phần nào của bài? Ví dụ: cách biểu diễn điểm/đường thẳng/mặt phẳng, quan hệ thuộc, hay cách xác định mặt phẳng? \n- Có cụ thể nào bạn đang bối rối không? \n\n**Bước 2: Dẫn dắt theo trình độ** \nVì bạn đang ở trình độ khá, tôi sẽ gợi ý một số khái niệm cơ bản để bạn tự liên hệ: \n- Recall that in space, a plane can be defined by three non-collinear points, or by a line and a point not on it. \n- Ví dụ: Cho ba điểm A, B, C không thẳng hàng, mặt phẳng nào chứa chúng? \n- Hoặc: Nếu đường thẳng d và điểm M không thuộc d, mặt phẳng chứa d và M là gì? \n\nHãy suy nghĩ và trả lời câu hỏi trên, tôi sẽ hướng dẫn tiếp dựa trên phản hồi của bạn.\n\n**Bước 3: Chốt và nối kho** \nDựa trên câu trả lời của bạn, tôi sẽ gợi ý bài tập luyện tập từ kho GV hoặc video hỗ trợ."
+    },
+    {
+      "role": "user",
+      "content": "khái niệm song song là gì"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào bạn! Đây là một khái niệm quan trọng trong hình học không gian. Dưới đây là phần dẫn dắt theo phong cách Socrates để bạn tự tìm ra câu trả lời.\n\n**Bước 1: Chẩn đoán**\nHãy bắt đầu bằng việc nhìn nhận lại khái niệm song song trong không gian:\n- Bạn có thể hình dung hai đường thẳng song song trong không gian không? Chúng có điểm chung nào không?\n- Có bao nhiêu mặt phẳng có thể chứa cả hai đường thẳng song song đó? Tại sao?\n\n**Bước 2: Dẫn dắt theo trình độ**\nVì bạn ở trình độ khá, tôi sẽ gợi ý các khía cạnh cần lưu ý:\n- Recall that in plane geometry, two lines are parallel if they never intersect. How does this extend to 3D space?\n- Trong không gian, hai đường thẳng song song phải nằm trong cùng một mặt phẳng và không cắt nhau. Đây là điều kiện then chốt.\n- Ví dụ: Cho đường thẳng d₁ và d₂. Nếu d₁ // d₂, mặt phẳng nào chứa cả hai đường? Có duy nhất một mặt phẳng không?\n\n**Bước 3: Chốt và nối kho**\nDựa trên suy nghĩ của bạn, tôi sẽ củng cố và đề xuất bài tập luyện tập từ kho GV:\n- Nhắc lại định nghĩa: Hai đường thẳng song song khi chúng nằm trong cùng một mặt phẳng và không cắt nhau.\n- Khẳng định tính chất: Có duy nhất một mặt phẳng chứa hai đường thẳng song song.\n- Gợi ý luyện tập: Hãy xem lại các bài tập trong mục CÂU THAM KHẢO liên quan đến mặt phẳng và đường thẳng để củng cố.\n\nHãy trả lời các câu hỏi trên để tôi có thể hỗ trợ bạn cụ thể hơn!"
     }
   ],
-  "weaknesses": [],
+  "weaknesses": [
+    "chưa xác định"
+  ],
   "id": "28",
   "ten": "28",
   "lop": "11A1",
@@ -25,17 +43,43 @@
   "trinh_do_toan": "khá",
   "manh": [],
   "yeu": [],
-  "bai_hien_tai": "Bài 1. Giá trị lượng giác của góc lượng giác",
-  "video_da_xem": [],
+  "bai_hien_tai": "Bài 10. Đường thẳng và mặt phẳng trong không gian",
+  "video_da_xem": [
+    "https://youtu.be/5MDMV-eDijE?si=njgdg3qj0PSjsFkw"
+  ],
   "phong_cach": "",
   "tkb": {},
   "bai_de_xuat": [],
   "viec_da_xong": [],
   "video_goi_y_count": {
-    "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG": 2
+    "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG": 2,
+    "https://youtu.be/5MDMV-eDijE?si=njgdg3qj0PSjsFkw": 2
   },
   "moc_attempt": 0,
   "conversations": [
+    {
+      "id": "cuoc-1789651298903",
+      "tieu_de": "B10: tôi không hiểu",
+      "bai": "Bài 10. Đường thẳng và mặt phẳng trong không gian",
+      "messages": [
+        {
+          "role": "user",
+          "content": "tôi không hiểu"
+        },
+        {
+          "role": "assistant",
+          "content": "Xin lỗi vì có thể làm bạn cảm thấy khó hiểu! Dưới đây là phần dẫn dắt theo phong cách Socrates để bạn tự tìm ra điều mình chưa rõ. Hãy cùng bắt đầu với Bài 10: Đường thẳng và mặt phẳng trong không gian.\n\n**Bước 1: Chẩn đoán** \nHãy nói thêm về điều bạn không hiểu: \n- Bạn thấy khó ở phần nào của bài? Ví dụ: cách biểu diễn điểm/đường thẳng/mặt phẳng, quan hệ thuộc, hay cách xác định mặt phẳng? \n- Có cụ thể nào bạn đang bối rối không? \n\n**Bước 2: Dẫn dắt theo trình độ** \nVì bạn đang ở trình độ khá, tôi sẽ gợi ý một số khái niệm cơ bản để bạn tự liên hệ: \n- Recall that in space, a plane can be defined by three non-collinear points, or by a line and a point not on it. \n- Ví dụ: Cho ba điểm A, B, C không thẳng hàng, mặt phẳng nào chứa chúng? \n- Hoặc: Nếu đường thẳng d và điểm M không thuộc d, mặt phẳng chứa d và M là gì? \n\nHãy suy nghĩ và trả lời câu hỏi trên, tôi sẽ hướng dẫn tiếp dựa trên phản hồi của bạn.\n\n**Bước 3: Chốt và nối kho** \nDựa trên câu trả lời của bạn, tôi sẽ gợi ý bài tập luyện tập từ kho GV hoặc video hỗ trợ."
+        },
+        {
+          "role": "user",
+          "content": "khái niệm song song là gì"
+        },
+        {
+          "role": "assistant",
+          "content": "Chào bạn! Đây là một khái niệm quan trọng trong hình học không gian. Dưới đây là phần dẫn dắt theo phong cách Socrates để bạn tự tìm ra câu trả lời.\n\n**Bước 1: Chẩn đoán**\nHãy bắt đầu bằng việc nhìn nhận lại khái niệm song song trong không gian:\n- Bạn có thể hình dung hai đường thẳng song song trong không gian không? Chúng có điểm chung nào không?\n- Có bao nhiêu mặt phẳng có thể chứa cả hai đường thẳng song song đó? Tại sao?\n\n**Bước 2: Dẫn dắt theo trình độ**\nVì bạn ở trình độ khá, tôi sẽ gợi ý các khía cạnh cần lưu ý:\n- Recall that in plane geometry, two lines are parallel if they never intersect. How does this extend to 3D space?\n- Trong không gian, hai đường thẳng song song phải nằm trong cùng một mặt phẳng và không cắt nhau. Đây là điều kiện then chốt.\n- Ví dụ: Cho đường thẳng d₁ và d₂. Nếu d₁ // d₂, mặt phẳng nào chứa cả hai đường? Có duy nhất một mặt phẳng không?\n\n**Bước 3: Chốt và nối kho**\nDựa trên suy nghĩ của bạn, tôi sẽ củng cố và đề xuất bài tập luyện tập từ kho GV:\n- Nhắc lại định nghĩa: Hai đường thẳng song song khi chúng nằm trong cùng một mặt phẳng và không cắt nhau.\n- Khẳng định tính chất: Có duy nhất một mặt phẳng chứa hai đường thẳng song song.\n- Gợi ý luyện tập: Hãy xem lại các bài tập trong mục CÂU THAM KHẢO liên quan đến mặt phẳng và đường thẳng để củng cố.\n\nHãy trả lời các câu hỏi trên để tôi có thể hỗ trợ bạn cụ thể hơn!"
+        }
+      ]
+    },
     {
       "id": "cuoc-1789553765374",
       "tieu_de": "B1: sin²x + cos²x = ? Giải thích từ ",
@@ -59,5 +103,11 @@
         }
       ]
     }
-  ]
+  ],
+  "diem_trinh_do": 0,
+  "mon_can_ho_tro": [],
+  "muc_tieu": "",
+  "gio_tu_hoc": "",
+  "muc_tieu_giai_doan": {},
+  "ke_hoach": {}
 }

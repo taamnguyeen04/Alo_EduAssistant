@@ -1,0 +1,12 @@
+{
+  "sid": "21-11a7",
+  "cau_id": "B1-TN-033",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Điểm biểu diễn góc $\\alpha$ nằm trong góc phần tư thứ tư. Khẳng định nào đúng?\nA. $\\cot\\alpha>0$.\nB. $\\tan\\alpha>0$.\nC. $\\sin\\alpha>0$.\nD. $\\cos\\alpha>0$.",
+  "dang": "TN",
+  "loai": "binh_thuong",
+  "chon": "C",
+  "dung": false,
+  "dung_het": false,
+  "do_kho": 1
+}

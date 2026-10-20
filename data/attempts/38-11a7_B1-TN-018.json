@@ -1,0 +1,12 @@
+{
+  "sid": "38-11a7",
+  "cau_id": "B1-TN-018",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Trên cùng một đường tròn định hướng, xét bốn cung lượng giác có chung điểm đầu và có số đo $\\alpha=-\\frac{5\\pi}{6}$, $\\beta=\\frac\\pi3$, $\\gamma=\\frac{25\\pi}{3}$, $\\delta=\\frac{19\\pi}{6}$. Những cung nào có điểm cuối trùng nhau?\nA. $\\beta$ và $\\gamma$; $\\alpha$ và $\\delta$.\nB. $\\alpha,\\beta,\\gamma$.\nC. $\\beta,\\gamma,\\delta$.\nD. $\\alpha$ và $\\beta$; $\\gamma$ và $\\delta$.",
+  "dang": "TN",
+  "loai": "lam_lai",
+  "chon": "D",
+  "dung": false,
+  "dung_het": false,
+  "do_kho": 1
+}

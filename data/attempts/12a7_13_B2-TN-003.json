@@ -1,0 +1,12 @@
+{
+  "sid": "12a7_13",
+  "cau_id": "B2-TN-003",
+  "bai": "Bài 2. Công thức lượng giác",
+  "de": "Biểu thức $\\sin x\\cos y-\\cos x\\sin y$ bằng biểu thức nào sau đây?\nA. $\\cos(x-y)$.\nB. $\\cos(x+y)$.\nC. $\\sin(x-y)$.\nD. $\\sin(y-x)$.",
+  "dang": "TN",
+  "loai": "binh_thuong",
+  "chon": "C",
+  "dung": true,
+  "dung_het": true,
+  "do_kho": 1
+}

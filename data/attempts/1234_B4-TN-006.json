@@ -1,0 +1,12 @@
+{
+  "sid": "1234",
+  "cau_id": "B4-TN-006",
+  "bai": "Bài 4. Phương trình lượng giác",
+  "de": "Cho phương trình \\(f(x)=g(x)\\) xác định với mọi \\(x>0\\). Trong các phương trình dưới đây, phương trình nào không tương đương với phương trình đã cho? A. \\(\\sqrt{x^2+2x+3}\\,f(x)=\\sqrt{x^2+2x+3}\\,g(x)\\). B. \\(\\dfrac{f(x)}{\\sqrt{-x}}=\\dfrac{g(x)}{\\sqrt{-x}}\\). C. \\(k f(x)=k g(x)\\), với mọi số thực \\(k\\ne0\\). D. \\((x^2+1)f(x)=(x^2+1)g(x)\\).",
+  "dang": "TN",
+  "loai": "binh_thuong",
+  "chon": "A",
+  "dung": false,
+  "dung_het": false,
+  "do_kho": 1
+}

@@ -1,0 +1,219 @@
+{
+  "main": {
+    "id": "58db9f7dc0150f42",
+    "type": "split",
+    "children": [
+      {
+        "id": "66b7b29c2e9c7731",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "33b10faae56f28fd",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "7bb29dbe30da9364",
+    "type": "split",
+    "children": [
+      {
+        "id": "9803e0baf5fdefb2",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c48074052a8c3336",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "4df75c85789b129c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "00af4ba0cdf58ea3",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "21078006ed42169c",
+    "type": "split",
+    "children": [
+      {
+        "id": "2b2f97400119dd29",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c945677cc7c4f571",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "wiki/C1_B4.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "c6593b51a11ae742",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "wiki/C1_B4.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "c4297ef48c0f7c48",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "7c8943a1b720a13a",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "3292eba4df58f1c4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "wiki/C1_B4.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "33b10faae56f28fd",
+  "lastOpenFiles": [
+    "wiki/C1_B4.md",
+    "questions/question.schema.md",
+    "relations.md",
+    "syllabus.md",
+    "analyses/khoang-trong-kien-thuc.md",
+    "analyses",
+    "dang-bai/C1_B4_K09__BaiTap.md",
+    "dang-bai/C1_B4_K08__BaiTap.md",
+    "dang-bai/C1_B4_K07__BaiTap.md",
+    "dang-bai/C1_B4_K06__BaiTap.md",
+    "dang-bai/C1_B4_K05__BaiTap.md",
+    "dang-bai/C1_B4_K04__BaiTap.md",
+    "dang-bai/C1_B4_K03__BaiTap.md",
+    "dang-bai/C1_B4_K02__BaiTap.md",
+    "dang-bai/C1_B4_K01__BaiTap.md",
+    "dang-bai/C1_B3_K11__BaiTap.md",
+    "dang-bai/C1_B3_K10__BaiTap.md",
+    "dang-bai/C1_B3_K09__BaiTap.md",
+    "dang-bai/C1_B3_K08__BaiTap.md",
+    "dang-bai/C1_B3_K07__BaiTap.md",
+    "dang-bai/C1_B3_K06__BaiTap.md",
+    "dang-bai/C1_B3_K05__BaiTap.md",
+    "dang-bai/C1_B3_K04__BaiTap.md",
+    "dang-bai/C1_B3_K03__BaiTap.md",
+    "dang-bai/C1_B3_K02__BaiTap.md",
+    "dang-bai/C1_B3_K01__BaiTap.md",
+    "dang-bai/C1_B2_K08__BaiTap.md",
+    "dang-bai",
+    "concepts"
+  ]
+}

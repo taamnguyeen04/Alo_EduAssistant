@@ -3,7 +3,7 @@
 # ═══════════════════════════════════════════════════════════
 #  CHẾ ĐỘ AI — MUỐN ĐỔI THÌ ĐỔI NGAY DÒNG DƯỚI:
 #    "test" = miễn phí như cũ (code/test hằng ngày)
-#    "prod" = thi/demo (2 DeepSeek: PRO hỏi đáp + FLASH việc ngầm)
+#    "prod" = thi/demo (PRO GPT-5.6-Luna hỏi đáp + FLASH DeepSeek việc ngầm)
 #  Đổi xong lưu file, chạy lại:  streamlit run app.py
 # ═══════════════════════════════════════════════════════════
 LLM_MODE = "prod"
@@ -82,7 +82,7 @@ def trang_dang_nhap():
         .saas-logo svg { width: 44px; height: 44px; }
         .saas-title {
             text-align: center;
-            font-size: 26px;
+            font-size: 23px;
             font-weight: 800;
             color: #0f172a;
             margin: 0 0 8px 0;
@@ -90,7 +90,7 @@ def trang_dang_nhap():
         }
         .saas-tagline {
             text-align: center;
-            font-size: 15px;
+            font-size: 13.5px;
             color: #64748b;
             margin: 0 0 36px 0;
         }
@@ -108,14 +108,14 @@ def trang_dang_nhap():
         }
         
         .saas-card-title {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 700;
             color: #0f172a;
             margin: 0 0 4px 0;
             letter-spacing: -0.3px;
         }
         .saas-card-sub {
-            font-size: 14.5px;
+            font-size: 13.5px;
             color: #64748b;
             margin: 0 0 16px 0;
         }
@@ -148,7 +148,7 @@ def trang_dang_nhap():
         }
         [data-testid="stRadio"] label[data-baseweb="radio"] div {
             font-weight: 600;
-            font-size: 14.5px;
+            font-size: 13.5px;
             color: #64748b;
         }
         [data-testid="stRadio"] label[data-baseweb="radio"]:has(input:checked) div {
@@ -163,7 +163,7 @@ def trang_dang_nhap():
         .stButton > button[kind="primary"] {
             height: 52px;
             border-radius: 12px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 600;
             margin-top: 12px;
             background: #2563EB;
@@ -191,14 +191,14 @@ def trang_dang_nhap():
             gap: 8px;
             font-weight: 600;
             color: #334155;
-            font-size: 14px;
+            font-size: 13px;
             margin-bottom: 12px;
         }
         .saas-help-card ol {
             margin: 0;
             padding-left: 20px;
             color: #475569;
-            font-size: 13.5px;
+            font-size: 12.5px;
             line-height: 1.6;
         }
         .saas-help-card ol li {
@@ -206,7 +206,7 @@ def trang_dang_nhap():
         }
         .saas-support-text {
             margin-top: 12px;
-            font-size: 13px;
+            font-size: 12px;
             color: #64748b;
             padding-top: 12px;
             border-top: 1px solid #e2e8f0;
@@ -321,7 +321,7 @@ if tab_hien_tai not in ["🏠 Trang chủ", "👤 Hồ sơ"]:
         # HS: tiêu đề trang duy nhất — căn giữa, cỡ lớn
         # (đổi môn ở 🏠 Trang chủ, đổi bài ở 📚 Bài học / 👤 Hồ sơ).
         st.markdown(f"""<div style='text-align:center;margin:10px 0 4px 0;'>
-        <h1 style='font-size:40px;font-weight:800;margin:0;color:#0f172a;letter-spacing:-1px;'>{tab_hien_tai}</h1>
+        <h1 style='font-size:36px;font-weight:800;margin:0;color:#0f172a;letter-spacing:-1px;'>{tab_hien_tai}</h1>
         <div style='width:72px;height:4px;border-radius:2px;margin:10px auto 0 auto;background:linear-gradient(90deg,#3b82f6,#8b5cf6);'></div>
         </div>""", unsafe_allow_html=True)
     else:
@@ -381,8 +381,9 @@ with st.sidebar:
         if "tab_gv" not in st.session_state:
             st.session_state.tab_gv = "Báo cáo lớp"
         # Migrate tab GV cũ (trước khi gộp trang) để không vỡ session đang lưu
-        _TAB_GV_CU = {"Soạn bài trực quan": "Soạn bài & Học liệu",
-                      "Học liệu": "Soạn bài & Học liệu",
+        _TAB_GV_CU = {"Soạn bài trực quan": "Tạo video",
+                      "Học liệu": "Tạo video",
+                      "Soạn bài & Học liệu": "Tạo video",
                       "Giao bài": "Quản lý lớp",
                       "Lớp học": "Quản lý lớp"}
         if st.session_state.get("tab_gv") in _TAB_GV_CU:
@@ -395,13 +396,17 @@ with st.sidebar:
     st.markdown("<div style='min-height: 80px;'></div>", unsafe_allow_html=True)
     if st.button("⎋ Đăng xuất", use_container_width=True):
         for k in ("auth_role", "auth_sid", "tab_hs", "tab_gv", "sid",
-                  "cau_hien_tai", "cau_da_hien", "kq_cuoi", "goiy_cauhoi", "bc_gv",
-                  "luyen_messages", "luyen_ids", "cid", "cid_chon",
-                  "_tab_hs_pending", "_tab_gv_pending", "_bai_moi",
-                  "_lich_su_hs", "_tab_cuoi_hs", "_lich_su_gv", "_tab_cuoi_gv",
-                  "_pf_sid", "tkb_file_da_xu_ly"):
+                   "cau_hien_tai", "cau_da_hien", "kq_cuoi", "goiy_cauhoi", "bc_gv",
+                   "luyen_messages", "luyen_ids", "cid", "cid_chon",
+                   "_tab_hs_pending", "_tab_gv_pending", "_bai_moi",
+                   "_lich_su_hs", "_tab_cuoi_hs", "_lich_su_gv", "_tab_cuoi_gv",
+                   "_pf_sid", "tkb_file_da_xu_ly",
+                   "tn_bai", "tn_bai_da_chon", "tn_cau", "tn_che_do", "tn_kq",
+                   "tn_con", "tn_con_idx", "tn_con_kq", "tn_yeu", "tn_ids"):
             st.session_state.pop(k, None)
-        for k in [k for k in list(st.session_state.keys()) if k.startswith("pf_")]:
+        for k in [k for k in list(st.session_state.keys())
+                  if k.startswith("pf_") or k.startswith("tn_chon_")
+                  or k.startswith("tn_con_") or k.startswith("tn_lamlai_")]:
             st.session_state.pop(k, None)
         st.rerun()
 
@@ -426,7 +431,7 @@ else:
     if tab == "Báo cáo lớp":
         from ui import gv_dashboard
         gv_dashboard.render(MON)
-    elif tab == "Soạn bài & Học liệu":
+    elif tab == "Tạo video":
         from ui import gv_soanbai
         gv_soanbai.render(MON)
     elif tab == "Quản lý lớp":

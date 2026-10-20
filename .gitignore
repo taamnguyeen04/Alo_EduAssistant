@@ -222,3 +222,5 @@ __marimo__/
 *.docx
 *.md
 !README.md
+/CERN_Poster_Template
+/data/students

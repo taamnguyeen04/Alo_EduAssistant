@@ -1,0 +1,12 @@
+{
+  "sid": "1234",
+  "cau_id": "B1-TN-008",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Cho $a=\\frac\\pi2+2k\\pi$, với $k\\in\\mathbb{Z}$. Tìm $k$ để $10\\pi<a<11\\pi$.\nA. $k=7$.\nB. $k=5$.\nC. $k=4$.\nD. $k=6$.",
+  "dang": "TN",
+  "loai": "lam_lai",
+  "chon": "D",
+  "dung": false,
+  "dung_het": false,
+  "do_kho": 1
+}

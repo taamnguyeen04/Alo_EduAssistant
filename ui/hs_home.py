@@ -178,7 +178,7 @@ def render(sid, mon="toan11"):
                 <div style='font-size:21px;font-weight:800;color:#0f172a;letter-spacing:-0.3px;
                      margin-bottom:4px;'>📋 Kế hoạch học tập hôm nay</div>
                 <div style='width:72px;height:4px;border-radius:2px;background:linear-gradient(90deg,#f59e0b,#ef4444);margin:10px 0 16px 0;'></div>
-                <div style='font-size:17px;color:#334155;margin-bottom:8px;'>Em chưa đặt <b>mục tiêu</b> và chưa tải
+                <div style='font-size:17px;color:#334155;margin-bottom:8px;'>Bạn chưa đặt <b>mục tiêu</b> và chưa tải
                     <b>thời khóa biểu</b> — AI chưa có gì để lên kế hoạch nhắc học mỗi ngày.</div>
                 <div style='font-size:15px;color:#64748b;'>Vào Hồ sơ làm 2 bước này, quay lại đây là có kế hoạch ngay! 🚀</div>
             </div>
@@ -201,7 +201,7 @@ def render(sid, mon="toan11"):
                 ma = mon_keys[i + j]
                 m = ds_mon[ma]
                 with cols[j]:
-                    img_b64 = _get_base64_image(m.get("img", "toan11.png"))
+                    img_b64 = _get_base64_image(m.get("img") or subjects.MON_HOC[subjects.MON_MAC_DINH]["img"])
                     bai_count = len(curriculum.load_videos(ma)) if m.get("co_du_lieu") else 0
                     is_active = (ma == mon)
                     active_border = "border: 2px solid #3b82f6;" if is_active else ""
@@ -315,7 +315,7 @@ def render(sid, mon="toan11"):
         if nhom:
             for n in nhom:
                 tv = n.get("thanh_vien", [])
-                # Hiện tên kèm mã để em biết mình đúng nhóm
+                # Hiện tên kèm mã để bạn biết mình đúng nhóm
                 ten_tv = []
                 for m in tv:
                     try:

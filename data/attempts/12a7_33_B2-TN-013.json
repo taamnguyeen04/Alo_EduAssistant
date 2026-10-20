@@ -1,0 +1,12 @@
+{
+  "sid": "12a7_33",
+  "cau_id": "B2-TN-013",
+  "bai": "Bài 2. Công thức lượng giác",
+  "de": "Trong các công thức sau, công thức nào sai? Xét trên miền xác định tương ứng.\nA. $\\cot 2x=\\frac{\\cot^{2} x-1}{2\\cot x}$.\nB. $\\tan 2x=\\frac{2\\tan x}{1+\\tan^{2} x}$.\nC. $\\cos 3x=4\\cos^{3} x-3\\cos x$.\nD. $\\sin 3x=3\\sin x-4\\sin^{3} x$.",
+  "dang": "TN",
+  "loai": "khong_biet",
+  "chon": "E",
+  "dung": false,
+  "dung_het": false,
+  "do_kho": 1
+}

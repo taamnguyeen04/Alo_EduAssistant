@@ -114,6 +114,17 @@ def do_kho_sao(n):
     return "★" * int(n) + "☆" * (3 - int(n))
 
 
+MUC_DO_TN = {1: "Nhận biết", 2: "Thông hiểu", 3: "Vận dụng"}
+
+
+def muc_do_label(n):
+    """1 -> 'Nhận biết', 2 -> 'Thông hiểu', 3 -> 'Vận dụng'."""
+    try:
+        return MUC_DO_TN.get(int(n), f"Mức {n}")
+    except (TypeError, ValueError):
+        return "Thông hiểu"
+
+
 CAU_HOI_MAU = [  # giữ để tương thích cũ (bản Toán 11)
     "sin²x + cos²x = ? Giải thích từ đường tròn lượng giác.",
     "Đạo hàm của y = x² + 3x tại x = 1 là bao nhiêu? Dẫn dắt từng bước.",

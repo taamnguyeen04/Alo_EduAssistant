@@ -40,7 +40,8 @@ check("hs-luu-truong-moi", hs2["yeu"] == ["sợ hình không gian"] and hs2["tkb
       and hs2["bai_hien_tai"] == "Bài 1. X")
 
 # 2. Điểm đệm trình độ: đúng +1/sai -1, đủ +5 ròng mới lên 1 bậc
-store.luu_hs(SID, {**store.doc_hs(SID), "trinh_do_toan": "trung bình", "diem_trinh_do": 0})
+store.luu_hs(SID, {**store.doc_hs(SID), "trinh_do_toan": "trung bình", "diem_trinh_do": 0,
+                   "trinh_do_mon": {}, "diem_trinh_do_mon": {}})
 for _ in range(4):
     cu, moi = student.tu_dong_cap_nhat_trinh_do(SID, True)
 check("4-dung-chua-len", (cu, moi) == ("trung bình", "trung bình")
@@ -62,7 +63,8 @@ cu, moi = student.tu_dong_cap_nhat_trinh_do(SID, False)
 check("tu-xuong-trinh-do", (cu, moi) == ("khá", "trung bình"))
 
 # 4. Đúng/sai xen kẽ quanh 0 thì giữ nguyên bậc
-store.luu_hs(SID, {**store.doc_hs(SID), "trinh_do_toan": "trung bình", "diem_trinh_do": 0})
+store.luu_hs(SID, {**store.doc_hs(SID), "trinh_do_toan": "trung bình", "diem_trinh_do": 0,
+                   "trinh_do_mon": {}, "diem_trinh_do_mon": {}})
 for kq in (True, False, True, True, False, False, True):
     cu, moi = student.tu_dong_cap_nhat_trinh_do(SID, kq)
 check("xen-ke-giu-nguyen", (cu, moi) == ("trung bình", "trung bình")
@@ -89,6 +91,7 @@ def gia_chat(msgs):
 student.llm.chat = gia_chat
 hs = store.doc_hs(SID)
 hs["trinh_do_toan"] = "giỏi"
+hs["trinh_do_mon"] = {}  # dict rỗng để đi đường fallback khóa legacy
 store.luu_hs(SID, hs)
 student.hs_chat(SID, "sin là gì")
 check("prompt-theo-trinh-do", "trình độ=giỏi" in bat.get("system", ""), bat.get("system", "")[:60])

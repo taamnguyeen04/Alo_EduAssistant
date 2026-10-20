@@ -1,0 +1,12 @@
+{
+  "sid": "38-11a7",
+  "cau_id": "B1-TN-028",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Có bao nhiêu điểm $M$ phân biệt trên đường tròn lượng giác gốc $A$ biểu diễn các góc có số đo $\\frac\\pi6+k\\frac{2\\pi}{3}$, với $k\\in\\mathbb{Z}$?\nA. $6$.\nB. $4$.\nC. $3$.\nD. $8$.",
+  "dang": "TN",
+  "loai": "binh_thuong",
+  "chon": "C",
+  "dung": true,
+  "dung_het": true,
+  "do_kho": 1
+}

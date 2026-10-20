@@ -1,0 +1,12 @@
+{
+  "sid": "1",
+  "cau_id": "B2-TN-027",
+  "bai": "Bài 2. Công thức lượng giác",
+  "de": "Biến đổi $\\sin\\alpha-1$ thành tích. Chọn biểu thức đúng:\nA. $2\\sin\\left(\\alpha-\\frac\\pi2\\right)\\cos\\left(\\alpha+\\frac\\pi2\\right)$.\nB. $2\\sin\\left(\\frac\\alpha2-\\frac\\pi4\\right)\\cos\\left(\\frac\\alpha2+\\frac\\pi4\\right)$.\nC. $2\\sin\\left(\\alpha+\\frac\\pi2\\right)\\cos\\left(\\alpha-\\frac\\pi2\\right)$.\nD. $2\\sin\\left(\\frac\\alpha2+\\frac\\pi4\\right)\\cos\\left(\\frac\\alpha2-\\frac\\pi4\\right)$.",
+  "dang": "TN",
+  "loai": "khong_biet",
+  "chon": "E",
+  "dung": false,
+  "dung_het": false,
+  "do_kho": 1
+}

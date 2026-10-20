@@ -62,5 +62,49 @@
     "muc_tieu": "Ôn Bài 1. Giá trị lượng giác của góc lượng giác",
     "trang_thai": "mo",
     "tao_luc": "2026-09-17"
+  },
+  {
+    "id": "N-007",
+    "bai": "Bài 1. X",
+    "thanh_vien": [
+      "test_p4_hs"
+    ],
+    "muc_tieu": "nhom test",
+    "trang_thai": "xong",
+    "tao_luc": "2026-09-18"
+  },
+  {
+    "id": "N-008",
+    "bai": "Bài 1. X",
+    "thanh_vien": [
+      "test_p4_hs"
+    ],
+    "muc_tieu": "nhom test",
+    "trang_thai": "xong",
+    "tao_luc": "2026-09-18"
+  },
+  {
+    "id": "N-009",
+    "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+    "thanh_vien": [
+      "02",
+      "1",
+      "11a2 41"
+    ],
+    "muc_tieu": "Ôn Bài 1. Giá trị lượng giác của góc lượng giác",
+    "trang_thai": "mo",
+    "tao_luc": "2026-09-20"
+  },
+  {
+    "id": "N-010",
+    "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+    "thanh_vien": [
+      "11a2",
+      "11a2_03",
+      "11a2_16"
+    ],
+    "muc_tieu": "Ôn Bài 1. Giá trị lượng giác của góc lượng giác",
+    "trang_thai": "mo",
+    "tao_luc": "2026-09-20"
   }
 ]

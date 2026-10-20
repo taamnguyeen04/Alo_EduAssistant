@@ -16,25 +16,20 @@ def chay():
     assert nut, "khong thay nut GV"
     nut[0].click().run()
     assert not at.exception, at.exception
-    at.session_state.tab_gv = "Soạn bài & Học liệu"
+    at.session_state.tab_gv = "Tạo video"
     at.run()
     assert not at.exception, at.exception
-    # Đã xoá preset Đường tròn hard-code: radio chỉ còn Đồ thị + Tiếp tuyến
+    # Trang gọn: không tabs, không radio Đồ thị/Tiếp tuyến rườm rà
+    assert not at.tabs, "van con tabs cu"
     cac_radio = " ".join(str(r.value) + " " + " ".join(str(o) for o in r.options) for r in at.radio)
-    assert "Đường tròn" not in cac_radio, f"van con preset duong tron: {cac_radio}"
-    assert any("Hàm" in str(s.label) for s in at.selectbox), "thieu selectbox Ham (nhanh Do thi)"
-    # Chuyển sang Tiếp tuyến: phải có slider h cát tuyến
-    radio_hinh = [r for r in at.radio if any("Tiếp tuyến" in str(o) for o in r.options)]
-    assert radio_hinh, "thieu radio Hinh minh hoa"
-    radio_hinh[0].set_value("Tiếp tuyến & đạo hàm (Chương 9)").run()
-    assert not at.exception, at.exception
-    assert at.slider, "thieu slider h (nhanh Tiep tuyen)"
-    at.slider[0].set_value(0.5).run()
-    assert not at.exception, at.exception
-    nut_ai = [b for b in at.button if "AI dựng học liệu" in str(b.label)]
-    assert nut_ai, "khong thay nut AI dung hoc lieu"
+    assert "Tiếp tuyến" not in cac_radio and "Đồ thị" not in cac_radio, f"van con muc cu: {cac_radio}"
+    # Có: chọn Bài + ô mô tả + chất lượng + nút tạo video
+    assert any("Bài" in str(s.label) for s in at.selectbox), "thieu selectbox Bai"
     assert any("Mô tả video" in str(t.label) for t in at.text_area), "thieu o mo ta"
-    print("THAT BAI: khong (tab Soan bai truc quan render + muc AI, da xoá duong tron)")
+    assert any("Chất lượng" in str(r.label) for r in at.radio), "thieu radio chat luong"
+    nut_video = [b for b in at.button if "Tạo video" in str(b.label)]
+    assert nut_video, "khong thay nut Tao video"
+    print("THAT BAI: khong (trang Tao video gon)")
 
 
 chay()

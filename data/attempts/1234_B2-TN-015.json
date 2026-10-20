@@ -1,0 +1,12 @@
+{
+  "sid": "1234",
+  "cau_id": "B2-TN-015",
+  "bai": "Bài 2. Công thức lượng giác",
+  "de": "Mệnh đề nào sau đây đúng?\nA. $\\cos 2a=\\cos^{2} a-\\sin^{2} a$.\nB. $\\cos 2a=\\cos^{2} a+\\sin^{2} a$.\nC. $\\cos 2a=2\\cos^{2} a+1$.\nD. $\\cos 2a=2\\sin^{2} a-1$.",
+  "dang": "TN",
+  "loai": "binh_thuong",
+  "chon": "D",
+  "dung": false,
+  "dung_het": false,
+  "do_kho": 1
+}

@@ -50,8 +50,11 @@ def doc_hs(sid):
     data.setdefault("ten", sid)
     data.setdefault("lop", "11A1")
     data.setdefault("mon", "Toán")
-    data.setdefault("trinh_do_toan", "trung bình")
-    data.setdefault("diem_trinh_do", 0)
+    data.setdefault("trinh_do_toan", "trung bình")  # legacy, giữ để đọc file cũ
+    data.setdefault("diem_trinh_do", 0)  # legacy, giữ để đọc file cũ
+    data.setdefault("trinh_do_mon", {})  # per-môn mới: {ma_mon: trinh_do}
+    data.setdefault("diem_trinh_do_mon", {})  # điểm đệm per-môn mới
+    data.setdefault("trinh_do_bai", {})
     data.setdefault("manh", [])
     data.setdefault("yeu", [])
     data.setdefault("mon_can_ho_tro", [])

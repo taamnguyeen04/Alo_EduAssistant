@@ -97,12 +97,14 @@ def _prompt_ke_hoach(ten, mt, tkb_lich):
             dong_tkb.append(f"- {TEN_NGAY[n]}: {', '.join(mons)}")
     txt_tkb = "\n".join(dong_tkb) if dong_tkb else "(chưa có thời khóa biểu)"
     return (
-        "Bạn là trợ lý học tập cho học sinh Việt Nam lớp 11, tên em là " + (ten or "em") + ".\n"
-        "MỤC TIÊU ĐIỂM (thang 10) EM ĐẶT:\n" + txt_mt + "\n"
+        "Bạn là trợ lý học tập cho học sinh Việt Nam, tên bạn ấy là " + (ten or "bạn") + ".\n"
+        "MỤC TIÊU ĐIỂM (thang 10) BẠN ẤY ĐẶT:\n" + txt_mt + "\n"
         "THỜI KHÓA BIỂU Ở TRƯỜNG:\n" + txt_tkb + "\n"
         "Hãy lập KẾ HOẠCH TỰ HỌC 1 TUẦN, mỗi ngày 2-4 việc ngắn gọn, cụ thể "
         "(môn nào, làm gì, bao lâu), ưu tiên môn sắp học ở trường hôm sau và "
-        "môn em đặt mục tiêu cao. Toàn bộ tiếng Việt.\n"
+        "môn bạn ấy đặt mục tiêu cao. Toàn bộ tiếng Việt.\n"
+        "XƯNG HÔ trong kế hoạch/lời nhắn: xưng \"mình\", gọi học sinh là \"bạn\" "
+        "(không xưng thầy/cô, không gọi em).\n"
         "CHỈ trả về đúng 1 JSON (không giải thích, không markdown fence):\n"
         '{"tuan": {"T2": ["việc 1", "việc 2"], "T3": [], "T4": [], "T5": [], '
         '"T6": [], "T7": [], "CN": []}, '

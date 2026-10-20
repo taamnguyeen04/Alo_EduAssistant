@@ -25,7 +25,7 @@ nut = [b for b in at.button if "Bắt đầu học" in str(b.label)]
 nut[0].click().run()
 check("login-gv", not at.exception, str(at.exception)[:150])
 
-for tab in ["Quản lý lớp", "Soạn bài & Học liệu", "Báo cáo lớp", "Kho đề"]:
+for tab in ["Quản lý lớp", "Tạo video", "Báo cáo lớp", "Kho đề"]:
     at.session_state.tab_gv = tab
     at.run()
     check(f"tab-{tab}", not at.exception, str(at.exception)[:150])

@@ -1,0 +1,12 @@
+{
+  "sid": "1234",
+  "cau_id": "B4-TN-015",
+  "bai": "Bài 4. Phương trình lượng giác",
+  "de": "Khi giải phương trình \\(\\dfrac{(x-5)(x-4)}{\\sqrt{x-3}}=0\\) (1), một học sinh tiến hành: Bước 1: \\((1)\\Leftrightarrow\\dfrac{x-5}{\\sqrt{x-3}}(x-4)=0\\) (2). Bước 2: \\(\\Leftrightarrow\\dfrac{x-5}{\\sqrt{x-3}}=0\\) hoặc \\(x-4=0\\). Bước 3: \\(\\Leftrightarrow x=5\\) hoặc \\(x=4\\). Bước 4: kết luận \\(S=\\{5;4\\}\\). Cách giải trên sai từ bước nào? A. Sai ở bước 3. B. Sai ở bước 2. C. Sai ở bước 1. D. Sai ở bước 4.",
+  "dang": "TN",
+  "loai": "binh_thuong",
+  "chon": "A",
+  "dung": false,
+  "dung_het": false,
+  "do_kho": 1
+}

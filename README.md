@@ -1,4 +1,4 @@
-# Alo_EduAssistant — Trợ lí AI học Toán 11 (Socrates + kho đề + báo cáo điểm yếu)
+# Alo_EduAssistant — Trợ lí AI học tập (môn đầu tiên có dữ liệu: Toán 11)
 
 ## Chạy thử (2 phút)
 

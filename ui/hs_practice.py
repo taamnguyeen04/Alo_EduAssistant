@@ -1,234 +1,484 @@
+"""Luyện tập trắc nghiệm: 4 phương án A-D + E 'Mình không biết'.
+
+Luồng:
+- HS chọn bài giảng -> phát 1 câu TN đúng trình độ per-Bài (1 Nhận biết /
+  2 Thông hiểu / 3 Vận dụng), trình độ đổi CHẬM (ngưỡng + đủ số câu).
+- Chọn A-D: chấm local tuyệt đối, hiện đáp án + bước giải ngay.
+- Chọn E: trừ điểm nhẹ, AI sinh 2-3 câu TN con dẫn dắt (lưu điểm yếu vào
+  hồ sơ), rồi cho chọn lại câu gốc đúng 1 lần mới hiện đáp án thật.
+Công thức render qua bank_view.lam_dep_hien_thi + st.markdown (KaTeX $...$).
+"""
+import base64
 import os
 import streamlit as st
-from core import exercises, grading, store, curriculum
+from core import bank_view, exercises, grading, store
+from core.student import lay_trinh_do_bai, ten_muc_do
 from ui import widgets
-from ui.theme import page_header
+
 ATTEMPT_DIR = os.path.join("data", "attempts")
 
+_E_LABEL = "E — Mình không biết làm bài này"
 
-def _attempts(sid):
+_MIME_ANH = {"png": "image/png", "jpg": "image/jpeg",
+             "jpeg": "image/jpeg", "webp": "image/webp"}
+
+
+def _file_sang_data_url(f):
+    raw = f.getvalue()
+    if len(raw) > 4 * 1024 * 1024:
+        return None
+    ext = (f.name.rsplit(".", 1)[-1].lower() if "." in (f.name or "") else "")
+    mime = _MIME_ANH.get(ext) or getattr(f, "type", "") or "image/jpeg"
+    return "data:%s;base64,%s" % (mime, base64.b64encode(raw).decode("ascii"))
+
+
+def _attempts(sid, bai=None):
     if not os.path.isdir(ATTEMPT_DIR):
         return []
     ds = []
     for ten in sorted(os.listdir(ATTEMPT_DIR), reverse=True):
         if ten.startswith(sid + "_") and ten.endswith(".json"):
-            ds.append(store.doc_json(os.path.join(ATTEMPT_DIR, ten), {}))
+            d = store.doc_json(os.path.join(ATTEMPT_DIR, ten), {})
+            if bai and d.get("bai") != bai:
+                continue
+            ds.append(d)
     return ds
 
 
-def _tin_cau_moi(cau):
-    """Tin nhắn bot khi ra đề (chỉ đề + meta, không lộ đáp án)."""
-    nguon = cau.get("nguon", "")
-    tag = "kho GV" if "kho GV" in nguon else "AI sinh"
-    return (f"📝 **Câu {cau.get('id')}** • {cau.get('bai')} • "
-            f"Độ khó {cau.get('do_kho')} {widgets.do_kho_sao(cau.get('do_kho', 2))} • _{tag}_\n\n"
-            f"{cau.get('de')}\n\n_Viết mỗi bước giải 1 dòng rồi gửi để thầy chấm nhé._")
+def _reset_cau():
+    for k in ("tn_cau", "tn_che_do", "tn_kq", "tn_con", "tn_con_idx",
+              "tn_con_kq", "tn_yeu"):
+        st.session_state.pop(k, None)
 
 
-def _tin_cham(kq):
-    dong = []
-    for i, ok in enumerate(kq.get("dung_sai_tung_buoc", []), 1):
-        dong.append(f"{'✅' if ok else '❌'} Bước {i}: {'đúng' if ok else 'sai'}")
-    if kq.get("dung_het"):
-        dong.append("\n🎉 **Đúng hết!** Bấm *Câu tiếp theo* để lên độ khó.")
-    else:
-        buoc = kq.get("sai_o_buoc")
-        dong.append(f"\n⚠️ Sai ở **bước {buoc}**." if buoc else "\n⚠️ Chưa xác định được bước sai.")
-        if kq.get("goi_y_sua"):
-            dong.append(f"💡 Gợi ý: {kq['goi_y_sua']}")
-        if kq.get("diem_yeu_moi"):
-            dong.append("📝 Điểm yếu mới: " + ", ".join(kq["diem_yeu_moi"]))
-    return "\n".join(dong)
+def _phat_de(sid, bai, mon):
+    tri = lay_trinh_do_bai(sid, bai)
+    cau = exercises.ra_bai_tn(
+        sid, bai, tri["level"], mon,
+        loai_tru=set(st.session_state.get("tn_ids", [])),
+        cau_hien_tai_id=(st.session_state.get("tn_cau") or {}).get("id"))
+    st.session_state["tn_cau"] = cau
+    st.session_state["tn_che_do"] = "lam_bai"
+    for k in ("tn_kq", "tn_con", "tn_con_idx", "tn_con_kq", "tn_yeu"):
+        st.session_state.pop(k, None)
+    ids = st.session_state.get("tn_ids", [])
+    if cau.get("id") not in ids:
+        ids.append(cau.get("id"))
+    st.session_state["tn_ids"] = ids[-200:]
+
+
+def _hienLuaChon(phuong_an):
+    """Hiện nội dung A-D bằng markdown riêng để KaTeX $...$ luôn render đúng."""
+    for nhan, nd in phuong_an:
+        st.markdown(f"**{nhan}.** {nd or '*(trống)*'}")
+
+
+def _badge_trinh_do(tri):
+    muc = ten_muc_do(tri["level"])
+    return (f"🎚 {muc} (mức {tri['level']}/3) • "
+            f"điểm đệm {tri['diem']:+g} • đã làm {tri['so_cau']} câu")
 
 
 def render(sid, mon="toan11"):
-    atts = _attempts(sid)
-    dung = sum(1 for a in atts if a.get("dung_het"))
+    tab_tn, tab_tl = st.tabs(["Trắc nghiệm", "Tự luận"])
+    with tab_tn:
+        _render_tn(sid, mon)
+    with tab_tl:
+        _render_tl(sid, mon)
 
-    # Banner nhóm: để HS biết mình đang làm bài nhóm nào (GV tạo ở Báo cáo lớp)
-    try:
-        from core import lop as lop_core
-        nhom_hs = lop_core.nhom_cua_hs(sid)
-        if nhom_hs:
-            for n in nhom_hs[:2]:
-                st.info(f"👥 Bạn đang ở nhóm **{n.get('id', '')}** — {n.get('bai', '')} "
-                        f"cùng {', '.join(n.get('thanh_vien', []))} "
-                        f"({n.get('muc_tieu', '')}). Hãy luyện đúng Bài này nhé!")
-        else:
-            st.caption(f"Chưa vào nhóm nào (mã: {sid}) — GV ghép ở Báo cáo lớp → Ghép nhóm.")
-    except Exception:
-        pass
-    
-    if "luyen_messages" not in st.session_state:
-        st.session_state.luyen_messages = []
-    if "luyen_ids" not in st.session_state:
-        st.session_state.luyen_ids = []
 
-    def _loai_tru():
-        return set(st.session_state.get("luyen_ids", []))
+def _render_tn(sid, mon="toan11"):
+    ds_bai = exercises.ds_bai_tn(mon)
+    if not ds_bai:
+        st.warning("Kho chưa có câu trắc nghiệm dùng được — nhờ GV bổ sung ở Kho đề.")
+        return
+    hs = store.doc_hs(sid)
+    bai_mac_dinh = hs.get("bai_hien_tai", "") or sorted(ds_bai)[0]
+    if bai_mac_dinh not in ds_bai:
+        bai_mac_dinh = sorted(ds_bai)[0]
 
-    def _nhan_cau_moi(cau):
-        st.session_state["cau_hien_tai"] = cau
-        st.session_state.pop("kq_cuoi", None)
-        st.session_state.luyen_messages.append({"role": "assistant", "content": _tin_cau_moi(cau)})
-        st.session_state["cau_da_hien"] = cau.get("id")
-        ids = st.session_state.get("luyen_ids", [])
-        if cau.get("id") not in ids:
-            ids.append(cau.get("id"))
-        st.session_state.luyen_ids = ids[-200:]
-        
-    # Header (tiêu đề trang đã có ở header chung app.py — ở đây chỉ giữ dòng mô tả)
-    c_title, c_new = st.columns([3, 1])
-    with c_title:
-        st.markdown("<p style='font-size:15px; color:#64748b; margin:8px 0 16px 0; text-align:center;'>Thầy ra đề trong chat — em nhắn từng bước giải, mỗi bước 1 dòng</p>", unsafe_allow_html=True)
-    with c_new:
-        st.markdown("<div style='height: 4px'></div>", unsafe_allow_html=True)
-        cau_hien_tai = st.session_state.get("cau_hien_tai")
-        nhan = "Phát đề tiếp theo" if cau_hien_tai else "Bắt đầu luyện tập"
-        if st.button(nhan, type="primary", use_container_width=True):
-            # Same logic as lay_moi / tiep
-            kq_cu = st.session_state.get("kq_cuoi")
-            if cau_hien_tai and kq_cu is None:
-                # Chưa nộp bài cũ -> giữ nguyên độ khó, chỉ đổi sang câu chưa gặp
-                do_kho_chon = cau_hien_tai.get("do_kho", 2)
-                bai_chon = cau_hien_tai.get("bai")
-            elif cau_hien_tai:
-                lam_dung = bool(kq_cu and kq_cu.get("dung_het"))
-                do_kho_chon = exercises.doi_kho_hien_tai(sid, cau_hien_tai.get("bai"), cau_hien_tai.get("do_kho", 2), lam_dung)
-                bai_chon = cau_hien_tai.get("bai")
-            else:
-                do_kho_chon = 2
-                ds_bai = [v["title"] for v in curriculum.load_videos(mon)]
-                bai_chon = ds_bai[0] if ds_bai else ""
-                
-            # If user explicitly set them in popover, it will override.
-            # Wait, we need to read session state for popover settings if we want to override.
-            # Actually, let's keep it simple.
-            
-            with st.spinner("Đang tìm bài trong kho..."):
-                try:
-                    cau = exercises.ra_bai(sid, bai_chon, do_kho_chon, mon,
-                                           loai_tru=_loai_tru(),
-                                           cau_hien_tai_id=(cau_hien_tai or {}).get("id"))
-                    _nhan_cau_moi(cau)
-                except Exception as e:
-                    st.error(str(e))
-            st.rerun()
+    c_bai, c_muc = st.columns([2.2, 1])
+    with c_bai:
+        bai = st.selectbox(
+            "Bài giảng",
+            sorted(ds_bai),
+            index=sorted(ds_bai).index(bai_mac_dinh),
+            format_func=lambda b: f"{b} ({ds_bai[b]} câu TN)",
+            key="tn_bai")
+    if bai != hs.get("bai_hien_tai"):
+        hs["bai_hien_tai"] = bai
+        store.luu_hs(sid, hs)
+    if st.session_state.get("tn_bai_da_chon") != bai:
+        st.session_state["tn_bai_da_chon"] = bai
+        _reset_cau()
+    tri = lay_trinh_do_bai(sid, bai)
+    with c_muc:
+        st.markdown("<div style='height:28px'></div>", unsafe_allow_html=True)
+        st.caption(f"Mức hiện tại: **{ten_muc_do(tri['level'])}**")
 
-    # Badges & Settings
-    c_badge, c_settings = st.columns([3, 1])
-    with c_badge:
-        tl = round(dung/len(atts)*100) if atts else 0
-        hs0 = store.doc_hs(sid)
-        trinh0 = hs0.get("trinh_do_toan", "trung bình")
-        try:
-            diem0 = int(hs0.get("diem_trinh_do", 0) or 0)
-        except (TypeError, ValueError):
-            diem0 = 0
-        st.html(f"""
-            <div style='display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom: 24px;'>
-                <div style='background:#f1f5f9; color:#475569; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>📝 Đã luyện: {len(atts)}</div>
-                <div style='background:#dcfce7; color:#16a34a; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>✓ Đúng hết: {dung}</div>
-                <div style='background:#eff6ff; color:#2563eb; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>📈 Tỉ lệ đúng: {tl}%</div>
-                <div title='Đúng +1, sai -1; đủ +5 lên bậc, -5 xuống bậc' style='background:#fefce8; color:#a16207; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>🎚 {trinh0} ({diem0:+d})</div>
-            </div>
-        """)
-        
-    with c_settings:
-        with st.popover("⚙️ Cài đặt đề", use_container_width=True):
-            ds_bai = [v["title"] for v in curriculum.load_videos(mon)]
-            bai = st.selectbox("Chọn Bài", ds_bai, index=0 if ds_bai else None)
-            do_kho = st.selectbox("Độ khó", [1, 2, 3], index=1, format_func=lambda n: f"{n} {widgets.do_kho_sao(n)}")
-            
-            b1, b2 = st.columns(2)
-            with b1:
-                if st.button("Câu mới", use_container_width=True):
-                    with st.spinner("Tìm..."):
-                        try:
-                            cau_ht = st.session_state.get("cau_hien_tai") or {}
-                            cau = exercises.ra_bai(sid, bai, do_kho, mon,
-                                                   loai_tru=_loai_tru(),
-                                                   cau_hien_tai_id=cau_ht.get("id"))
-                            _nhan_cau_moi(cau)
-                        except Exception as e:
-                            st.error(str(e))
-                    st.rerun()
-            with b2:
-                if st.button("Bắt đầu lại", use_container_width=True):
-                    st.session_state.luyen_messages = []
-                    st.session_state.luyen_ids = []
-                    st.session_state.pop("cau_hien_tai", None)
-                    st.session_state.pop("cau_da_hien", None)
-                    st.session_state.pop("kq_cuoi", None)
-                    st.rerun()
+    atts = _attempts(sid, bai)
+    dung = sum(1 for a in atts if a.get("dung_het") or a.get("dung"))
+    st.html(
+        "<div style='display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:8px 0 16px 0;'>"
+        f"<div style='background:#f1f5f9; color:#475569; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>📝 Bài này đã luyện: {len(atts)}</div>"
+        f"<div style='background:#dcfce7; color:#16a34a; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>✓ Đúng: {dung}</div>"
+        f"<div title='Đúng +1 (VD +1.5), sai -1, không biết -0.5; đủ +4 lên mức, -3 xuống mức (tối thiểu 6 câu)' style='background:#fefce8; color:#a16207; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>{_badge_trinh_do(tri)}</div>"
+        "</div>")
 
-    st.markdown("<hr style='margin: 0 0 24px 0; border-color: #f1f5f9;'>", unsafe_allow_html=True)
+    # Nhận câu từ tab Chat ("Làm câu này") nếu là TN dùng được.
+    if not st.session_state.get("tn_cau") and st.session_state.get("cau_hien_tai"):
+        raw = st.session_state.pop("cau_hien_tai")
+        st.session_state.pop("cau_da_hien", None)
+        if isinstance(raw, dict) and exercises.cau_tn_dung_duoc(raw):
+            st.session_state["tn_cau"] = exercises.lam_giau_tn(raw)
+            st.session_state["tn_che_do"] = "lam_bai"
+        elif isinstance(raw, dict) and raw.get("id"):
+            st.info(f"Câu {raw.get('id')} là tự luận/chưa đủ chuẩn trắc nghiệm nên mình phát câu TN khác — bạn bấm Phát đề nhé.")
 
-    # Câu nạp từ tab Chat ("Làm câu này") chưa có tin nhắn bot -> dựng tin nhắn
-    cau = st.session_state.get("cau_hien_tai")
-    if cau and st.session_state.get("cau_da_hien") != cau.get("id"):
-        st.session_state.luyen_messages.append({"role": "assistant", "content": _tin_cau_moi(cau)})
-        st.session_state["cau_da_hien"] = cau.get("id")
-        ids = st.session_state.get("luyen_ids", [])
-        if cau.get("id") not in ids:
-            ids.append(cau.get("id"))
-        st.session_state.luyen_ids = ids[-200:]
-
-    # Lịch sử chat luyện tập
-    for m in st.session_state.luyen_messages[-40:]:
-        with st.chat_message(m["role"]):
-            st.markdown(m["content"])
-
-    cau = st.session_state.get("cau_hien_tai")
-    if cau and cau.get("buoc_giai"):
-        with st.expander("Xem bước chuẩn (chỉ mở khi đã cố gắng)"):
-            for i, b in enumerate(cau["buoc_giai"], 1):
-                st.markdown(f"{i}. {b}")
-
+    cau = st.session_state.get("tn_cau")
     if not cau:
-        st.info("Bấm **Câu mới** để thầy ra đề. Ưu tiên kho GV, hết mới sinh.")
-        return
-    tra_loi = st.chat_input("Viết bài làm (mỗi bước 1 dòng) — hoặc nhắn 'không biết, hướng dẫn em'...")
-    if not tra_loi:
-        with st.expander(f"Lịch sử luyện ({len(atts)})"):
-            for a in atts[:10]:
-                icon = "✅" if a.get("dung_het") else "❌"
-                st.markdown(f"{icon} **{a.get('cau_id')}** — {a.get('bai', '')}: {a.get('de', '')[:80]}")
-        return
-    cac_buoc = [d.strip() for d in tra_loi.splitlines() if d.strip()]
-    if not cac_buoc:
-        cac_buoc = [tra_loi.strip()]
-    st.session_state.luyen_messages.append({"role": "user", "content": tra_loi})
-    with st.chat_message("user"):
-        st.markdown(tra_loi)
-    if grading.la_xin_goi_y(tra_loi):
-        # Xin gợi ý: hỏi Socrates đúng bước 1, KHÔNG chấm, KHÔNG lưu rớt
-        with st.spinner("Thầy đang nghĩ cách gợi mở..."):
+        st.info("Bấm **Phát đề** để bắt đầu. Mỗi lượt 1 câu trắc nghiệm đúng trình độ của bạn ở Bài này.")
+        if st.button("▶ Phát đề", type="primary", use_container_width=True):
             try:
-                kq = grading.goi_y_buoc_dau(sid, cau, mon)
+                with st.spinner("Đang tìm câu trắc nghiệm..."):
+                    _phat_de(sid, bai, mon)
             except Exception as e:
                 st.error(str(e))
                 return
-        st.session_state.luyen_messages.append(
-            {"role": "assistant", "content": f"💡 {kq['goi_y']}\n\n_Em thử làm bước 1 rồi nhắn tiếp nhé._"})
+            st.rerun()
+        return
+
+    che_do = st.session_state.get("tn_che_do", "lam_bai")
+    meta = f"📝 **Câu {cau.get('id')}** • {widgets.muc_do_label(cau.get('do_kho', 1))}"
+    if cau.get("dang_phan"):
+        meta += f" • {cau['dang_phan']}"
+    st.markdown(meta)
+    with st.container(border=True):
+        st.markdown(cau.get("than_de", ""))
+
+    if che_do == "lam_bai":
+        st.markdown("**Chọn đáp án:**")
+        _hienLuaChon(cau.get("phuong_an", []))
+        chon = st.radio("Đáp án của em", ["A", "B", "C", "D", _E_LABEL],
+                        index=None, key=f"tn_chon_{cau.get('id')}")
+        c_nop, c_bo = st.columns([1, 1])
+        with c_nop:
+            nop = st.button("Trả lời", type="primary", use_container_width=True)
+        with c_bo:
+            bo = st.button("Câu khác", use_container_width=True)
+        if bo:
+            try:
+                with st.spinner("Đang đổi câu..."):
+                    _phat_de(sid, bai, mon)
+            except Exception as e:
+                st.error(str(e))
+                return
+            st.rerun()
+        if not nop:
+            return
+        if not chon:
+            st.warning("Bạn chọn 1 phương án (A–E) rồi bấm Trả lời nhé.")
+            return
+        if chon == _E_LABEL:
+            grading.ghi_nhan_khong_biet(sid, cau, mon)
+            with st.spinner("Mình đang soạn câu dẫn dắt cho bạn..."):
+                cons, yeu = grading.sinh_cau_dan_dat(sid, cau, mon)
+            st.session_state["tn_con"] = cons
+            st.session_state["tn_con_idx"] = 0
+            st.session_state["tn_con_kq"] = []
+            st.session_state["tn_yeu"] = yeu
+            st.session_state["tn_che_do"] = "dan_dat"
+            st.rerun()
+        kq = grading.cham_trac_nghiem(sid, cau, chon, mon)
+        st.session_state["tn_kq"] = kq
+        st.session_state["tn_che_do"] = "ket_qua"
         st.rerun()
-    cac_buoc = [d.strip() for d in tra_loi.splitlines() if d.strip()]
-    if not cac_buoc:
-        cac_buoc = [tra_loi.strip()]
-    with st.spinner("Thầy đang chấm từng bước..."):
+
+    elif che_do == "ket_qua":
+        kq = st.session_state.get("tn_kq", {})
+        _hien_ket_qua_cuoi(cau, kq, False)
+        if st.button("Câu tiếp theo →", type="primary", use_container_width=True):
+            try:
+                with st.spinner("Đang tìm câu tiếp theo..."):
+                    _phat_de(sid, bai, mon)
+            except Exception as e:
+                st.error(str(e))
+                return
+            st.rerun()
+
+    elif che_do == "dan_dat":
+        cons = st.session_state.get("tn_con", [])
+        idx = st.session_state.get("tn_con_idx", 0)
+        if idx >= len(cons):
+            st.session_state["tn_che_do"] = "lam_lai"
+            st.rerun()
+            return
+        cc = cons[idx]
+        st.info(f"💡 Bạn chọn chưa biết làm — mình đi từng bước nhỏ nhé "
+                f"(câu dẫn dắt {idx + 1}/{len(cons)}). Trả lời xong bạn được chọn lại câu gốc 1 lần.")
+        with st.container(border=True):
+            st.markdown(f"**Dẫn dắt {idx + 1}:** {cc.get('de', '')}")
+            for i, nd in enumerate(cc.get("phuong_an", [])):
+                st.markdown(f"**{'ABCD'[i]}.** {bank_view.hien_thi(nd)}")
+        chon = st.radio("Đáp án", ["A", "B", "C", "D"], index=None,
+                        key=f"tn_con_{cau.get('id')}_{idx}")
+        if st.button("Trả lời câu dẫn dắt", type="primary", use_container_width=True):
+            if not chon:
+                st.warning("Bạn chọn A–D nhé.")
+                return
+            dung = chon == cc.get("dap_an")
+            kqs = st.session_state.get("tn_con_kq", [])
+            kqs.append(dung)
+            st.session_state["tn_con_kq"] = kqs
+            st.session_state[f"tn_con_dung_{idx}"] = dung
+            st.session_state[f"tn_con_chon_{idx}"] = chon
+            st.rerun()
+        if f"tn_con_dung_{idx}" in st.session_state:
+            dung = st.session_state[f"tn_con_dung_{idx}"]
+            if dung:
+                st.success(f"✅ Đúng rồi! {cc.get('giai_thich', '')}")
+            else:
+                st.error(f"❌ Chưa đúng — đáp án là **{cc.get('dap_an')}**. {cc.get('giai_thich', '')}")
+            if st.button("Tiếp tục →", type="primary", use_container_width=True):
+                for k in (f"tn_con_dung_{idx}", f"tn_con_chon_{idx}", f"tn_con_{cau.get('id')}_{idx}"):
+                    st.session_state.pop(k, None)
+                st.session_state["tn_con_idx"] = idx + 1
+                st.rerun()
+
+    elif che_do == "lam_lai":
+        st.success("Bạn đã đi qua các bước dẫn dắt — giờ chọn lại câu gốc 1 lần nhé (đúng vẫn được cộng điểm bù).")
+        with st.container(border=True):
+            st.markdown(cau.get("than_de", ""))
+            _hienLuaChon(cau.get("phuong_an", []))
+        chon = st.radio("Chọn lại đáp án", ["A", "B", "C", "D"], index=None,
+                        key=f"tn_lamlai_{cau.get('id')}")
+        if st.button("Chốt đáp án", type="primary", use_container_width=True):
+            if not chon:
+                st.warning("Bạn chọn A–D nhé.")
+                return
+            kq = grading.cham_lam_lai(sid, cau, chon,
+                                      st.session_state.get("tn_yeu", []), mon)
+            st.session_state["tn_kq"] = kq
+            st.session_state["tn_che_do"] = "xong_lam_lai"
+            st.rerun()
+
+    elif che_do == "xong_lam_lai":
+        kq = st.session_state.get("tn_kq", {})
+        _hien_ket_qua_cuoi(cau, kq, True)
+        if st.button("Câu tiếp theo →", type="primary", use_container_width=True):
+            try:
+                with st.spinner("Đang tìm câu tiếp theo..."):
+                    _phat_de(sid, bai, mon)
+            except Exception as e:
+                st.error(str(e))
+                return
+            st.rerun()
+
+    with st.expander(f"Lịch sử Bài này ({len(atts)})"):
+        for a in atts[:15]:
+            icon = "✅" if (a.get("dung_het") or a.get("dung")) else "❌"
+            loai = {"khong_biet": " (không biết)", "lam_lai": " (làm lại)"}.get(a.get("loai", ""), "")
+            st.markdown(f"{icon} **{a.get('cau_id')}**{loai} — chọn {a.get('chon', '?')}")
+
+
+def _hien_ket_qua_cuoi(cau, kq, la_lam_lai):
+    if kq.get("dung"):
+        st.success(f"🎉 **Đúng rồi!** Đáp án là **{kq.get('dap_an_dung')}**."
+                   + (" (cộng điểm bù sau dẫn dắt)" if la_lam_lai else ""))
+    else:
+        st.error(f"❌ Chưa đúng. Bạn chọn **{kq.get('chon', '?')}** — đáp án đúng là "
+                 f"**{kq.get('dap_an_dung')}**.")
+    if kq.get("diem_yeu_moi"):
+        st.warning("📝 Điểm yếu mình ghi nhận: " + ", ".join(kq["diem_yeu_moi"]))
+    with st.expander("Xem bước giải chuẩn", expanded=False):
+        for i, b in enumerate(cau.get("buoc_giai", []) or [], 1):
+            st.markdown(f"{i}. {bank_view.hien_thi(b)}")
+    if kq.get("trinh_do_moi"):
+        tm = kq["trinh_do_moi"]
+        st.info(f"📈 Mức độ Bài này: **{tm['cu']} → {tm['moi']}**.")
+
+
+# ── Luyện tự luận: phát đề → làm ra vở → chụp ảnh nộp ──────────────────
+
+def _reset_tl():
+    for k in ("tl_cau", "tl_kq", "tl_goi_y"):
+        st.session_state.pop(k, None)
+
+
+def _phat_de_tl(sid, bai, mon):
+    tri = lay_trinh_do_bai(sid, bai)
+    cau = exercises.ra_bai_tl(
+        sid, bai, tri["level"], mon,
+        loai_tru=set(st.session_state.get("tl_ids", [])),
+        cau_hien_tai_id=(st.session_state.get("tl_cau") or {}).get("id"))
+    st.session_state["tl_cau"] = cau
+    st.session_state.pop("tl_kq", None)
+    st.session_state.pop("tl_goi_y", None)
+    ids = st.session_state.get("tl_ids", [])
+    if cau.get("id") not in ids:
+        ids.append(cau.get("id"))
+    st.session_state["tl_ids"] = ids[-200:]
+
+
+def _render_tl(sid, mon="toan11"):
+    """Tab tự luận: HS nhận đề, giải vào vở, chụp ảnh tải lên để AI chấm."""
+    ds_bai = exercises.ds_bai_tl(mon)
+    if not ds_bai:
+        st.warning("Kho chưa có câu tự luận dùng được — nhờ GV bổ sung ở Kho đề.")
+        return
+    hs = store.doc_hs(sid)
+    bai_mac_dinh = hs.get("bai_hien_tai", "") or sorted(ds_bai)[0]
+    if bai_mac_dinh not in ds_bai:
+        bai_mac_dinh = sorted(ds_bai)[0]
+    bai = st.selectbox(
+        "Bài giảng (tự luận)",
+        sorted(ds_bai),
+        index=sorted(ds_bai).index(bai_mac_dinh),
+        format_func=lambda b: f"{b} ({ds_bai[b]} câu TL)",
+        key="tl_bai")
+    if st.session_state.get("tl_bai_da_chon") != bai:
+        st.session_state["tl_bai_da_chon"] = bai
+        _reset_tl()
+    tri = lay_trinh_do_bai(sid, bai)
+    st.caption(f"Mức hiện tại: **{ten_muc_do(tri['level'])}** • {tri['so_cau']} câu đã luyện")
+
+    atts = [a for a in _attempts(sid, bai) if a.get("dang", "TL") == "TL"]
+    dung = sum(1 for a in atts if a.get("dung_het") or a.get("dung"))
+    st.html(
+        "<div style='display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:8px 0 16px 0;'>"
+        f"<div style='background:#f1f5f9; color:#475569; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>📝 Đã nộp: {len(atts)}</div>"
+        f"<div style='background:#dcfce7; color:#16a34a; padding:6px 14px; border-radius:20px; font-size:13px; font-weight:600;'>✓ Đúng hết: {dung}</div>"
+        "</div>")
+
+    cau = st.session_state.get("tl_cau")
+    if not cau:
+        st.info("Bấm **Phát đề** để nhận 1 câu tự luận. Bạn giải vào vở rồi chụp ảnh nộp.")
+        if st.button("▶ Phát đề tự luận", type="primary", use_container_width=True):
+            try:
+                with st.spinner("Đang tìm câu tự luận..."):
+                    _phat_de_tl(sid, bai, mon)
+            except Exception as e:
+                st.error(str(e))
+                return
+            st.rerun()
+        return
+
+    st.markdown(f"📝 **Câu {cau.get('id')}** • {widgets.muc_do_label(cau.get('do_kho', 1))}"
+                + (f" • {cau['dang_phan']}" if cau.get("dang_phan") else ""))
+    with st.container(border=True):
+        st.markdown(bank_view.hien_thi(cau.get("de", "")))
+    st.caption("Bạn giải vào vở từng bước, chụp rõ chữ rồi tải lên (tối đa 3 ảnh, mỗi ảnh <4MB). "
+               "Bí thì bấm **Cần gợi ý** — mình mở từng nấc, không đọc đáp án ngay.")
+
+    goi_ys = st.session_state.get("tl_goi_y", [])
+    if goi_ys:
+        st.markdown("**💡 Gợi ý đã mở:**")
+        for i, g in enumerate(goi_ys, 1):
+            if g.get("kieu") == "buoc":
+                st.success(f"{i}. {bank_view.hien_thi(g.get('nd', ''))}")
+            else:
+                st.info(f"{i}. {g.get('nd', '')}")
+
+    if "tl_anh_ver" not in st.session_state:
+        st.session_state.tl_anh_ver = 0
+    up_files = st.file_uploader(
+        "📷 Ảnh bài giải trong vở",
+        type=["png", "jpg", "jpeg", "webp"], accept_multiple_files=True,
+        key=f"tl_anh_{st.session_state.tl_anh_ver}")
+    if up_files:
+        st.image(up_files, width=180)
+
+    kq = st.session_state.get("tl_kq")
+    if kq and not up_files:
+        pass  # đã chấm xong, giữ kết quả để xem lại
+    c_nop, c_goi, c_doi = st.columns([1, 1, 1])
+    with c_nop:
+        nop = st.button("Nộp bài chấm", type="primary", use_container_width=True,
+                        disabled=not up_files)
+    with c_goi:
+        goi = st.button("💡 Cần gợi ý", use_container_width=True)
+    with c_doi:
+        doi = st.button("Câu khác", use_container_width=True)
+    if goi:
+        if not any(g.get("kieu") == "ai" for g in goi_ys):
+            try:
+                with st.spinner("Mình đang nghĩ gợi ý cho bước đầu..."):
+                    gh = grading.goi_y_buoc_dau(sid, cau, mon)
+                goi_ys.append({"kieu": "ai", "nd": gh.get("goi_y", "")})
+            except Exception as e:
+                st.error(str(e) or "Chưa nghĩ được gợi ý, bạn thử lại nhé.")
+                return
+        else:
+            buocs = [str(b or "").strip() for b in (cau.get("buoc_giai") or [])
+                     if str(b or "").strip()]
+            da_mo = sum(1 for g in goi_ys if g.get("kieu") == "buoc")
+            if da_mo < len(buocs):
+                goi_ys.append({"kieu": "buoc", "nd": f"Bước {da_mo + 1}: {buocs[da_mo]}"})
+            else:
+                st.info("Đã mở hết các bước chuẩn — bạn làm vào vở rồi nộp bài nhé.")
+                return
+        st.session_state["tl_goi_y"] = goi_ys
+        st.rerun()
+    if doi:
         try:
-            kq, _ = grading.cham_tung_buoc(sid, cau, cac_buoc, mon)
-            st.session_state["kq_cuoi"] = kq
+            with st.spinner("Đang đổi câu..."):
+                _phat_de_tl(sid, bai, mon)
         except Exception as e:
             st.error(str(e))
             return
-    st.session_state.luyen_messages.append({"role": "assistant", "content": _tin_cham(kq)})
-    if kq.get("trinh_do_moi"):
-        from core.student import TRINH_DO
-        tm = kq["trinh_do_moi"]
-        len_huong = "tiến bộ, bài tiếp theo sẽ thử thách hơn" if TRINH_DO.index(tm["moi"]) > TRINH_DO.index(tm["cu"]) \
-            else "cần chắc lại nền tảng, bài tiếp theo sẽ nhẹ nhàng hơn"
-        st.session_state.luyen_messages.append(
-            {"role": "assistant",
-             "content": f"📈 Trình độ của em: **{tm['cu']} → {tm['moi']}** ({len_huong})."})
-    st.rerun()
+        st.session_state.tl_anh_ver += 1
+        st.rerun()
+    if nop:
+        if not up_files:
+            st.warning("Bạn tải ảnh bài giải lên đã nhé.")
+            return
+        data_urls = []
+        for f in up_files[:3]:
+            url = _file_sang_data_url(f)
+            if url:
+                data_urls.append(url)
+        if not data_urls:
+            st.error("Ảnh quá lớn (>4MB). Bạn nén/chụp lại giúp mình nhé.")
+            return
+        try:
+            with st.spinner("Mình đang đọc ảnh và chấm từng bước..."):
+                kq, _ = grading.cham_tu_luan_qua_anh(sid, cau, data_urls, mon)
+        except Exception as e:
+            st.error(str(e) or "Chấm chưa được, bạn thử lại nhé.")
+            return
+        st.session_state["tl_kq"] = kq
+        st.session_state.tl_anh_ver += 1  # xóa ảnh đã nộp
+        st.rerun()
+
+    kq = st.session_state.get("tl_kq")
+    if kq:
+        if kq.get("dung_het"):
+            st.success("🎉 **Đúng hết các bước!** Giỏi lắm.")
+        else:
+            st.error("Chưa đúng hết — xem mình chỉ chỗ sai bên dưới.")
+        ds = kq.get("dung_sai_tung_buoc") or []
+        if ds:
+            st.markdown("**Chấm từng bước:** " + " ".join(
+                f"{'✅' if x else '❌'} B{i + 1}" for i, x in enumerate(ds)))
+            if kq.get("sai_o_buoc") is not None:
+                st.caption(f"Sai ở bước {kq.get('sai_o_buoc')}.")
+        if kq.get("goi_y_sua"):
+            st.info(f"💡 Gợi ý sửa: {kq['goi_y_sua']}")
+        if kq.get("diem_yeu_moi"):
+            st.warning("📝 Điểm yếu mình ghi nhận: " + ", ".join(kq["diem_yeu_moi"]))
+        with st.expander("Xem bước giải chuẩn", expanded=False):
+            for i, b in enumerate(cau.get("buoc_giai", []) or [], 1):
+                st.markdown(f"{i}. {bank_view.hien_thi(b)}")
+        if st.button("Câu tiếp theo →", type="primary", use_container_width=True):
+            try:
+                with st.spinner("Đang tìm câu tiếp theo..."):
+                    _phat_de_tl(sid, bai, mon)
+            except Exception as e:
+                st.error(str(e))
+                return
+            st.rerun()
+
+    with st.expander(f"Lịch sử tự luận Bài này ({len(atts)})"):
+        for a in atts[:15]:
+            icon = "✅" if (a.get("dung_het") or a.get("dung")) else "❌"
+            st.markdown(f"{icon} **{a.get('cau_id')}**")

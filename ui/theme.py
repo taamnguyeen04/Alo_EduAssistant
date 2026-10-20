@@ -2,7 +2,7 @@
 import streamlit as st
 
 HS_TABS = ["🏠 Trang chủ", "🤖 Hỏi AI", "📚 Bài học", "✏ Luyện tập", "👤 Hồ sơ"]
-GV_TABS = ["Báo cáo lớp", "Kho đề", "Soạn bài & Học liệu", "Quản lý lớp"]
+GV_TABS = ["Báo cáo lớp", "Kho đề", "Tạo video", "Quản lý lớp"]
 
 
 def apply_theme():
@@ -14,7 +14,7 @@ def apply_theme():
     html, body, [class*="css"] {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', Roboto, sans-serif;
         color: #1E293B;
-        font-size: 19px;
+        font-size: 17px;
     }
 
     [data-testid="stAppViewContainer"] {
@@ -68,7 +68,7 @@ def apply_theme():
     [data-testid="stExpandSidebarButton"]::after,
     [data-testid="collapsedControl"]::after {
         content: "Menu";
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 700;
         color: #2563eb;
     }
@@ -81,38 +81,38 @@ def apply_theme():
     }
 
     h1, h2, h3, h4 { color: #1E293B; letter-spacing: -0.3px; }
-    h1 { font-size: 2.3rem !important; }
-    h2 { font-size: 1.85rem !important; }
-    h3 { font-size: 1.45rem !important; }
-    h4 { font-size: 1.25rem !important; }
+    h1 { font-size: 2.05rem !important; }
+    h2 { font-size: 1.65rem !important; }
+    h3 { font-size: 1.3rem !important; }
+    h4 { font-size: 1.12rem !important; }
 
     /* ───────────── Tăng cỡ chữ toàn trang (nội dung đọc chính) ───────────── */
     [data-testid="stMarkdownContainer"] p,
     [data-testid="stMarkdownContainer"] li,
     [data-testid="stMarkdownContainer"] div,
     .stMarkdown p, .stMarkdown li {
-        font-size: 1.18rem !important;
-        line-height: 1.8 !important;
+        font-size: 1.08rem !important;
+        line-height: 1.75 !important;
     }
     [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p,
     [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] li {
-        font-size: 1.22rem !important;
-        line-height: 1.85 !important;
+        font-size: 1.12rem !important;
+        line-height: 1.8 !important;
     }
     [data-testid="stExpander"] [data-testid="stMarkdownContainer"] p,
     [data-testid="stExpander"] [data-testid="stMarkdownContainer"] li {
-        font-size: 1.18rem !important;
-        line-height: 1.8 !important;
+        font-size: 1.08rem !important;
+        line-height: 1.75 !important;
     }
     [data-testid="stDataFrame"], [data-testid="stTable"], table {
-        font-size: 1.13rem !important;
+        font-size: 1.02rem !important;
     }
 
     /* ───────────── SaaS Login brand ───────────── */
     .saas-logo { display: flex; justify-content: center; margin: 6px 0 14px 0; }
     .saas-title {
         text-align: center;
-        font-size: 41px;
+        font-size: 37px;
         font-weight: 700;
         color: #1E293B;
         letter-spacing: -0.5px;
@@ -121,20 +121,20 @@ def apply_theme():
     }
     .saas-tagline {
         text-align: center;
-        font-size: 19px;
+        font-size: 17px;
         font-weight: 400;
         color: #64748B;
         margin: 8px 0 24px 0;
         line-height: 1.5;
     }
     .saas-card-title {
-        font-size: 22px;
+        font-size: 20px;
         font-weight: 700;
         color: #1E293B;
         margin: 2px 0 4px 0;
     }
     .saas-card-sub {
-        font-size: 17.5px;
+        font-size: 16px;
         color: #64748B;
         margin: 0 0 18px 0;
     }
@@ -144,9 +144,9 @@ def apply_theme():
         border-radius: 12px;
         padding: 13px 16px;
         margin-top: 14px;
-        font-size: 17px;
+        font-size: 15.5px;
         color: #475569;
-        line-height: 1.8;
+        line-height: 1.75;
         box-shadow: 0 1px 3px rgba(15,23,42,0.04);
     }
     .saas-guide-head {
@@ -154,13 +154,13 @@ def apply_theme():
         align-items: center;
         gap: 7px;
         font-weight: 600;
-        font-size: 17px;
+        font-size: 15.5px;
         color: #1E293B;
         margin-bottom: 4px;
     }
     .saas-support {
         text-align: center;
-        font-size: 15.5px;
+        font-size: 14px;
         color: #94A3B8;
         margin-top: 14px;
     }
@@ -177,7 +177,7 @@ def apply_theme():
     [data-testid="stSelectbox"] label,
     [data-testid="stTextInput"] label,
     [data-testid="stRadio"] > label {
-        font-size: 17px !important;
+        font-size: 15.5px !important;
         font-weight: 600 !important;
         color: #334155 !important;
     }
@@ -188,7 +188,7 @@ def apply_theme():
         background: #F8FAFC;
         border: 1px solid #E2E8F0;
         border-radius: 10px;
-        font-size: 18px;
+        font-size: 16.5px;
         color: #1E293B;
     }
     [data-testid="stSelectbox"] div[data-baseweb="select"]:hover > div {
@@ -204,7 +204,7 @@ def apply_theme():
         background: #F8FAFC;
         border: 1px solid #E2E8F0;
         border-radius: 10px;
-        font-size: 18px;
+        font-size: 16.5px;
         color: #1E293B;
         padding: 0 14px;
     }
@@ -226,7 +226,7 @@ def apply_theme():
     [data-testid="stRadio"] input[type="radio"] { accent-color: #2563EB; }
     [data-testid="stRadio"] label {
         font-weight: 500;
-        font-size: 1.13rem;
+        font-size: 1.03rem;
         color: #334155;
     }
 
@@ -255,7 +255,7 @@ def apply_theme():
         border: 1px solid #bfdbfe;
     }
     [data-testid="stSidebar"] label[data-baseweb="radio"] div {
-        font-size: 18px;
+        font-size: 16.5px;
         color: #475569;
         margin: 0 !important;
     }
@@ -268,7 +268,7 @@ def apply_theme():
     .stButton > button {
         border-radius: 10px;
         font-weight: 600;
-        font-size: 1.13rem;
+        font-size: 1.03rem;
         min-height: 56px;
         letter-spacing: 0.1px;
     }
@@ -279,7 +279,7 @@ def apply_theme():
         border: 1px solid #2563EB;
         color: #FFFFFF;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 16.5px;
         border-radius: 10px;
         transition: background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
@@ -306,8 +306,8 @@ def apply_theme():
         border: 1px solid #E6ECF3;
         box-shadow: 0 4px 20px rgba(15,23,42,0.06);
     }
-    .hero h2 { color: #1E293B; margin: 0 0 6px 0; font-size: 1.7rem; font-weight: 700; }
-    .hero p { color: #64748B; margin: 0; font-size: 1.18rem; }
+    .hero h2 { color: #1E293B; margin: 0 0 6px 0; font-size: 1.55rem; font-weight: 700; }
+    .hero p { color: #64748B; margin: 0; font-size: 1.08rem; }
     .card {
         background: #ffffff;
         border: 1px solid #E6ECF3;
@@ -315,9 +315,9 @@ def apply_theme():
         padding: 20px 22px;
         margin-bottom: 16px;
         box-shadow: 0 1px 4px rgba(15,23,42,0.05);
-        font-size: 1.16rem;
+        font-size: 1.06rem;
     }
-    .card h4 { margin: 0 0 10px 0; font-weight: 600; font-size: 1.18rem; color: #1e293b; }
+    .card h4 { margin: 0 0 10px 0; font-weight: 600; font-size: 1.08rem; color: #1e293b; }
 
     /* ───────────── Metrics / Sidebar / misc (trang trong) ───────────── */
     [data-testid="stMetric"] {
@@ -327,18 +327,18 @@ def apply_theme():
         padding: 14px 16px;
     }
     [data-testid="stMetricLabel"] {
-        font-size: 1.0rem; font-weight: 500; color: #64748b;
+        font-size: 0.92rem; font-weight: 500; color: #64748b;
         text-transform: uppercase; letter-spacing: 0.5px;
     }
-    [data-testid="stMetricValue"] { font-size: 1.95rem; font-weight: 700; color: #0f172a; }
+    [data-testid="stMetricValue"] { font-size: 1.75rem; font-weight: 700; color: #0f172a; }
     [data-testid="stSidebar"] { background: #FFFFFF; border-right: 1px solid #e2e8f0; }
     [data-testid="stSidebar"] .block-container { padding-top: 1.2rem; }
-    .side-title { font-weight: 800; font-size: 20px; color: #0f172a; margin-bottom: 2px; }
-    .side-sub { color: #64748b; font-size: 15.5px; margin-bottom: 10px; }
+    .side-title { font-weight: 800; font-size: 18px; color: #0f172a; margin-bottom: 2px; }
+    .side-sub { color: #64748b; font-size: 14px; margin-bottom: 10px; }
     .side-badge {
         display: inline-block; background: #eff6ff; color: #1d4ed8;
         border: 1px solid #bfdbfe; border-radius: 6px;
-        font-size: 15px; font-weight: 600; padding: 2px 8px; margin-bottom: 8px;
+        font-size: 13.5px; font-weight: 600; padding: 2px 8px; margin-bottom: 8px;
     }
     /* ───────────── Course Modules (Expanders) ───────────── */
     [data-testid="stExpander"] { 
@@ -360,7 +360,7 @@ def apply_theme():
     }
     [data-testid="stExpander"] summary p {
         font-weight: 700 !important;
-        font-size: 18px !important;
+        font-size: 16.5px !important;
         color: #0f172a !important;
         margin: 0;
     }
@@ -368,18 +368,18 @@ def apply_theme():
         border-bottom-color: #e2e8f0;
     }
     hr { border-color: #e2e8f0; margin: 12px 0; }
-    [data-testid="stChatMessage"] { border-radius: 10px; border: 1px solid #f1f5f9; margin-bottom: 6px; font-size: 1.18rem; }
-    [data-testid="stAlert"] { border-radius: 10px; font-size: 1.13rem; }
-    button[data-baseweb="tab"] { font-weight: 600; font-size: 1.1rem; color: #64748b; }
+    [data-testid="stChatMessage"] { border-radius: 10px; border: 1px solid #f1f5f9; margin-bottom: 6px; font-size: 1.08rem; }
+    [data-testid="stAlert"] { border-radius: 10px; font-size: 1.03rem; }
+    button[data-baseweb="tab"] { font-weight: 600; font-size: 1.0rem; color: #64748b; }
     button[data-baseweb="tab"][aria-selected="true"] { color: #2563EB; }
-    .stCaption, small { color: #64748b; font-size: 1.0rem; }
-    [data-testid="stCaptionContainer"] { font-size: 1.05rem !important; }
-    [data-testid="stChatInput"] textarea { font-size: 1.18rem !important; }
+    .stCaption, small { color: #64748b; font-size: 0.92rem; }
+    [data-testid="stCaptionContainer"] { font-size: 0.95rem !important; }
+    [data-testid="stChatInput"] textarea { font-size: 1.08rem !important; }
 
     /* ───────────── Responsive ───────────── */
     @media (max-width: 640px) {
-        .saas-title { font-size: 32px; }
-        .saas-tagline { font-size: 18px; margin-bottom: 18px; }
+        .saas-title { font-size: 29px; }
+        .saas-tagline { font-size: 16.5px; margin-bottom: 18px; }
         .main .block-container { padding-left: 1rem !important; padding-right: 1rem !important; }
     }
     </style>
@@ -501,10 +501,10 @@ def chon_mon_va_di(mon, tab):
 
 
 def page_header(tieu_de, phu_de=""):
-    phu = f"<p style='margin:10px 0 0 0;color:#64748b;font-size:1.15rem;'>{phu_de}</p>" if phu_de else ""
+    phu = f"<p style='margin:10px 0 0 0;color:#64748b;font-size:1.05rem;'>{phu_de}</p>" if phu_de else ""
     st.markdown(
         f"""<div style='text-align:center;margin:14px 0 22px 0;'>
-        <h2 style='margin:0;font-size:2.4rem;font-weight:800;color:#0f172a;letter-spacing:-0.5px;'>{tieu_de}</h2>
+        <h2 style='margin:0;font-size:2.15rem;font-weight:800;color:#0f172a;letter-spacing:-0.5px;'>{tieu_de}</h2>
         <div style='width:72px;height:4px;border-radius:2px;margin:12px auto 0 auto;background:linear-gradient(90deg,#3b82f6,#8b5cf6);'></div>
         {phu}</div>""",
         unsafe_allow_html=True,

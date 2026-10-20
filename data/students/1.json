@@ -47,6 +47,14 @@
     {
       "role": "assistant",
       "content": "Chào bạn! Dựa trên kho câu tham khảo mà GV đã duyệt, hiện có 3 đề bài ở dạng toán cơ bản. Nếu xét về độ dễ dàng (từ dễ đến khó), thứ tự các bài sẽ là:\n\n### 1. Bài `[B1-02]` (Dễ nhất - chỉ cần tính giá trị lượng giác cơ bản)\n* **Đề bài:** Tính $\\sin\\frac{\\pi}{6}+\\cos\\frac{\\pi}{3}$.\n* *Lý do dễ:* Đây là bài toán đơn giản nhất, chỉ cần bạn recall được giá trị lượng giác của các góc $\\frac{\\pi}{6}$ và $\\frac{\\pi}{3}$ là có thể làm ngay.\n\n### 2. Bài `[AI-DEMO-001]` (Cũng rất dễ - tính giá trị lượng giác)\n* **Đề bài:** Tính $\\sin\\frac{\\pi}{3} + \\cos\\frac{\\pi}{6}$.\n* *Lý do dễ:* Tương tự bài trên, đây là bài tính giá trị lượng giác trực tiếp, cần cẩn trọng một chút để tránh nhầm giá trị đặc biệt.\n\n### 3. Bài `[B4-TL-026]` (Khó hơn một chút - giải phương trình lượng giác)\n* **Đề bài:** Giải phương trình $\\cos3x+\\cos2x-\\cos x-1=0$.\n* *Lý do khó hơn:* Đây là bài giải phương trình lượng giác, cần dùng các công thức biến đổi tổng thành tích hoặc đôi góc, yêu cầu kỹ năng dọn dẹp đại số và biến đổi tốt hơn.\n\n---\n\n**Lưu ý quan trọng:** Các đề bài này chủ yếu thuộc phần lượng giác (Bài 1 và Bài 4). Nếu bạn đang tập trung vào **Bài 10. Đường thẳng và mặt phẳng trong không gian**, mình có thể hướng dẫn bạn các dạng bài tập cơ bản nhất của Lesson 10 (như xác định phương trình mặt phẳng qua 3 điểm, hoặc đường thẳng qua 2 điểm) nếu bạn cung cấp thêm đề bài cụ thể cho Lesson 10 nhé! Hãy thử làm 2 bài đầu tiên `[B1-02]` và `[AI-DEMO-001]` để làm nóng tay dạng tính toán nha."
+    },
+    {
+      "role": "user",
+      "content": "các công thuc luong giac"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào bạn! Đây là phần tổng hợp các **công thức lượng giác** chính trong chương trình Toán 11 (Kết nối tri thức), đặc biệt là những công thức được dùng trong **Bài 2: Công thức lượng giác**. Mình sẽ chia thành các nhóm để bạn dễ theo dõi và áp dụng.\n\n---\n\n### 1. Bảng lượng giác cơ bản\n- $\\sin^2 x + \\cos^2 x = 1$\n- $\\tan x = \\dfrac{\\sin x}{\\cos x}$, $\\cot x = \\dfrac{\\cos x}{\\sin x}$\n- $1 + \\tan^2 x = \\dfrac{1}{\\cos^2 x}$, $1 + \\cot^2 x = \\dfrac{1}{\\sin^2 x}$\n\n### 2. Công thức cộng (tổng & hiệu hai góc)\n- $\\sin(a \\pm b) = \\sin a \\cos b \\pm \\cos a \\sin b$\n- $\\cos(a \\pm b) = \\cos a \\cos b \\mp \\sin a \\sin b$\n- $\\tan(a \\pm b) = \\dfrac{\\tan a \\pm \\tan b}{1 \\mp \\tan a \\tan b}$\n\n### 3. Công thức nhân đôi (góc gấp hai)\n- $\\sin 2a = 2 \\sin a \\cos a$\n- $\\cos 2a = \\cos^2 a - \\sin^2 a = 2\\cos^2 a - 1 = 1 - 2\\sin^2 a$\n- $\\tan 2a = \\dfrac{2\\tan a}{1 - \\tan^2 a}$\n\n### 4. Công thức hạ bậc & nửa góc\n- $\\sin^2 a = \\dfrac{1 - \\cos 2a}{2}$, $\\cos^2 a = \\dfrac{1 + \\cos 2a}{2}$\n- $\\tan \\dfrac{a}{2} = \\dfrac{\\sin a}{1 + \\cos a} = \\dfrac{1 - \\cos a}{\\sin a}$\n\n### 5. Biến đổi tích thành tổng\n- $\\sin a \\cos b = \\dfrac{1}{2}[\\sin(a+b) + \\sin(a-b)]$\n- $\\cos a \\cos b = \\dfrac{1}{2}[\\cos(a+b) + \\cos(a-b)]$\n- $\\sin a \\sin b = \\dfrac{1}{2}[\\cos(a-b) - \\cos(a+b)]$\n\n---\n\nBạn có thể thử ngay với bài **B2-TL-011**: không dùng máy tính, tính $\\cos\\frac{\\pi}{8}$ bằng công thức nửa góc hoặc công thức nhân đôi. Nếu cần thêm bài tập luyện tập, mình có thể gợi ý một số mã trong kho GV để bạn làm thêm."
     }
   ],
   "weaknesses": [
@@ -55,34 +63,81 @@
     "cần luyện tập các dạng bài tập đạo hàm cơ bản (hàm hợp, hàm thương)",
     "cần củng cố kỹ năng tìm vector pháp tuyến và giao tuyến của hai mặt phẳng",
     "cần làm quen với việc hình dung không gian 3D qua phương trình đại số",
-    "chưa rõ ràng về đối tượng bài tập cần luyện (Lesson 10 hay ôn tập lượng giác)"
+    "chưa rõ ràng về đối tượng bài tập cần luyện (Lesson 10 hay ôn tập lượng giác)",
+    "cần dẫn dắt mức Nhận biết — Bài 1. Giá trị lượng giác của góc lượng giác",
+    "chưa thành thạo việc thực hiện việc rút gọn phân số khi đổi đơn vị độ sang radian",
+    "chưa nhớ chính xác công thức chuyển đổi độ sang radian",
+    "làm sai mức Nhận biết — Bài 1. Giá trị lượng giác của góc lượng giác",
+    "sai dạng Độ và radian (Nhận biết)",
+    "đang ôn tập tổng hợp công thức lượng giác",
+    "chưa thành thạo công thức $\\sin(a-b)$",
+    "không áp dụng được công thức vào bài tập cụ thể",
+    "chưa ghi nhớ giá trị lượng giác của góc $\\frac{\\pi}{2}$",
+    "khó khăn khi rút gọn phân số trong biểu thức tam giác",
+    "không nhận biết được rằng $1 = \\sin\\frac{\\pi}{2}$",
+    "chưa thành thạo công thức tổng hóa tích cho hiệu hai sine",
+    "không kiểm tra được các góc trong biểu thức sau khi áp dụng công thức"
   ],
   "id": "1",
   "ten": "văn vũ hoàng phát",
-  "lop": "11A1",
+  "lop": "11A2",
   "mon": "Toán",
   "trinh_do_toan": "giỏi",
   "manh": [],
   "yeu": [],
-  "bai_hien_tai": "Bài 10. Đường thẳng và mặt phẳng trong không gian",
+  "bai_hien_tai": "Bài 2. Công thức lượng giác",
   "video_da_xem": [
-    "https://youtu.be/5MDMV-eDijE?si=njgdg3qj0PSjsFkw"
+    "https://youtu.be/5MDMV-eDijE?si=njgdg3qj0PSjsFkw",
+    "https://youtu.be/w7EBXzzabtY?si=SI5X3NqQ6gFBwZtl"
   ],
   "phong_cach": "",
   "tkb": {},
   "bai_de_xuat": [
-    "B1-02",
-    "AI-DEMO-001",
-    "B4-TL-026"
+    "B2-TL-011",
+    "C1_B2_SA_017",
+    "B2-TL-053"
   ],
   "viec_da_xong": [],
   "video_goi_y_count": {
     "https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG": 1,
-    "https://youtu.be/w7EBXzzabtY?si=SI5X3NqQ6gFBwZtl": 1,
+    "https://youtu.be/w7EBXzzabtY?si=SI5X3NqQ6gFBwZtl": 2,
     "https://youtu.be/5MDMV-eDijE?si=njgdg3qj0PSjsFkw": 3
   },
   "moc_attempt": 0,
   "conversations": [
+    {
+      "id": "cuoc-1790125840159",
+      "tieu_de": "B5: Thắc mắc mới",
+      "bai": "Bài 5. Dãy số",
+      "messages": []
+    },
+    {
+      "id": "cuoc-1790125795351",
+      "tieu_de": "B2: các công thuc luong giac",
+      "bai": "Bài 2. Công thức lượng giác",
+      "messages": [
+        {
+          "role": "user",
+          "content": "các công thuc luong giac"
+        },
+        {
+          "role": "assistant",
+          "content": "Chào bạn! Đây là phần tổng hợp các **công thức lượng giác** chính trong chương trình Toán 11 (Kết nối tri thức), đặc biệt là những công thức được dùng trong **Bài 2: Công thức lượng giác**. Mình sẽ chia thành các nhóm để bạn dễ theo dõi và áp dụng.\n\n---\n\n### 1. Bảng lượng giác cơ bản\n- $\\sin^2 x + \\cos^2 x = 1$\n- $\\tan x = \\dfrac{\\sin x}{\\cos x}$, $\\cot x = \\dfrac{\\cos x}{\\sin x}$\n- $1 + \\tan^2 x = \\dfrac{1}{\\cos^2 x}$, $1 + \\cot^2 x = \\dfrac{1}{\\sin^2 x}$\n\n### 2. Công thức cộng (tổng & hiệu hai góc)\n- $\\sin(a \\pm b) = \\sin a \\cos b \\pm \\cos a \\sin b$\n- $\\cos(a \\pm b) = \\cos a \\cos b \\mp \\sin a \\sin b$\n- $\\tan(a \\pm b) = \\dfrac{\\tan a \\pm \\tan b}{1 \\mp \\tan a \\tan b}$\n\n### 3. Công thức nhân đôi (góc gấp hai)\n- $\\sin 2a = 2 \\sin a \\cos a$\n- $\\cos 2a = \\cos^2 a - \\sin^2 a = 2\\cos^2 a - 1 = 1 - 2\\sin^2 a$\n- $\\tan 2a = \\dfrac{2\\tan a}{1 - \\tan^2 a}$\n\n### 4. Công thức hạ bậc & nửa góc\n- $\\sin^2 a = \\dfrac{1 - \\cos 2a}{2}$, $\\cos^2 a = \\dfrac{1 + \\cos 2a}{2}$\n- $\\tan \\dfrac{a}{2} = \\dfrac{\\sin a}{1 + \\cos a} = \\dfrac{1 - \\cos a}{\\sin a}$\n\n### 5. Biến đổi tích thành tổng\n- $\\sin a \\cos b = \\dfrac{1}{2}[\\sin(a+b) + \\sin(a-b)]$\n- $\\cos a \\cos b = \\dfrac{1}{2}[\\cos(a+b) + \\cos(a-b)]$\n- $\\sin a \\sin b = \\dfrac{1}{2}[\\cos(a-b) - \\cos(a+b)]$\n\n---\n\nBạn có thể thử ngay với bài **B2-TL-011**: không dùng máy tính, tính $\\cos\\frac{\\pi}{8}$ bằng công thức nửa góc hoặc công thức nhân đôi. Nếu cần thêm bài tập luyện tập, mình có thể gợi ý một số mã trong kho GV để bạn làm thêm."
+        }
+      ]
+    },
+    {
+      "id": "cuoc-1789701707302",
+      "tieu_de": "B1: Thắc mắc mới",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": []
+    },
+    {
+      "id": "cuoc-1789701696237",
+      "tieu_de": "B1: Thắc mắc mới",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": []
+    },
     {
       "id": "cuoc-1789643503612",
       "tieu_de": "B10: cho 3 bài dễ nhất",
@@ -160,9 +215,73 @@
     }
   ],
   "diem_trinh_do": 0,
-  "mon_can_ho_tro": [],
+  "mon_can_ho_tro": [
+    "anh11",
+    "toan11",
+    "van11"
+  ],
   "muc_tieu": "",
-  "gio_tu_hoc": "",
-  "muc_tieu_giai_doan": {},
-  "ke_hoach": {}
+  "gio_tu_hoc": "30–60 phút",
+  "muc_tieu_giai_doan": {
+    "CK1": {
+      "toan11": 2.0
+    },
+    "GK2": {
+      "toan11": 2.0
+    },
+    "CK2": {
+      "toan11": 2.5
+    }
+  },
+  "ke_hoach": {
+    "tuan": {
+      "T2": [
+        "Toán 11: Ôn tập lại các khái niệm về hàm số, 30 phút",
+        "Toán 11: Làm bài tập về tính đơn điệu của hàm số, 45 phút"
+      ],
+      "T3": [
+        "Toán 11: Học về đạo hàm của hàm số, 40 phút",
+        "Toán 11: Giải bài tập về ứng dụng đạo hàm, 35 phút"
+      ],
+      "T4": [
+        "Toán 11: Ôn tập các công thức tích phân, 30 phút",
+        "Toán 11: Làm bài tập về tích phân cơ bản, 50 phút"
+      ],
+      "T5": [
+        "Toán 11: Tổng kết các bài học trong tuần, 40 phút",
+        "Toán 11: Làm đề bài tập nhỏ để củng cố, 60 phút"
+      ],
+      "T6": [
+        "Toán 11: Ôn tập lại chương I (hàm số), 50 phút",
+        "Toán 11: Giải bài tập nâng cao về đạo hàm, 45 phút"
+      ],
+      "T7": [
+        "Toán 11: Xem video bài học về chủ đề mới, 30 phút",
+        "Toán 11: Làm bài tập về chủ đề đã xem, 40 phút"
+      ],
+      "CN": [
+        "Toán 11: Ôn tập nhẹ cho tuần sau, 25 phút",
+        "Toán 11: Đọc lại ghi chú và bài tập đã làm, 20 phút"
+      ]
+    },
+    "trong_tam": "Trọng tâm của tuần này là tập trung vào việc củng cố kiến thức Toán 11, đặc biệt là các chương về hàm số, đạo hàm và tích phân.",
+    "loi_nhan": "Hãy tin vào khả năng của mình, mỗi ngày một nỗ lực sẽ bringing lại tiến bộ rõ rệt!",
+    "nguon": "ai",
+    "fingerprint": "f43f4a2564034218",
+    "cap_nhat": "2026-09-19T23:24"
+  },
+  "trinh_do_bai": {
+    "Bài 1. Giá trị lượng giác của góc lượng giác": {
+      "level": 1,
+      "diem": -2.5,
+      "so_cau": 6
+    },
+    "Bài 2. Công thức lượng giác": {
+      "level": 1,
+      "diem": -1.5,
+      "so_cau": 3
+    }
+  },
+  "trinh_do_mon": {},
+  "diem_trinh_do_mon": {}
 }

@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-09-17",
+  "chapter": "C1",
+  "source_policy": "individual lesson files are primary for detailed ingest; combined chapter file is cross-check/reference",
+  "sources": [
+    {
+      "role": "combined",
+      "filename": "C1- CĐ DAY THEM TOAN 11-CTM 2025 VIP.docx",
+      "size_bytes": 16904988,
+      "sha256": "7f83afead6e896ed3fe2814f8773b05764b68ae8a58edc1cada9cd8a462d40a0"
+    },
+    {
+      "role": "B1",
+      "filename": "C1-B1-GIA TRI LUONG GIAC CUA MOT GOC LUONG GIAC.docx",
+      "size_bytes": 7564336,
+      "sha256": "082b43dbe6209f63b8fac91810fc9e5c1e9ddeb18e385564992d8551cdec52e8"
+    },
+    {
+      "role": "B2",
+      "filename": "C1-B2-CAC PHEP BIEN DOI LUONG GIAC.docx",
+      "size_bytes": 3057068,
+      "sha256": "0ee9fa0378f64bc6eada2e1044099e72a063c81f9bc8e7c851a0222005125e67"
+    },
+    {
+      "role": "B3",
+      "filename": "C1-B3-HAM SO LUONG GIAC VA DO THI.docx",
+      "size_bytes": 12108283,
+      "sha256": "56e1b002d1e25584c1740ff059929a159fd81a1beb63a6d6021b0abd4a0b310c"
+    },
+    {
+      "role": "B4",
+      "filename": "C1-B4-PT LUONG GIAC CO BAN.docx",
+      "size_bytes": 5479030,
+      "sha256": "be577fa720d08a60d136508e9a50ab00626d2b601acfe93b0632feb096035b88"
+    }
+  ],
+  "outputs": {
+    "question_count": 497,
+    "asset_counts": {
+      "B1": {
+        "svg_formula_assets": 1577,
+        "other_assets": 402
+      },
+      "B2": {
+        "svg_formula_assets": 1031,
+        "other_assets": 5
+      },
+      "B3": {
+        "svg_formula_assets": 1826,
+        "other_assets": 31
+      },
+      "B4": {
+        "svg_formula_assets": 1121,
+        "other_assets": 14
+      }
+    },
+    "question_counts": {
+      "B1": {
+        "count": 128,
+        "by_source_section": {
+          "multiple_choice": 55,
+          "true_false": 34,
+          "short_answer": 39
+        },
+        "by_actual_type": {
+          "multiple_choice_single": 60,
+          "true_false": 34,
+          "short_answer": 34
+        }
+      },
+      "B2": {
+        "count": 111,
+        "by_source_section": {
+          "multiple_choice": 48,
+          "true_false": 19,
+          "short_answer": 44
+        },
+        "by_actual_type": {
+          "multiple_choice_single": 48,
+          "true_false": 19,
+          "short_answer": 44
+        }
+      },
+      "B3": {
+        "count": 127,
+        "by_source_section": {
+          "multiple_choice": 59,
+          "true_false": 23,
+          "short_answer": 45
+        },
+        "by_actual_type": {
+          "multiple_choice_single": 59,
+          "true_false": 23,
+          "short_answer": 45
+        }
+      },
+      "B4": {
+        "count": 131,
+        "by_source_section": {
+          "multiple_choice": 50,
+          "true_false": 13,
+          "short_answer": 68
+        },
+        "by_actual_type": {
+          "multiple_choice_single": 50,
+          "true_false": 13,
+          "short_answer": 68
+        }
+      }
+    },
+    "qa": {
+      "missing_assets": 0,
+      "bad_mc_options": 0,
+      "bad_tf_statements": 0,
+      "missing_answers": 0,
+      "duplicate_ids": 0,
+      "review_queue_count": 287
+    }
+  }
+}

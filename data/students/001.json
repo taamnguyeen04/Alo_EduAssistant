@@ -47,10 +47,20 @@
     {
       "role": "assistant",
       "content": "\n\nChắc chắn rồi! Dưới đây là các **\"bí kíp học thuộc\"** và **các câu口诀 (mnemonics)** cực kỳ hiệu quả, được thiết kế riêng để giải quyết các điểm bạn hay gặp phải (như nhầm dấu góc phần tư, nhầm $\\pi$ với $360^\\circ$, hay nhầm các công thức $\\sin$ và $\\cos$).\n\nHãy cùng mình học thuộc các công thức theo từng nhóm nhỏ nhé!\n\n---\n\n### 🔑 BÍ KÍP 1: NHỚ BẢNG GIÁ TRỊ ĐẶC BIỆT ($30^\\circ, 45^\\circ, 60^\\circ$)\n\nĐây là nguồn gốc của mọi nhầm lẫn. Đừng học vẹt $1/2, \\sqrt{2}/2, \\sqrt{3}/2$. Hãy nhớ thứ tự số_inside:\n\n*   **Dla $\\sin$ (tăng dần từ $30^\\circ$ đến $60^\\circ$):**\n    $$\\sin 30^\\circ = \\frac{\\sqrt{1}}{2}, \\quad \\sin 45^\\circ = \\frac{\\sqrt{2}}{2}, \\quad \\sin 60^\\circ = \\frac{\\sqrt{3}}{2}$$\n    *   *Cách nhớ:* thứ tự số dưới根号 là **$1 \\rightarrow 2 \\rightarrow 3$** (nhỏ đến lớn).\n*   **Dla $\\cos$ (giảm dần từ $30^\\circ$ đến $60^\\circ$):**\n    $$\\cos 30^\\circ = \\frac{\\sqrt{3}}{2}, \\quad \\cos 44^\\circ = \\frac{\\sqrt{2}}{2}, \\quad \\cos 60^\\circ = \\frac{\\sqrt{1}}{2}$$\n    *   *Cách nhớ:* thứ tự số dưới根号 là **$3 \\rightarrow 2 \\rightarrow 1$** (lớn đến nhỏ).\n\n> **Lời khẩn:** *\"Sìn đi lên từ 1 đến 3, Cos đi xuống từ 3 đến 1.\"*\n\n---\n\n### 🔑 BÍ KÍP 2: NHỚ DẤU THEO GÓC PHẦN TƯ (Giải quyết điểm yếu \"nhầm dấu\")\n\nĐể không bao giờ nhầm dấu $\\sin$ và $\\cos$ ở các góc phần tư II, III, IV, hãy dùng **quy tắc đồ họa chữ \"S\" và \"C\"**:\n\n*   **$\\sin\\alpha$ (chữ S):**\n    *   Vẽ chữ **S** bắt đầu từ gốc tọa độ: nó đi qua góc phần tư I, sau đó quẹo sang II, xuống III, rồi IV.\n    *   Parts inside the curve of 'S' are **I and II** $\\rightarrow$ **$\\sin$ dương ở I, II; âm ở III, IV**.\n*   **$\\cos\\alpha$ (chữ C):**\n    *   Vẽ chữ **C** nằm ngang: nó bao quát góc phần tư IV, I, II, III.\n    *   Parts inside the curve of 'C' are **I and IV** $\\rightarrow$ **$\\cos$ dương ở I, IV; âm ở II, III**.\n*   **$\\tan\\alpha$ (đồng chất tan):**\n    *   $\\tan\\alpha = \\frac{\\sin\\alpha}{\\cos\\alpha}$. Dấu của $\\tan$ là dấu của $\\sin/\\cos$ (như nhau thì dương, khác nhau thì âm).\n    *   Do đó, $\\tan$ dương ở **I và III** (góc phần tư I: cả sin, cos đều dương; góc phần tư III: cả sin, cos đều âm $\\rightarrow$ âm/âm = dương).\n    *   $\\tan$ âm ở **II và IV**.\n\n---\n\n### 🔑 BÍ KÍP 3: CHUYỂN ĐỔI ĐỘ VÀ RADIAN (Sửa lỗi \"nhầm $\\pi = 360^\\circ$\")\n\nĐiểm yếu ghi trong hồ sơ của bạn là **nhầm $\\pi = 360^\\circ$**. Đây là lỗi cực kỳ phổ biến. Hãy ghi nhớ một cách logic:\n\n*   **Vòng tròn đầy đủ ($360^\\circ$) tương đương với $2\\pi$ radian.**\n    $$\\mathbf{2\\pi = 360^\\circ}$$\n*   **Nửa vòng tròn ($180^\\circ$) tương đương với $\\pi$ radian.**\n    $$\\mathbf{\\pi = 180^\\circ}$$\n*   **Công thức chuyển đổi chéo:**\n    *   Để chuyển **độ $\\alpha$ sang radian**: $\\alpha^\\circ = \\frac{\\alpha \\cdot \\pi}{180}$ (chia cho $180$, nhân $\\pi$).\n    *   Để chuyển **radian $x$ sang độ**: $x \\text{ rad} = \\frac{x \\cdot 180^\\circ}{\\pi}$ (nhân $180$, chia $\\pi$).\n\n> *Mnemonic:* **\"Pi là nửa vòng, tức là 180 độ.\"** Đừng bao giờ liên kết $\\pi$ với $360$ vì $360$ là số chẵn của vòng tròn ($2\\pi$).\n\n---\n\n### 🔑 BÍ KÍP 4: HỆ THỐNG CƠ BẢN ($\\sin^2\\alpha + \\cos^2\\alpha = 1$)\n\nĐừng học thuộc công thức này một cách vô thức. Hãy hình dung **đường tròn đơn vị** (đường tròn tâm O bán kính $R=1$):\n*   Tọa độ điểm M trên đường tròn là $M(\\cos\\alpha; \\sin\\alpha)$.\n*   Theo định lý Pythagoras trong tam giác vuông: $\\text{cạnh góc vuông}_1^2 + \\text{cạnh góc vuông}_2^2 = \\text{huyền}^2$.\n    $$\\sin^2\\alpha + \\cos^2\\alpha = 1^2 = 1$$\n*   Từ đó, suy ra các hệ thức liên hệ:\n    *   $\\tan\\alpha = \\frac{\\sin\\alpha}{\\cos\\alpha}$ (lớn hơn so với nhỏ hơn).\n    *   $\\cot\\alpha = \\frac{\\cos\\alpha}{\\sin\\alpha}$.\n\n---\n\n### 🔑 BÍ KÍP 5: CÁC CÔNG THỨC GIẢM GÓC (Reduction formulas)\n\nKhi gặp các công thức như $\\sin(\\frac{\\pi}{2} \\pm \\alpha)$ hay $\\cos(\\pi - \\alpha)$, hãy làm theo 2 bước đơn giản:\n\n#### Bước 1: Xem có $\\frac{\\pi}{2}$ hay $\\pi$ không để đổi tên hàm?\n*   Có chứa $\\frac{\\pi}{2}$ (hoặc bội lẻ của $\\frac{\\pi}{2}$): **Đổi tên hàm** ($\\sin \\leftrightarrow \\cos$, $\\tan \\leftrightarrow \\cot$).\n    *   Ví dụ: $\\sin(\\frac{\\pi}{2} - \\alpha) \\rightarrow \\cos\\alpha$.\n*   Chỉ chứa $\\pi$ (hoặc bội chẵn của $\\pi$): **Giữ nguyên tên hàm**.\n    *   Ví dụ: $\\cos(\\pi - \\alpha) \\rightarrow \\cos\\alpha$.\n\n#### Bước 2: Xác định dấu based on quadrant of the angle inside the formula.\n*   Ví dụ: $\\cos(\\pi - \\alpha)$. Góc $\\pi - \\alpha$ nằm ở góc phần tư II.\n*   Ở góc phần tư II, $\\cos$ âm $\\rightarrow$ Ta thêm dấu âm vào kết quả:\n    $$\\cos(\\pi - \\alpha) = -\\cos\\alpha$$\n\n---\n\n### 📝 LUYỆN TẬP THỰC CHIẾN\n\nKhi bạn đã thuộc các bí kíp trên, hãy thử làm 2 bài tập dưới đây từ khoGV để củng cố. Chúng sẽ giúp bạn áp dụng công thức một cách thành thạo:\n\n*   **[B1-TL-045]** Chứng minh các đẳng thức:\n    *   a) $\\cos^4\\alpha - \\sin^4\\alpha = 2\\cos^2\\alpha - 1$.\n    *   b) $\\frac{\\cos^2\\alpha + \\tan^2\\alpha - 1}{\\sin^2\\alpha} = \\tan^2\\alpha$.\n    *(Đây là bài tập lý tưởng để luyện công thức $\\sin^2+\\cos^2=1$ và công thức chuyển đổi $\\tan = \\sin/\\cos$.)*\n*   **[B1-TL-048]** Chứng minh biểu thức hoành tráng: $\\sin^4x\\cot^2x + \\cos^4x\\tan^2x + \\dots$\n\nHãy thử làm phần a) của bài **[B1-TL-045]** trước đây. Nếu bạn làm được thì hãy comment xuống đây mình sẽ cùng bạn kiểm tra nhé! 🦉"
+    },
+    {
+      "role": "user",
+      "content": "chưa hiểu về hai góc bù nhau"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào bạn, mình thấy bạn đang có sự băn khoăn về hai khái niệm \"góc bù nhau\" và \"góc phụ nhau\". Đây là một điểm rất dễ nhầm lẫn phải không? Hãy cùng mình làm rõ từng khái niệm một, sau đó so sánh để bạn thấy chúng khác biệt ở điểm nào.\n\n**Bước 1: Ôn lại khái niệm góc bù nhau**\nTheo định nghĩa, hai góc được gọi là **bù nhau** nếu **tổng số đo của chúng bằng 90 độ** (hoặc $\\frac{\\pi}{2}$ radian).\nVí dụ: một góc $30^\\circ$ và một góc $60^\\circ$ thì chúng bù nhau vì $30^\\circ + 60^\\circ = 90^\\circ$.\nBạn có thể hình dung hai góc này đặt cạnh nhau sẽ tạo thành một góc vuông $90^\\circ$.\n\n**Bước 2: Ôn lại khái niệm góc phụ nhau**\nHai góc được gọi là **phụ nhau** nếu **tổng số đo của chúng bằng 180 độ** (hoặc $\\pi$ radian).\nVí dụ: một góc $50^\\circ$ và một góc $130^\\circ$ thì chúng phụ nhau vì $50^\\circ + 130^\\circ = 180^\\circ$.\nHai góc này đặt cạnh nhau sẽ tạo thành một góc phẳng $180^\\circ$.\n\n**Bước 3: So sánh và liên hệ với các giá trị lượng giác**\nSự khác biệt then chốt là ở tổng số đo: $90^\\circ$ với góc bù, $180^\\circ$ với góc phụ. Điều này dẫn đến các hệ thức liên hệ giữa các hàm số lượng giác khác nhau:\n- Với hai góc bù nhau $\\alpha$ và $\\beta = 90^\\circ - \\alpha$: $\\sin\\alpha = \\cos\\beta$, $\\cos\\alpha = \\sin\\beta$, $\\tan\\alpha = \\cot\\beta$.\n- Với hai góc phụ nhau $\\alpha$ và $\\beta = 180^\\circ - \\alpha$: $\\sin\\alpha = \\sin\\beta$, $\\cos\\alpha = -\\cos\\beta$, $\\tan\\alpha = -\\tan\\beta$.\n\nBạn thấy đó, với góc phụ nhau, các hàm số lượng giác bằng chéo nhau, còn với góc bù nhau, chúng bằng nhau nhưng đổi giữa $\\sin$ và $\\cos$, $\\tan$ và $\\cot$.\n\nĐể củng cố sự khác biệt này, mình gợi ý bạn làm một bài tập nhỏ sau đây. Đây là bài tập trong kho của GV, có liên quan đến góc phụ nhau, qua đó bạn sẽ thấy rõ hơn sự khác biệt."
     }
   ],
   "weaknesses": [
-    "chưa làm chủ khái niệm góc lượng giác và cách xác định giá trị lượng giác trên đường tròn đơn vị"
+    "chưa làm chủ khái niệm góc lượng giác và cách xác định giá trị lượng giác trên đường tròn đơn vị",
+    "nhầm lẫn khái niệm góc bù nhau và góc phụ nhau",
+    "cần dẫn dắt mức Nhận biết — Bài 1. Giá trị lượng giác của góc lượng giác"
   ],
   "id": "001",
   "ten": "001",
@@ -66,8 +76,7 @@
   "phong_cach": "",
   "tkb": {},
   "bai_de_xuat": [
-    "B1-03",
-    "B1-TL-051"
+    "B1-TN-039"
   ],
   "viec_da_xong": [],
   "video_goi_y_count": {
@@ -75,6 +84,21 @@
   },
   "moc_attempt": 0,
   "conversations": [
+    {
+      "id": "cuoc-1789892393612",
+      "tieu_de": "B1: chưa hiểu về hai góc bù nhau",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": [
+        {
+          "role": "user",
+          "content": "chưa hiểu về hai góc bù nhau"
+        },
+        {
+          "role": "assistant",
+          "content": "Chào bạn, mình thấy bạn đang có sự băn khoăn về hai khái niệm \"góc bù nhau\" và \"góc phụ nhau\". Đây là một điểm rất dễ nhầm lẫn phải không? Hãy cùng mình làm rõ từng khái niệm một, sau đó so sánh để bạn thấy chúng khác biệt ở điểm nào.\n\n**Bước 1: Ôn lại khái niệm góc bù nhau**\nTheo định nghĩa, hai góc được gọi là **bù nhau** nếu **tổng số đo của chúng bằng 90 độ** (hoặc $\\frac{\\pi}{2}$ radian).\nVí dụ: một góc $30^\\circ$ và một góc $60^\\circ$ thì chúng bù nhau vì $30^\\circ + 60^\\circ = 90^\\circ$.\nBạn có thể hình dung hai góc này đặt cạnh nhau sẽ tạo thành một góc vuông $90^\\circ$.\n\n**Bước 2: Ôn lại khái niệm góc phụ nhau**\nHai góc được gọi là **phụ nhau** nếu **tổng số đo của chúng bằng 180 độ** (hoặc $\\pi$ radian).\nVí dụ: một góc $50^\\circ$ và một góc $130^\\circ$ thì chúng phụ nhau vì $50^\\circ + 130^\\circ = 180^\\circ$.\nHai góc này đặt cạnh nhau sẽ tạo thành một góc phẳng $180^\\circ$.\n\n**Bước 3: So sánh và liên hệ với các giá trị lượng giác**\nSự khác biệt then chốt là ở tổng số đo: $90^\\circ$ với góc bù, $180^\\circ$ với góc phụ. Điều này dẫn đến các hệ thức liên hệ giữa các hàm số lượng giác khác nhau:\n- Với hai góc bù nhau $\\alpha$ và $\\beta = 90^\\circ - \\alpha$: $\\sin\\alpha = \\cos\\beta$, $\\cos\\alpha = \\sin\\beta$, $\\tan\\alpha = \\cot\\beta$.\n- Với hai góc phụ nhau $\\alpha$ và $\\beta = 180^\\circ - \\alpha$: $\\sin\\alpha = \\sin\\beta$, $\\cos\\alpha = -\\cos\\beta$, $\\tan\\alpha = -\\tan\\beta$.\n\nBạn thấy đó, với góc phụ nhau, các hàm số lượng giác bằng chéo nhau, còn với góc bù nhau, chúng bằng nhau nhưng đổi giữa $\\sin$ và $\\cos$, $\\tan$ và $\\cot$.\n\nĐể củng cố sự khác biệt này, mình gợi ý bạn làm một bài tập nhỏ sau đây. Đây là bài tập trong kho của GV, có liên quan đến góc phụ nhau, qua đó bạn sẽ thấy rõ hơn sự khác biệt."
+        }
+      ]
+    },
     {
       "id": "cuoc-1789464710627",
       "tieu_de": "B1: cách nhớ công thức ",
@@ -136,5 +160,18 @@
       "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
       "messages": []
     }
-  ]
+  ],
+  "diem_trinh_do": 0,
+  "trinh_do_bai": {
+    "Bài 1. Giá trị lượng giác của góc lượng giác": {
+      "level": 1,
+      "diem": -1.0,
+      "so_cau": 2
+    }
+  },
+  "mon_can_ho_tro": [],
+  "muc_tieu": "",
+  "gio_tu_hoc": "",
+  "muc_tieu_giai_doan": {},
+  "ke_hoach": {}
 }

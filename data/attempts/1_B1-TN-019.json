@@ -1,0 +1,12 @@
+{
+  "sid": "1",
+  "cau_id": "B1-TN-019",
+  "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+  "de": "Trên đường tròn lượng giác, đặt $A=(1,0)$, $B=(0,1)$, $C=(-1,0)$, $D=(0,-1)$. Gọi $L,M,N,P$ lần lượt là trung điểm các cung nhỏ $AB,BC,CD,DA$. Cung lượng giác có điểm đầu $A$ và số đo $-\\frac{3\\pi}{4}+k\\pi$ ($k\\in\\mathbb{Z}$) có điểm cuối ở đâu?\nA. $L$ hoặc $N$.\nB. $M$ hoặc $P$.\nC. $M$ hoặc $N$.\nD. $L$ hoặc $P$.",
+  "dang": "TN",
+  "loai": "khong_biet",
+  "chon": "E",
+  "dung": false,
+  "dung_het": false,
+  "do_kho": 1
+}

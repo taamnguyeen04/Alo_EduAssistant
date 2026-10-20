@@ -1,0 +1,69 @@
+{
+  "edges": [
+    {
+      "from": "C1_B1_K03",
+      "to": "C1_B2_K01",
+      "type": "prerequisite"
+    },
+    {
+      "from": "C1_B1_K04",
+      "to": "C1_B2_K06",
+      "type": "prerequisite"
+    },
+    {
+      "from": "C1_B2_K01",
+      "to": "C1_B2_K07",
+      "type": "supports"
+    },
+    {
+      "from": "C1_B1_K03",
+      "to": "C1_B3_K03",
+      "type": "prerequisite"
+    },
+    {
+      "from": "C1_B1_K03",
+      "to": "C1_B3_K04",
+      "type": "prerequisite"
+    },
+    {
+      "from": "C1_B3_K03",
+      "to": "C1_B4_K02",
+      "type": "prerequisite"
+    },
+    {
+      "from": "C1_B3_K04",
+      "to": "C1_B4_K03",
+      "type": "prerequisite"
+    },
+    {
+      "from": "C1_B3_K05",
+      "to": "C1_B4_K04",
+      "type": "prerequisite"
+    },
+    {
+      "from": "C1_B3_K06",
+      "to": "C1_B4_K05",
+      "type": "prerequisite"
+    },
+    {
+      "from": "C1_B4_K02",
+      "to": "C1_B4_K06",
+      "type": "supports"
+    },
+    {
+      "from": "C1_B4_K03",
+      "to": "C1_B4_K06",
+      "type": "supports"
+    },
+    {
+      "from": "C1_B4_K04",
+      "to": "C1_B4_K06",
+      "type": "supports"
+    },
+    {
+      "from": "C1_B4_K05",
+      "to": "C1_B4_K06",
+      "type": "supports"
+    }
+  ]
+}

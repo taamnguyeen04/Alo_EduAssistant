@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "question.schema.json",
+  "title": "LLM Wiki Toan 11 Question",
+  "type": "object",
+  "required": [
+    "id", "chapter_id", "lesson_id", "source_number", "source_section_type",
+    "question_type", "prompt_md", "stem_md", "correct_answer", "solution_md",
+    "difficulty", "knowledge_ids", "assets", "formula_rendering", "source"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^C1_B[1-4]_(MC|TF|SA)_[0-9]{3}$"},
+    "chapter_id": {"const": "C1"},
+    "lesson_id": {"enum": ["C1_B1", "C1_B2", "C1_B3", "C1_B4"]},
+    "source_number": {"type": "integer", "minimum": 1},
+    "source_section_type": {"enum": ["multiple_choice", "true_false", "short_answer"]},
+    "question_type": {"enum": ["multiple_choice_single", "true_false", "short_answer"]},
+    "prompt_md": {"type": "string"},
+    "stem_md": {"type": "string"},
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "content_md"],
+        "properties": {
+          "key": {"enum": ["A", "B", "C", "D"]},
+          "content_md": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "statements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["key", "content_md"],
+        "properties": {
+          "key": {"enum": ["a", "b", "c", "d"]},
+          "content_md": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "correct_answer": {},
+    "answer_confidence": {"type": "string"},
+    "answer_origin": {"type": "string"},
+    "solution_md": {"type": "string"},
+    "difficulty": {
+      "type": "object",
+      "required": ["label", "display", "source", "confidence"],
+      "properties": {
+        "label": {"enum": ["nhan_biet", "thong_hieu", "van_dung", "van_dung_cao"]},
+        "display": {"type": "string"},
+        "source": {"const": "inferred_not_stated_in_source"},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "reason": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "knowledge_ids": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "assets": {"type": "array", "items": {"type": "string"}},
+    "formula_rendering": {"type": "string"},
+    "source": {
+      "type": "object",
+      "required": ["filename", "sha256", "section", "source_number"],
+      "properties": {
+        "filename": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "section": {"type": "string"},
+        "source_number": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

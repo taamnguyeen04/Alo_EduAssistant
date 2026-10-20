@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "stats": {
+    "question_count": 497,
+    "by_type": {
+      "multiple_choice_single": 217,
+      "true_false": 89,
+      "short_answer": 191
+    },
+    "by_difficulty": {
+      "nhan_biet": 292,
+      "thong_hieu": 119,
+      "van_dung": 57,
+      "van_dung_cao": 29
+    },
+    "answer_origins": {
+      "source_solution_choose_or_source_formatting": 216,
+      "source_solution": 86,
+      "source_answer_table_and_solution": 2,
+      "source_answer_table": 1,
+      "derived_from_source_solution_final_line": 190,
+      "source_solution_choose": 1,
+      "computed_from_source_expression_not_present_in_source": 1
+    },
+    "questions_with_source_anomaly": 5,
+    "questions_review_required": 1,
+    "blank_source_solutions": 1,
+    "knowledge_unit_count": 34,
+    "relation_count": 13,
+    "markdown_asset_refs_checked": 5983,
+    "asset_stats": {
+      "B1": {
+        ".png": 402,
+        ".svg": 1577
+      },
+      "B2": {
+        ".svg": 1031,
+        ".png": 5
+      },
+      "B3": {
+        ".svg": 1826,
+        ".png": 31
+      },
+      "B4": {
+        ".svg": 1121,
+        ".png": 13,
+        ".jpeg": 1
+      }
+    },
+    "errors": 0,
+    "warnings": 0
+  },
+  "errors": [],
+  "warnings": []
+}

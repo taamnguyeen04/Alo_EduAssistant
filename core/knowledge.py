@@ -117,15 +117,125 @@ def loi_sai_cua_bai(bai, n=5, mon="toan11"):
 
 def doc_concept(bai, max_chars=1500, mon="toan11"):
     """Đọc trang khái niệm wiki của Bài (truy gốc điểm yếu). Không có -> ''."""
-    # Bài chưa có trang wiki thì trả rỗng để prompt vẫn chạy bình thường.
+    # Giữ tương thích stub cũ (concepts/<stem Bài>.md); hệ mới C1_Bx_Kxx
+    # đọc qua doc_ly_thuyet() nên hàm này chỉ còn fallback.
     p = os.path.join(_wiki_dir(mon), "concepts", _safe_stem(bai) + ".md")
+    if os.path.exists(p):
+        try:
+            with open(p, encoding="utf-8") as f:
+                return f.read()[:max_chars]
+        except Exception:
+            return ""
+    # Fallback hệ mới: lấy concepts của lesson khớp nhất.
+    _, concepts, _ = doc_ly_thuyet(bai, "", mon=mon, max_wiki_chars=0,
+                                   max_concepts=1, max_concept_chars=max_chars)
+    return concepts
+
+
+@lru_cache(maxsize=4)
+def _tai_syllabus(mon="toan11"):
+    """Nạp syllabus.json (map Bài -> wiki_page + knowledge_units). Cache."""
+    p = os.path.join(_wiki_dir(mon), "syllabus.json")
+    try:
+        import json
+        with open(p, encoding="utf-8") as f:
+            d = json.load(f)
+        lessons = d.get("lessons", []) if isinstance(d, dict) else []
+        return [l for l in lessons if isinstance(l, dict)]
+    except Exception:
+        return []
+
+
+def bai_sang_lesson(bai, cau_hoi="", mon="toan11"):
+    """Map tên Bài bank (tiếng Việt) -> lesson C1_Bx trong syllabus.
+
+    Chấm bằng trùng từ khóa giữa tên Bài + câu hỏi với title/summary từng
+    lesson. Không khớp -> None (để caller vét theo câu hỏi).
+    """
+    lessons = _tai_syllabus(mon)
+    if not lessons:
+        return None
+    khoa_bai = tach_tu(f"{bai or ''} {cau_hoi or ''}")
+    if not khoa_bai:
+        return None
+    best, best_diem = None, 0
+    for l in lessons:
+        van = f"{l.get('title', '')} {l.get('id', '')} " + " ".join(
+            f"{k.get('title', '')} {k.get('summary', '')}"
+            for k in (l.get("knowledge_units") or []) if isinstance(k, dict))
+        trung = khoa_bai & tach_tu(van)
+        diem = len(trung)
+        # Ưu tiên khớp trực tiếp tên Bài với title lesson.
+        if tach_tu(bai or "") & tach_tu(l.get("title", "")):
+            diem += 2
+        if diem > best_diem:
+            best, best_diem = l, diem
+    return best if best_diem >= 2 else None
+
+
+def _doc_file(mon, rel, max_chars):
+    if not rel:
+        return ""
+    p = os.path.join(_wiki_dir(mon), rel.replace("/", os.sep))
     if not os.path.exists(p):
         return ""
     try:
         with open(p, encoding="utf-8") as f:
-            return f.read()[:max_chars]
+            t = f.read()
+        # Bỏ frontmatter ---...--- đầu file cho gọn token.
+        if t.startswith("---"):
+            end = t.find("---", 3)
+            if 0 < end < 2000:
+                t = t[end + 3:].lstrip()
+        return t[:max_chars].strip()
     except Exception:
         return ""
+
+
+def doc_ly_thuyet(bai, cau_hoi="", mon="toan11", max_wiki_chars=3000,
+                  max_concepts=2, max_concept_chars=1200):
+    """Đọc lý thuyết chuẩn cho hỏi đáp: (wiki_bai, concepts_ghep, lesson_id).
+
+    - wiki_bai: nội dung wiki/<lesson>.md (source_grounded, ~4-5KB) cắt gọn.
+    - concepts_ghep: 1-2 units C1_Bx_Kxx khớp câu hỏi nhất (công thức cốt lõi).
+    - lesson_id: 'C1_B1'... hoặc '' khi không map được.
+    Thiếu file nào thì trả rỗng phần đó, không bao giờ raise.
+    """
+    lesson = bai_sang_lesson(bai, cau_hoi, mon)
+    if lesson is None:
+        # Vét theo câu hỏi trên toàn syllabus khi tên Bài không khớp.
+        lessons = _tai_syllabus(mon)
+        khoa = tach_tu(cau_hoi or "")
+        best, best_diem = None, 0
+        for l in lessons:
+            van = f"{l.get('title', '')} " + " ".join(
+                f"{k.get('title', '')} {k.get('summary', '')}"
+                for k in (l.get("knowledge_units") or []) if isinstance(k, dict))
+            d = len(khoa & tach_tu(van))
+            if d > best_diem:
+                best, best_diem = l, d
+        lesson = best if best_diem >= 1 else None
+    if lesson is None:
+        return "", "", ""
+    lid = lesson.get("id", "") or ""
+    wiki_text = _doc_file(mon, lesson.get("wiki_page", ""), max_wiki_chars)
+    # Chọn concepts khớp câu hỏi nhất trong lesson.
+    units = [k for k in (lesson.get("knowledge_units") or []) if isinstance(k, dict)]
+    khoa = tach_tu(f"{cau_hoi or ''} {bai or ''}")
+    scored = []
+    for k in units:
+        van = f"{k.get('title', '')} {k.get('summary', '')} {k.get('id', '')}"
+        trung = khoa & tach_tu(van)
+        scored.append((len(trung), k))
+    scored.sort(key=lambda x: -x[0])
+    # Không tách được từ khóa thì lấy 1 unit đầu để HS luôn có nền.
+    top = [k for s, k in scored[:max_concepts] if s > 0] or units[:1]
+    parts = []
+    for k in top[:max_concepts]:
+        t = _doc_file(mon, f"concepts/{k.get('id', '')}.md", max_concept_chars)
+        if t:
+            parts.append(f"[{k.get('id', '')} — {k.get('title', '')}]\n{t}")
+    return wiki_text, "\n\n---\n\n".join(parts), lid
 
 
 def tom_tat_kho(mon="toan11"):

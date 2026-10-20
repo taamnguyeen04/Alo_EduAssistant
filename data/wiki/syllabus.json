@@ -1,0 +1,212 @@
+{
+  "chapter_id": "C1",
+  "title": "Hàm số lượng giác - Phương trình lượng giác",
+  "lessons": [
+    {
+      "id": "C1_B1",
+      "title": "Giá trị lượng giác của một góc lượng giác",
+      "knowledge_units": [
+        {
+          "id": "C1_B1_K01",
+          "title": "Độ và radian",
+          "summary": "Quan hệ và chuyển đổi giữa đơn vị độ và radian."
+        },
+        {
+          "id": "C1_B1_K02",
+          "title": "Góc lượng giác và số đo",
+          "summary": "Chiều quay, số đo tổng quát của các góc cùng tia đầu/tia cuối, hệ thức Chasles."
+        },
+        {
+          "id": "C1_B1_K03",
+          "title": "Đường tròn lượng giác và giá trị lượng giác",
+          "summary": "Định nghĩa sin, cos, tan, cot bằng tọa độ trên đường tròn lượng giác."
+        },
+        {
+          "id": "C1_B1_K04",
+          "title": "Dấu và hệ thức lượng giác cơ bản",
+          "summary": "Dấu theo góc phần tư và các hệ thức cơ bản giữa sin, cos, tan, cot."
+        },
+        {
+          "id": "C1_B1_K05",
+          "title": "Các góc liên quan đặc biệt",
+          "summary": "Góc đối, hơn kém π, bù nhau, phụ nhau."
+        },
+        {
+          "id": "C1_B1_K06",
+          "title": "Ứng dụng góc lượng giác",
+          "summary": "Bài toán vòng quay, cung tròn, chuyển động và mô hình thực tế."
+        }
+      ],
+      "question_file": "questions/C1_B1.json",
+      "wiki_page": "wiki/C1_B1.md",
+      "source_fidelity_md": "source_md/C1_B1.md"
+    },
+    {
+      "id": "C1_B2",
+      "title": "Các phép biến đổi lượng giác",
+      "knowledge_units": [
+        {
+          "id": "C1_B2_K01",
+          "title": "Công thức cộng",
+          "summary": "Công thức sin, cos, tan của tổng và hiệu hai góc."
+        },
+        {
+          "id": "C1_B2_K02",
+          "title": "Công thức nhân đôi",
+          "summary": "Các công thức sin 2a, cos 2a, tan 2a."
+        },
+        {
+          "id": "C1_B2_K03",
+          "title": "Công thức hạ bậc",
+          "summary": "Biểu diễn sin²a và cos²a theo cos 2a."
+        },
+        {
+          "id": "C1_B2_K04",
+          "title": "Tích thành tổng",
+          "summary": "Biến đổi tích các hàm lượng giác thành tổng/hiệu."
+        },
+        {
+          "id": "C1_B2_K05",
+          "title": "Tổng thành tích",
+          "summary": "Biến đổi tổng/hiệu các hàm lượng giác thành tích."
+        },
+        {
+          "id": "C1_B2_K06",
+          "title": "Tính giá trị biểu thức",
+          "summary": "Khai thác công thức biến đổi để tính chính xác và rút gọn biểu thức."
+        },
+        {
+          "id": "C1_B2_K07",
+          "title": "Đẳng thức lượng giác",
+          "summary": "Chứng minh, rút gọn và suy luận các hệ thức lượng giác."
+        },
+        {
+          "id": "C1_B2_K08",
+          "title": "Ứng dụng phép biến đổi",
+          "summary": "Ứng dụng hình học, dao động điều hòa và bài toán thực tế."
+        }
+      ],
+      "question_file": "questions/C1_B2.json",
+      "wiki_page": "wiki/C1_B2.md",
+      "source_fidelity_md": "source_md/C1_B2.md"
+    },
+    {
+      "id": "C1_B3",
+      "title": "Hàm số lượng giác và đồ thị",
+      "knowledge_units": [
+        {
+          "id": "C1_B3_K01",
+          "title": "Hàm số chẵn, hàm số lẻ",
+          "summary": "Định nghĩa và tính đối xứng của đồ thị."
+        },
+        {
+          "id": "C1_B3_K02",
+          "title": "Hàm số tuần hoàn",
+          "summary": "Định nghĩa chu kì và số dương nhỏ nhất là chu kì."
+        },
+        {
+          "id": "C1_B3_K03",
+          "title": "Hàm số sin",
+          "summary": "Tập xác định, tập giá trị, tính lẻ, chu kì, đơn điệu và đồ thị."
+        },
+        {
+          "id": "C1_B3_K04",
+          "title": "Hàm số cos",
+          "summary": "Tập xác định, tập giá trị, tính chẵn, chu kì, đơn điệu và đồ thị."
+        },
+        {
+          "id": "C1_B3_K05",
+          "title": "Hàm số tan",
+          "summary": "Tập xác định, tập giá trị, tính lẻ, chu kì, đơn điệu và đồ thị."
+        },
+        {
+          "id": "C1_B3_K06",
+          "title": "Hàm số cot",
+          "summary": "Tập xác định, tập giá trị, tính lẻ, chu kì, đơn điệu và đồ thị."
+        },
+        {
+          "id": "C1_B3_K07",
+          "title": "Đồ thị và tương giao",
+          "summary": "Dùng đồ thị để đọc giá trị và số nghiệm/giao điểm."
+        },
+        {
+          "id": "C1_B3_K08",
+          "title": "Đồng biến, nghịch biến",
+          "summary": "Xét các khoảng đơn điệu của hàm lượng giác."
+        },
+        {
+          "id": "C1_B3_K09",
+          "title": "Vẽ và biến đổi đồ thị",
+          "summary": "Vẽ đồ thị và đọc cực trị, nghiệm từ đồ thị."
+        },
+        {
+          "id": "C1_B3_K10",
+          "title": "Tập xác định và tập giá trị",
+          "summary": "Xác định miền xác định/miền giá trị của biểu thức lượng giác."
+        },
+        {
+          "id": "C1_B3_K11",
+          "title": "Ứng dụng hàm lượng giác",
+          "summary": "Mô hình tuần hoàn và bài toán thực tế."
+        }
+      ],
+      "question_file": "questions/C1_B3.json",
+      "wiki_page": "wiki/C1_B3.md",
+      "source_fidelity_md": "source_md/C1_B3.md"
+    },
+    {
+      "id": "C1_B4",
+      "title": "Phương trình lượng giác cơ bản",
+      "knowledge_units": [
+        {
+          "id": "C1_B4_K01",
+          "title": "Phương trình tương đương",
+          "summary": "Khái niệm và các phép biến đổi tương đương có điều kiện."
+        },
+        {
+          "id": "C1_B4_K02",
+          "title": "Phương trình sin x = m",
+          "summary": "Điều kiện có nghiệm và nghiệm tổng quát."
+        },
+        {
+          "id": "C1_B4_K03",
+          "title": "Phương trình cos x = m",
+          "summary": "Điều kiện có nghiệm và nghiệm tổng quát."
+        },
+        {
+          "id": "C1_B4_K04",
+          "title": "Phương trình tan x = m",
+          "summary": "Nghiệm tổng quát của phương trình tan."
+        },
+        {
+          "id": "C1_B4_K05",
+          "title": "Phương trình cot x = m",
+          "summary": "Nghiệm tổng quát của phương trình cot."
+        },
+        {
+          "id": "C1_B4_K06",
+          "title": "Tìm nghiệm thỏa điều kiện",
+          "summary": "Lọc nghiệm trên đoạn/khoảng hoặc theo điều kiện bổ sung."
+        },
+        {
+          "id": "C1_B4_K07",
+          "title": "Máy tính cầm tay",
+          "summary": "Sử dụng giá trị lượng giác ngược để lấy nghiệm đại diện."
+        },
+        {
+          "id": "C1_B4_K08",
+          "title": "Biến đổi phương trình lượng giác",
+          "summary": "Đưa phương trình về các dạng cơ bản, xử lý điều kiện xác định."
+        },
+        {
+          "id": "C1_B4_K09",
+          "title": "Ứng dụng phương trình lượng giác",
+          "summary": "Mô hình dao động/chuyển động và bài toán thực tế."
+        }
+      ],
+      "question_file": "questions/C1_B4.json",
+      "wiki_page": "wiki/C1_B4.md",
+      "source_fidelity_md": "source_md/C1_B4.md"
+    }
+  ]
+}

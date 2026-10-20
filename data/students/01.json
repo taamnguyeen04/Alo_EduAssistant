@@ -72,6 +72,70 @@
     {
       "role": "assistant",
       "content": "Dưới đây là hướng dẫn học bài **Bài 1. Giá trị lượng giác của góc lượng giác** một cách dễ hiểu, phù hợp với học sinh trình độ trung bình, được trình bày hoàn toàn bằng tiếng Việt, không chứa bất kỳ ký tự chữ Hán nào.\n\n---\n\n### Bước 1: Nền tảng số 1 - Hình dung \"Đường tròn đơn vị\" thay vì học vẹt công thức\n\nHọc sinh trình độ trung bình thường hay học vẹt các giá trị đặc biệt như $\\cos 180^\\circ = -1$, $\\sin 90^\\circ = 1$ nhưng dễ nhầm lẫn. Bí kíp vàng là **hình dung trực quan** qua đường tròn đơn vị:\n\n* **Đường tròn đơn vị** là đường tròn tâm gốc tọa độ $O(0;0)$ và bán kính bằng $1$.\n* Khi ta có một góc lượng giác $\\alpha$, tia cuối của góc sẽ cắt đường tròn đơn vị tại một điểm $M$ có tọa độ $(x; y)$. \n* **Định nghĩa cốt lõi:**\n $$\\cos\\alpha = x \\quad (\\text{hoành độ điểm } M)$$\n $$\\sin\\alpha = y \\quad (\\text{tung độ điểm } M)$$\n $$\\tan\\alpha = \\frac{y}{x} \\quad (\\text{nếu } x \\neq 0)$$\n\n**Hỏi tự vấn để luyện tập:**\n* Khi góc là $180^\\circ$ (hoặc $\\pi$ rad), tia cuối đi thẳng sang trái, cắt đường tròn tại điểm $(-1; 0)$. Vậy $\\cos(180^\\circ)$ là $-1$, $\\sin(180^\\circ)$ là $0$, và $\\tan(180^\\circ) = 0/(-1) = 0$. Bạn có thấy chỉ cần vẽ một trục tọa độ đơn giản là có thể tự tính ra mọi giá trị đặc biệt không?\n* Với góc $90^\\circ$: tia cuối cắt tại $(0; 1)$. Vậy $\\cos 90^\\circ = 0$, $\\sin 90^\\circ = 1$, $\\tan 90^\\circ$ không xác định (vì chia cho $x=0$). Hãy tự vẽ góc $270^\\circ$ tương tự!\n\n---\n\n### Bước 2: Vượt qua rào chắn điểm yếu - Chuyển đổi đơn vị $\\pi/180$\n\nĐiểm yếu \"quên áp dụng hệ số chuyển đổi $\\pi/180$\" rất phổ biến. Để không bao giờ sai, hãy ghi nhớ mối liên hệ cực kỳ đơn giản này:\n\n* **Liên hệ tối hậu:** $$180^\\circ = \\pi \\text{ radian}$$\n* **Công thức đổi độ $\\to$ radian:** \n $$\\text{Số radian} = \\text{số độ} \\times \\frac{\\pi}{180}$$\n *Ví dụ:* $60^\\circ \\Rightarrow 60 \\times \\frac{\\pi}{180} = \\frac{\\pi}{3}$ rad.\n* **Công thức đổi radian $\\to$ độ:**\n $$\\text{số độ} = \\text{số radian} \\times \\frac{180}{\\pi}$$\n *Ví dụ:* $\\frac{2\\pi}{3} \\Rightarrow \\frac{2\\pi}{3} \\times \\frac{180}{\\pi} = 120^\\circ$.\n\n**Lưu ý nhỏ cho bạn:** Khi thấy trong đề bài có ký hiệu $\\pi$ (ví dụ $\\frac{3\\pi}{2}$), đó là đơn vị radian. Khi thấy dấu ${}^\\circ$ (ví dụ $270^\\circ$), đó là độ. Hãy luôn kiểm tra đơn vị trước khi áp dụng các công thức!\n\n---\n\n### Bước 3: Quy tắc dấu trong 4 góc phần tư (Rất quan trọng cho bài B1-TL-034)\n\nKhi giải các bài toán tìm các giá trị lượng giác còn lại (như bài B1-TL-034), ta cần biết dấu của $\\sin$ và $\\cos$ dựa trên vị trí góc $\\alpha$ thuộc góc phần tư nào. \n\nĐừng học vẹt bảng dấu bằng heart, hãy dựa vào trục tọa độ $x$ và $y$:\n* $\\cos\\alpha = x$ (dương nếu $x > 0$, âm nếu $x < 0$).\n* $\\sin\\alpha = y$ (dương nếu $y > 0$, âm nếu $y < 0$).\n* **Tóm tắt nhanh:**\n * **Góc phần tư I ($0 < \\alpha < 90^\\circ$):** Cả $x$ và $y$ đều dương $\\Rightarrow \\cos > 0, \\sin > 0$.\n * **Góc phần tư II ($90^\\circ < \\alpha < 180^\\circ$):** $x$ âm, $y$ dương $\\Rightarrow \\cos < 0, \\sin > 0$.\n * **Góc phần tư III ($180^\\circ < \\alpha < 270^\\circ$):** Cả $x$ và $y$ đều âm $\\Rightarrow \\cos < 0, \\sin < 0$.\n * **Góc phần tư IV ($270^\\circ < \\alpha < 360^\\circ$):** $x$ dương, $y$ âm $\\Rightarrow \\cos > 0, \\sin < 0$.\n\n---\n\n### Bước 4: Kết nối thực hành với các bài tập mẫu (Câu tham khảo)\n\nĐể củng cố 3 bước trên, bạn hãy cùng mình luyện tập với các câu hỏi tiêu biểu từ kho GV đã được chọn lọc:\n\n* **Bài tập cơ bản (B1-TN-049):** Tính $\\tan 180^\\circ$. Đây là bài tập giúp bạn làm quen với các góc nằm trên trục tọa độ, rèn luyện tư duy hình dung điểm cắt $M(-1; 0)$.\n* **Bài tập trung bình (B1-TL-034):** \"Tính các giá trị lượng giác còn lại của góc $\\alpha$, biết $\\cos\\alpha = -2/3$ và $\\pi < \\alpha < 3\\pi/2$.\"\n * *Cách làm:* Ta dùng công thức liên hệ $\\sin^2\\alpha + \\cos^2\\alpha = 1$ để tìm $\\sin\\alpha = \\pm\\sqrt{1 - (-2/3)^2} = \\pm\\frac{\\sqrt{5}}{3}$.\n * Vì $\\alpha$ thuộc góc phần tư III ($\\pi < \\alpha < 3\\pi/2$), theo quy tắc dấu ở Bước 3, ta chọn $\\sin\\alpha < 0$. Từ đó suy ra $\\tan\\alpha$ và $\\cot\\alpha$. Bài này sẽ rèn cho bạn cả công thức liên hệ và quy tắc dấu cực kỳ chuẩn!\n* **Bài tập luyện tính toán (B1-TN-084):** Biến đổi biểu thức $D$ để tìm giá trị không phụ thuộc $x$. Bài này sẽ giúp bạn luyện **thứ tự thực hiện phép tính** (điểm yếu của bạn) một cách cẩn trọng, kết hợp công thức $\\cot^2x \\cdot \\sin^2x = \\cos^2x$.\n\n---\n\n### Video tham khảo trực quan\nNếu bạn thấy việc hình dung các góc quay trên trục tọa độ vẫn còn abstract, hãy xem video dưới đây. Video này sẽ minh họa trực tiếp cách định nghĩa góc lượng giác trên đường tròn đơn vị, cực kỳ dễ hình dung cho trình độ trung bình:\n* **Link video:** [Bài 1. Giá trị lượng giác của góc lượng giác](https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG)\n\n---\n\nHãy bắt đầu bằng việc tự vẽ một trục tọa độ $Oxy$ và một đường tròn đơn vị bán kính $1$ trên giấy của yourself. Đặt các góc $0^\\circ, 90^\\circ, 180^\\circ, 270^\\circ$ lên và ghi tọa độ tương ứng. Bạn sẽ thấy toàn bộ bài học trở nên cực kỳ trực quan và dễ nhớ! Chúc bạn học tập hiệu quả."
+    },
+    {
+      "role": "user",
+      "content": "Giải phương trình: sin^3 x + cos^3 x = 2sin^2 x·cos x + 2sin x·cos^2 x - sin x - cos x trên đoạn [0, 2pi]. Tìm tất cả nghiệm và chỉ rõ nghiệm nào thỏa điều kiện sin x + cos x >= 0."
+    },
+    {
+      "role": "assistant",
+      "content": "### 1. Chốt đáp án\n\nCác nghiệm của phương trình trên đoạn $\\left[0,2\\pi\\right]$ là\n\n$$\nx=\\frac{3\\pi}{4},\\quad x=\\frac{7\\pi}{4}.\n$$\n\nCả hai nghiệm đều thỏa điều kiện $\\sin x+\\cos x\\ge 0$ vì khi đó $\\sin x+\\cos x=0$.\n\n### 2. Các bước giải\n\nĐặt $s=\\sin x$, $c=\\cos x$. Phương trình trở thành\n\n$$\ns^3+c^3=2s^2c+2sc^2-s-c.\n$$\n\nTa có\n\n$$\ns^3+c^3=(s+c)(s^2-sc+c^2)=(s+c)(1-sc),\n$$\n\nvà\n\n$$\n2s^2c+2sc^2-s-c=(s+c)(2sc-1).\n$$\n\nDo đó\n\n$$\n(s+c)(1-sc)=(s+c)(2sc-1),\n$$\n\nsuy ra\n\n$$\n(s+c)(2-3sc)=0.\n$$\n\nXét hai trường hợp:\n\n- Nếu $s+c=0$, tức là\n\n$$\n\\sin x+\\cos x=0\n\\Longleftrightarrow \\tan x=-1,\n$$\n\nnên trên $\\left[0,2\\pi\\right]$:\n\n$$\nx=\\frac{3\\pi}{4},\\quad x=\\frac{7\\pi}{4}.\n$$\n\n- Nếu $2-3sc=0$, thì $sc=\\dfrac{2}{3}$. Nhưng\n\n$$\n\\sin x\\cos x\\le \\frac12,\n$$\n\nnên trường hợp này vô nghiệm.\n\nVậy tập nghiệm là\n\n$$\n\\boxed{x\\in\\left\\{\\frac{3\\pi}{4},\\frac{7\\pi}{4}\\right\\}}.\n$$\n\n### 3. Kiểm tra điều kiện\n\nVới $x=\\dfrac{3\\pi}{4}$:\n\n$$\n\\sin x+\\cos x=\\frac{\\sqrt2}{2}-\\frac{\\sqrt2}{2}=0.\n$$\n\nVới $x=\\dfrac{7\\pi}{4}$:\n\n$$\n\\sin x+\\cos x=-\\frac{\\sqrt2}{2}+\\frac{\\sqrt2}{2}=0.\n$$\n\nCả hai đều thỏa\n\n$$\n\\sin x+\\cos x\\ge 0.\n$$\n\n**Kết luận:** Tất cả nghiệm đều thỏa điều kiện đã cho.\n\nBạn hãy thử tự giải thích vì sao phương trình $2-3\\sin x\\cos x=0$ không có nghiệm?\n\nGợi ý luyện thêm: **B4-TN-102**, **B1-TN-084**, **B1-TL-008**. \nVideo tham khảo: https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG"
+    },
+    {
+      "role": "user",
+      "content": "em không biết giải phương trình: sin^3 x + cos^3 x = 2sin^2 x·cos x + 2sin x·cos^2 x - sin x - cos x trên đoạn [0, 2pi]. Tìm tất cả nghiệm và chỉ rõ nghiệm nào thỏa điều kiện sin x + cos x >= 0."
+    },
+    {
+      "role": "assistant",
+      "content": "### 1. Chốt đáp án\n\nPhương trình có hai nghiệm trên đoạn $\\left[0,2\\pi\\right]$:\n\n$$\n\\boxed{x=\\frac{3\\pi}{4},\\quad x=\\frac{7\\pi}{4}}.\n$$\n\nCả hai nghiệm đều thỏa điều kiện $\\sin x+\\cos x\\ge 0$ vì khi đó $\\sin x+\\cos x=0$.\n\n### 2. Các bước giải\n\nĐặt $a=\\sin x$, $b=\\cos x$. Phương trình trở thành\n\n$$\na^3+b^3=2a^2b+2ab^2-a-b.\n$$\n\nChuyển tất cả về một vế:\n\n$$\na^3+b^3-2a^2b-2ab^2+a+b=0.\n$$\n\nDùng hằng đẳng thức $a^3+b^3=(a+b)(a^2-ab+b^2)$ và $a^2+b^2=1$:\n\n$$\n\\begin{aligned}\n& a^3+b^3-2a^2b-2ab^2+a+b\\\\\n&=(a+b)(a^2-ab+b^2)-2ab(a+b)+(a+b)\\\\\n&=(a+b)(1-ab-2ab+1)\\\\\n&=(a+b)(2-3ab).\n\\end{aligned}\n$$\n\nVậy\n\n$$\n(\\sin x+\\cos x)(2-3\\sin x\\cos x)=0.\n$$\n\nXét hai trường hợp:\n\n- Nếu $\\sin x+\\cos x=0$, ta có\n $$\\tan x=-1,$$\n nên trên $\\left[0,2\\pi\\right]$:\n $$x=\\frac{3\\pi}{4},\\quad x=\\frac{7\\pi}{4}.$$\n\n- Nếu $2-3\\sin x\\cos x=0$, thì\n $$\\sin x\\cos x=\\frac23.$$\n Nhưng\n $$\\left|\\sin x\\cos x\\right|\\le \\frac12,$$\n nên trường hợp này vô nghiệm.\n\n### 3. Kiểm tra điều kiện\n\nVới $x=\\dfrac{3\\pi}{4}$:\n\n$$\n\\sin x+\\cos x=\\frac{\\sqrt2}{2}-\\frac{\\sqrt2}{2}=0.\n$$\n\nVới $x=\\dfrac{7\\pi}{4}$:\n\n$$\n\\sin x+\\cos x=-\\frac{\\sqrt2}{2}+\\frac{\\sqrt2}{2}=0.\n$$\n\nDo đó cả hai nghiệm đều thỏa điều kiện $\\sin x+\\cos x\\ge0$.\n\n**Câu hỏi kiểm tra:** Vì sao phương trình $\\sin x+\\cos x=0$ cho hai nghiệm $\\dfrac{3\\pi}{4}$ và $\\dfrac{7\\pi}{4}$ trên đoạn $\\left[0,2\\pi\\right]$?\n\nBạn có thể luyện thêm: **B1-TN-084**, **B1-TN-098**. \nVideo tham khảo: https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG"
+    },
+    {
+      "role": "user",
+      "content": "em không biết giải phương trình: sin^3 x + cos^3 x = 2sin^2 x·cos x + 2sin x·cos^2 x - sin x - cos x trên đoạn [0, 2pi]. Tìm tất cả nghiệm và chỉ rõ nghiệm nào thỏa điều kiện sin x + cos x ≥ 0."
+    },
+    {
+      "role": "assistant",
+      "content": "Chốt: Đặt $s=\\sin x,\\ c=\\cos x$. Phương trình có hai nghiệm trên $[0,2\\pi]$ là $\\boxed{x=\\frac{3\\pi}{4},\\ \\frac{7\\pi}{4}}$. Cả hai nghiệm đều thỏa điều kiện $\\sin x+\\cos x\\ge0$ vì tổng này bằng $0$.\n\nBước:\n\nTa có\n\\[\ns^3+c^3=(s+c)(s^2-sc+c^2)\n\\]\nvà\n\\[\n2s^2c+2sc^2-s-c=(s+c)(2sc-1).\n\\]\n\nDo đó phương trình trở thành\n\\[\n(s+c)(s^2-sc+c^2)=(s+c)(2sc-1),\n\\]\nhay\n\\[\n(s+c)\\bigl(s^2-3sc+c^2+1\\bigr)=0.\n\\]\n\n- Trường hợp 1:\n\\[\ns+c=0\\iff \\sin x+\\cos x=0.\n\\]\nSuy ra\n\\[\n\\tan x=-1,\n\\]\nnên trên $[0,2\\pi]$:\n\\[\nx=\\frac{3\\pi}{4},\\quad x=\\frac{7\\pi}{4}.\n\\]\n\n- Trường hợp 2:\n\\[\ns^2-3sc+c^2+1=0.\n\\]\nVì $s^2+c^2=1$, ta được\n\\[\n2-3sc=0\\iff sc=\\frac23.\n\\]\nNhưng\n\\[\n|sc|=|\\sin x\\cos x|\\le\\frac12,\n\\]\nnên trường hợp này vô nghiệm.\n\nVí dụ kiểm tra điều kiện:\n\nVới $x=\\frac{3\\pi}{4}$:\n\\[\n\\sin x+\\cos x=\\frac{\\sqrt2}{2}-\\frac{\\sqrt2}{2}=0\\ge0.\n\\]\n\nVới $x=\\frac{7\\pi}{4}$:\n\\[\n\\sin x+\\cos x=-\\frac{\\sqrt2}{2}+\\frac{\\sqrt2}{2}=0\\ge0.\n\\]\n\nVậy tất cả nghiệm là\n\\[\n\\boxed{x\\in\\left\\{\\frac{3\\pi}{4},\\frac{7\\pi}{4}\\right\\}},\n\\]\nvà cả hai nghiệm đều thỏa $\\boxed{\\sin x+\\cos x\\ge0}$.\n\nHỏi: Em có nhận ra vì sao ở đây không được chia ngay hai vế cho $s+c$ không? Vì $s+c$ có thể bằng $0$, và đó chính là trường hợp cho hai nghiệm của bài."
+    },
+    {
+      "role": "user",
+      "content": "em không biết giải phương trình: sin^3 x + cos^3 x = 2sin^2 x·cos x + 2sin x·cos^2 x - sin x - cos x trên đoạn [0, 2pi]. Tìm tất cả nghiệm và chỉ rõ nghiệm nào thỏa điều kiện sin x + cos x ≥ 0."
+    },
+    {
+      "role": "assistant",
+      "content": "**Chốt:** Câu trả lời trên mới dừng ở gợi ý, chưa tìm tất cả nghiệm và chưa kiểm tra điều kiện $\\sin x+\\cos x\\ge0$. Ta giải tiếp như sau.\n\n**Bước:**\n\nĐặt $s=\\sin x,\\ c=\\cos x$. Khi đó:\n\n$$\ns^3+c^3=(s+c)(s^2-sc+c^2)=(s+c)(1-sc).\n$$\n\nVế phải là:\n\n$$\n2s^2c+2sc^2-s-c\n=2sc(s+c)-(s+c)\n=(s+c)(2sc-1).\n$$\n\nPhương trình trở thành:\n\n$$\n(s+c)(1-sc)=(s+c)(2sc-1).\n$$\n\nChuyển vế và đặt nhân tử chung:\n\n$$\n(s+c)\\bigl[(1-sc)-(2sc-1)\\bigr]=0,\n$$\n\n$$\n(s+c)(2-3sc)=0.\n$$\n\nXét hai trường hợp:\n\n- $s+c=0$, tức là $\\sin x+\\cos x=0$.\n- $2-3sc=0$, tức là $sc=\\dfrac23$.\n\nVì\n\n$$\nsc=\\sin x\\cos x\\le \\frac12,\n$$\n\nnên $sc=\\dfrac23$ là vô nghiệm. Do đó:\n\n$$\n\\sin x+\\cos x=0.\n$$\n\nTa có:\n\n$$\n\\sin x+\\cos x=\\sqrt2\\sin\\left(x+\\frac{\\pi}{4}\\right),\n$$\n\nnên\n\n$$\n\\sin\\left(x+\\frac{\\pi}{4}\\right)=0\n$$\n\n$$\n\\Longleftrightarrow x+\\frac{\\pi}{4}=k\\pi\n\\Longleftrightarrow x=-\\frac{\\pi}{4}+k\\pi.\n$$\n\nTrên đoạn $[0,2\\pi]$, các nghiệm là:\n\n$$\n\\boxed{x=\\frac{3\\pi}{4},\\ \\frac{7\\pi}{4}}.\n$$\n\n**Ví dụ kiểm tra điều kiện:**\n\n- Với $x=\\dfrac{3\\pi}{4}$:\n\n$$\n\\sin x+\\cos x=\\frac{\\sqrt2}{2}-\\frac{\\sqrt2}{2}=0\\ge0.\n$$\n\n- Với $x=\\dfrac{7\\pi}{4}$:\n\n$$\n\\sin x+\\cos x=-\\frac{\\sqrt2}{2}+\\frac{\\sqrt2}{2}=0\\ge0.\n$$\n\nVậy tất cả nghiệm đều thỏa điều kiện $\\sin x+\\cos x\\ge0$.\n\n$$\n\\boxed{\\text{Nghiệm của phương trình: }x=\\frac{3\\pi}{4},\\frac{7\\pi}{4}.}\n$$\n\n$$\n\\boxed{\\text{Cả hai nghiệm đều thỏa }\\sin x+\\cos x\\ge0.}\n$$\n\n**Hỏi:** Em có thể chỉ ra vì sao phương trình $sc=\\dfrac23$ vô nghiệm dựa trên bất đẳng thức $\\sin x\\cos x\\le\\dfrac12$ không?"
+    },
+    {
+      "role": "user",
+      "content": "Dạ em thưa, vì sinx·cosx = (sin2x)/2 mà |sin2x| ≤ 1 nên |sinx·cosx| ≤ 1/2. Mà 2/3 > 1/2 nên không có x nào thỏa sc = 2/3, vậy trường hợp này vô nghiệm ạ."
+    },
+    {
+      "role": "assistant",
+      "content": "Đúng rồi, bạn lập luận rất chặt chẽ: $\\sin x\\cos x=\\dfrac{\\sin 2x}{2}$ nên $\\left|\\sin x\\cos x\\right|\\le\\dfrac12$. \nVì $\\dfrac23>\\dfrac12$, nhánh $2-3\\sin x\\cos x=0$ chắc chắn vô nghiệm. \nVậy chỉ còn nhánh $\\sin x+\\cos x=0$. \nBạn hãy tự viết nghiệm tổng quát rồi lọc trên đoạn $[0,2\\pi]$ nhé: $x=-\\dfrac{\\pi}{4}+k\\pi$. \nSau đó kiểm tra dấu của $\\sin x+\\cos x$ tại các nghiệm vừa tìm được.\n\nGợi ý luyện tập: B4-TN-057, B1-TN-084, B1-TL-008; video: https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG"
+    },
+    {
+      "role": "user",
+      "content": "Dạ với x = -pi/4 + k*pi, cho k=1 được 3pi/4, k=2 được 7pi/4, k=0 và k=3 ra ngoài [0,2pi] ạ. Thay vào sin+cos đều bằng 0 nên ≥ 0, vậy cả 2 nghiệm đều nhận ạ."
+    },
+    {
+      "role": "assistant",
+      "content": "Đúng hoàn toàn, bạn lọc nghiệm chính xác: $k=1,2$ cho $x=\\dfrac{3\\pi}{4},\\dfrac{7\\pi}{4}$; còn $k=0,3$ nằm ngoài đoạn. \nTại cả hai nghiệm, $\\sin x+\\cos x=0\\ge0$, nên **cả hai nghiệm đều nhận**. \nVậy nghiệm cuối cùng là $\\boxed{x=\\dfrac{3\\pi}{4},\\dfrac{7\\pi}{4}}$. \nBạn đã hoàn thành đúng các bước: phân tích nhân tử, loại nhánh vô nghiệm và kiểm tra điều kiện.\n\nGợi ý luyện tập: B1-02, B1-TN-034, B1-TN-084; video: https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG"
+    },
+    {
+      "role": "user",
+      "content": "hi"
+    },
+    {
+      "role": "assistant",
+      "content": "Chào bạn! Mình sẵn sàng hỗ trợ bạn tiếp tục Toán 11. Bạn muốn luyện thêm phương trình lượng giác hay chuyển sang dạng bài khác?"
+    },
+    {
+      "role": "user",
+      "content": "tôi chưa hiểu bài"
+    },
+    {
+      "role": "assistant",
+      "content": "Điểm mấu chốt: trước khi tính giá trị lượng giác, bạn cần xác định đúng góc và đơn vị đo của góc. \nVí dụ: $180^\\circ=\\pi$ radian, nên $30^\\circ=\\frac{\\pi}{6}$ radian. \nBạn đang chưa hiểu phần nào hơn: đổi độ–radian hay xác định dấu của $\\sin,\\cos,\\tan$ theo góc phần tư?\n\nGợi ý luyện tập: [B1-03], [B1-TN-084], [B1-TL-050]; video: https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG"
     }
   ],
   "weaknesses": [
@@ -80,7 +144,8 @@
     "quên chuyển đổi π/180",
     "nhầm thứ tự thực hiện phép tính",
     "cần củng cố việc đổi đơn vị radian π/180 trước khi áp dụng công thức, cẩn trọng với thứ tự thực hiện phép tính trong các biểu thức lượng giác tổng hợp",
-    "Cẩn trọng với thứ tự thực hiện phép tính trong các biểu thức lượng giác tổng hợp"
+    "Cẩn trọng với thứ tự thực hiện phép tính trong các biểu thức lượng giác tổng hợp",
+    "chưa nhận ra hằng đẳng thức tổng lập phương để đặt nhân tử chung"
   ],
   "ten": "Nguyễn Trần Minh Tâm",
   "lop": "11A1",
@@ -154,11 +219,65 @@
     }
   },
   "bai_de_xuat": [
-    "B1-TN-049",
-    "B1-TL-034",
-    "B1-TN-084"
+    "B1-03",
+    "B1-TN-084",
+    "B1-TL-050"
   ],
   "conversations": [
+    {
+      "id": "cuoc-1790988433735",
+      "tieu_de": "B1: tôi chưa hiểu bài",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": [
+        {
+          "role": "user",
+          "content": "tôi chưa hiểu bài"
+        },
+        {
+          "role": "assistant",
+          "content": "Điểm mấu chốt: trước khi tính giá trị lượng giác, bạn cần xác định đúng góc và đơn vị đo của góc. \nVí dụ: $180^\\circ=\\pi$ radian, nên $30^\\circ=\\frac{\\pi}{6}$ radian. \nBạn đang chưa hiểu phần nào hơn: đổi độ–radian hay xác định dấu của $\\sin,\\cos,\\tan$ theo góc phần tư?\n\nGợi ý luyện tập: [B1-03], [B1-TN-084], [B1-TL-050]; video: https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG"
+        }
+      ]
+    },
+    {
+      "id": "cuoc-1790726985055",
+      "tieu_de": "B1: em không biết giải phương trình:",
+      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
+      "messages": [
+        {
+          "role": "user",
+          "content": "em không biết giải phương trình: sin^3 x + cos^3 x = 2sin^2 x·cos x + 2sin x·cos^2 x - sin x - cos x trên đoạn [0, 2pi]. Tìm tất cả nghiệm và chỉ rõ nghiệm nào thỏa điều kiện sin x + cos x ≥ 0."
+        },
+        {
+          "role": "assistant",
+          "content": "**Chốt:** Câu trả lời trên mới dừng ở gợi ý, chưa tìm tất cả nghiệm và chưa kiểm tra điều kiện $\\sin x+\\cos x\\ge0$. Ta giải tiếp như sau.\n\n**Bước:**\n\nĐặt $s=\\sin x,\\ c=\\cos x$. Khi đó:\n\n$$\ns^3+c^3=(s+c)(s^2-sc+c^2)=(s+c)(1-sc).\n$$\n\nVế phải là:\n\n$$\n2s^2c+2sc^2-s-c\n=2sc(s+c)-(s+c)\n=(s+c)(2sc-1).\n$$\n\nPhương trình trở thành:\n\n$$\n(s+c)(1-sc)=(s+c)(2sc-1).\n$$\n\nChuyển vế và đặt nhân tử chung:\n\n$$\n(s+c)\\bigl[(1-sc)-(2sc-1)\\bigr]=0,\n$$\n\n$$\n(s+c)(2-3sc)=0.\n$$\n\nXét hai trường hợp:\n\n- $s+c=0$, tức là $\\sin x+\\cos x=0$.\n- $2-3sc=0$, tức là $sc=\\dfrac23$.\n\nVì\n\n$$\nsc=\\sin x\\cos x\\le \\frac12,\n$$\n\nnên $sc=\\dfrac23$ là vô nghiệm. Do đó:\n\n$$\n\\sin x+\\cos x=0.\n$$\n\nTa có:\n\n$$\n\\sin x+\\cos x=\\sqrt2\\sin\\left(x+\\frac{\\pi}{4}\\right),\n$$\n\nnên\n\n$$\n\\sin\\left(x+\\frac{\\pi}{4}\\right)=0\n$$\n\n$$\n\\Longleftrightarrow x+\\frac{\\pi}{4}=k\\pi\n\\Longleftrightarrow x=-\\frac{\\pi}{4}+k\\pi.\n$$\n\nTrên đoạn $[0,2\\pi]$, các nghiệm là:\n\n$$\n\\boxed{x=\\frac{3\\pi}{4},\\ \\frac{7\\pi}{4}}.\n$$\n\n**Ví dụ kiểm tra điều kiện:**\n\n- Với $x=\\dfrac{3\\pi}{4}$:\n\n$$\n\\sin x+\\cos x=\\frac{\\sqrt2}{2}-\\frac{\\sqrt2}{2}=0\\ge0.\n$$\n\n- Với $x=\\dfrac{7\\pi}{4}$:\n\n$$\n\\sin x+\\cos x=-\\frac{\\sqrt2}{2}+\\frac{\\sqrt2}{2}=0\\ge0.\n$$\n\nVậy tất cả nghiệm đều thỏa điều kiện $\\sin x+\\cos x\\ge0$.\n\n$$\n\\boxed{\\text{Nghiệm của phương trình: }x=\\frac{3\\pi}{4},\\frac{7\\pi}{4}.}\n$$\n\n$$\n\\boxed{\\text{Cả hai nghiệm đều thỏa }\\sin x+\\cos x\\ge0.}\n$$\n\n**Hỏi:** Em có thể chỉ ra vì sao phương trình $sc=\\dfrac23$ vô nghiệm dựa trên bất đẳng thức $\\sin x\\cos x\\le\\dfrac12$ không?"
+        },
+        {
+          "role": "user",
+          "content": "Dạ em thưa, vì sinx·cosx = (sin2x)/2 mà |sin2x| ≤ 1 nên |sinx·cosx| ≤ 1/2. Mà 2/3 > 1/2 nên không có x nào thỏa sc = 2/3, vậy trường hợp này vô nghiệm ạ."
+        },
+        {
+          "role": "assistant",
+          "content": "Đúng rồi, bạn lập luận rất chặt chẽ: $\\sin x\\cos x=\\dfrac{\\sin 2x}{2}$ nên $\\left|\\sin x\\cos x\\right|\\le\\dfrac12$. \nVì $\\dfrac23>\\dfrac12$, nhánh $2-3\\sin x\\cos x=0$ chắc chắn vô nghiệm. \nVậy chỉ còn nhánh $\\sin x+\\cos x=0$. \nBạn hãy tự viết nghiệm tổng quát rồi lọc trên đoạn $[0,2\\pi]$ nhé: $x=-\\dfrac{\\pi}{4}+k\\pi$. \nSau đó kiểm tra dấu của $\\sin x+\\cos x$ tại các nghiệm vừa tìm được.\n\nGợi ý luyện tập: B4-TN-057, B1-TN-084, B1-TL-008; video: https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG"
+        },
+        {
+          "role": "user",
+          "content": "Dạ với x = -pi/4 + k*pi, cho k=1 được 3pi/4, k=2 được 7pi/4, k=0 và k=3 ra ngoài [0,2pi] ạ. Thay vào sin+cos đều bằng 0 nên ≥ 0, vậy cả 2 nghiệm đều nhận ạ."
+        },
+        {
+          "role": "assistant",
+          "content": "Đúng hoàn toàn, bạn lọc nghiệm chính xác: $k=1,2$ cho $x=\\dfrac{3\\pi}{4},\\dfrac{7\\pi}{4}$; còn $k=0,3$ nằm ngoài đoạn. \nTại cả hai nghiệm, $\\sin x+\\cos x=0\\ge0$, nên **cả hai nghiệm đều nhận**. \nVậy nghiệm cuối cùng là $\\boxed{x=\\dfrac{3\\pi}{4},\\dfrac{7\\pi}{4}}$. \nBạn đã hoàn thành đúng các bước: phân tích nhân tử, loại nhánh vô nghiệm và kiểm tra điều kiện.\n\nGợi ý luyện tập: B1-02, B1-TN-034, B1-TN-084; video: https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG"
+        },
+        {
+          "role": "user",
+          "content": "hi"
+        },
+        {
+          "role": "assistant",
+          "content": "Chào bạn! Mình sẵn sàng hỗ trợ bạn tiếp tục Toán 11. Bạn muốn luyện thêm phương trình lượng giác hay chuyển sang dạng bài khác?"
+        }
+      ]
+    },
     {
       "id": "cuoc-1789530639840",
       "tieu_de": "B1: hướng dẫn tôi học bài này dễ hiể",
@@ -203,12 +322,6 @@
           "content": "\n\nChào em! Đây là một khái niệm nền tảng của Toán 11, nhưng rất nhiều bạn học trung bình lại hay nhầm lẫn ở các bước chuyển đổi đơn vị hoặc thứ tự thực hiện. Hãy cùng tìm hiểu từng bước nhỏ nhé.\n\n**Bước 1: Góc lượng giác là gì?**\nEm đã biết góc là gì chưa? Một góc được tạo thành bởi hai tia gốc từ một điểm O. Giờ đây, chúng ta gọi O là **đỉnh góc**, hai tia kia là **tia đầu** và **tia cuối**. Với góc lượng giác, chúng ta quan sát chuyển động của một tia quét từ vị trí ban đầu (tia đầu) đến vị trí kết thúc (tia cuối). Chuyển động đó được gọi là **quét góc**.\n\n**Bước 2: Chiều dương, chiều âm**\nChúng ta có quy ước:\n- Chiều **ngược chiều kim đồng hồ** là chiều **dương (+)**.\n- Chiều **thuận chiều kim đồng hồ** là chiềú **âm (-)**.\nVí dụ: nếu tia quét theo chiều kim đồng hồ, góc sẽ là góc âm.\n\n**Bước 3: Số đo của góc**\nSố đo của góc là giá trị tương ứng với quét đó. Đơn vị thường dùng là **độ** hoặc **radian**. Đừng vội so sánh nha, em sẽ có điểm yếu nếu nhầm π = 360 độ. Hãy cùng xem phần video để hình dung rõ hơn về khái niệm này.\n\n**Bước 4: Liên hệ với các góc cùng tia đầu, tia cuối**\nCác góc có cùng tia đầu và tia cuối được gọi là các góc đồng dạng, chúng khác nhau một bội số của 360° hoặc 2π radian.\n\n**Bước 5: Hệ thức Sắc-lơ**\nĐây là công thức quan trọng liên quan đến phép cộng các góc lượng giác, em cần lưu ý để giải các bài toán sau.\n\n**Bước 6: Đơn vị đo**\nNhớ chuyển đổi: $180^\\circ = \\pi \\text{ radian}$. Để chuyển từ độ sang radian, nhân với $\\frac{\\pi}{180}$; từ radian sang độ, nhân với $\\frac{180}{\\pi}$.\n\n**Tóm lại:** Lượng giác là các hàm số (sin, cos, tan, cot) được định nghĩa dựa trên góc lượng giác. Chúng mô tả mối quan hệ giữa các cạnh của một tam giác vuông hoặc trên đường tròn đơn vị.\n\nĐể củng cố khái niệm, em có thể xem video này: [Bài 1. Giá trị lượng giác của góc lượng giác](https://youtu.be/zSkQ55tPuY4?si=gXD8ds3HFTS0D1kG).\n\nNếu em có câu hỏi cụ thể nào về các hàm số lượng giác, hãy đặt ra nhé!"
         }
       ]
-    },
-    {
-      "id": "cuoc-1789529936057",
-      "tieu_de": "B1: Thắc mắc mới",
-      "bai": "Bài 1. Giá trị lượng giác của góc lượng giác",
-      "messages": []
     },
     {
       "id": "cuoc-1789529884649",
@@ -366,5 +479,8 @@
     "nguon": "ai",
     "fingerprint": "9c1429dc022ea804",
     "cap_nhat": "2026-09-17T05:06"
-  }
+  },
+  "trinh_do_mon": {},
+  "diem_trinh_do_mon": {},
+  "trinh_do_bai": {}
 }

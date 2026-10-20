@@ -1,0 +1,64 @@
+{
+  "question_ids_unique": true,
+  "duplicate_ids": [],
+  "question_count": 497,
+  "missing_assets": [],
+  "bad_multiple_choice_options": [],
+  "bad_true_false_statements": [],
+  "missing_answers": [],
+  "review_queue_count": 287,
+  "lessons": {
+    "B1": {
+      "count": 128,
+      "by_source_section": {
+        "multiple_choice": 55,
+        "true_false": 34,
+        "short_answer": 39
+      },
+      "by_actual_type": {
+        "multiple_choice_single": 60,
+        "true_false": 34,
+        "short_answer": 34
+      }
+    },
+    "B2": {
+      "count": 111,
+      "by_source_section": {
+        "multiple_choice": 48,
+        "true_false": 19,
+        "short_answer": 44
+      },
+      "by_actual_type": {
+        "multiple_choice_single": 48,
+        "true_false": 19,
+        "short_answer": 44
+      }
+    },
+    "B3": {
+      "count": 127,
+      "by_source_section": {
+        "multiple_choice": 59,
+        "true_false": 23,
+        "short_answer": 45
+      },
+      "by_actual_type": {
+        "multiple_choice_single": 59,
+        "true_false": 23,
+        "short_answer": 45
+      }
+    },
+    "B4": {
+      "count": 131,
+      "by_source_section": {
+        "multiple_choice": 50,
+        "true_false": 13,
+        "short_answer": 68
+      },
+      "by_actual_type": {
+        "multiple_choice_single": 50,
+        "true_false": 13,
+        "short_answer": 68
+      }
+    }
+  }
+}

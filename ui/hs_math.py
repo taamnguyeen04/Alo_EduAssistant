@@ -44,8 +44,8 @@ def render(sid, mon="toan11"):
                 <div style='font-size:52px;margin-bottom:12px;'>{cfg.get('icon', '📚')}</div>
                 <div style='font-size:24px;font-weight:800;color:#0f172a;margin-bottom:8px;'>
                     Môn {cfg.get('ten', '')} đang được soạn</div>
-                <div style='font-size:15px;color:#64748b;margin-bottom:24px;'>Thầy sẽ cập nhật bài giảng,
-                    video và bài tập trong thời gian tới.<br>Em quay lại sau nhé!</div>
+                <div style='font-size:15px;color:#64748b;margin-bottom:24px;'>Mình sẽ cập nhật bài giảng,
+                    video và bài tập trong thời gian tới.<br>Bạn quay lại sau nhé!</div>
             </div>
         """)
         st.markdown("<div style='height:16px;'></div>", unsafe_allow_html=True)

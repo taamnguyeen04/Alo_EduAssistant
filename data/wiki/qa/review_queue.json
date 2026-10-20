@@ -1,0 +1,1727 @@
+{
+  "count": 287,
+  "items": [
+    {
+      "id": "C1_B1_MC_044",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_underlined_source); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_MC_045",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_underlined_source); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_MC_046",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_underlined_source); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_MC_048",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_underlined_source); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_TF_002",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B1_TF_003",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B1_TF_009",
+      "priority": "medium",
+      "field": "source_anomaly",
+      "reason": "Tài liệu gốc lặp nhãn b) ở mệnh đề thứ 4; chuẩn hóa thành d) theo thứ tự và bảng đáp án."
+    },
+    {
+      "id": "C1_B1_TF_010",
+      "priority": "medium",
+      "field": "source_anomaly",
+      "reason": "Mệnh đề thứ tư được gõ nhãn b) trong nguồn; bảng đáp án ghi d)."
+    },
+    {
+      "id": "C1_B1_TF_012",
+      "priority": "medium",
+      "field": "source_anomaly",
+      "reason": "Tài liệu gốc lặp nhãn b) ở mệnh đề thứ 3; chuẩn hóa thành c) theo thứ tự và bảng đáp án."
+    },
+    {
+      "id": "C1_B1_SA_006",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_007",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_008",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_009",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_010",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_011",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_012",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_013",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_014",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_015",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_016",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_017",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_018",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_019",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_020",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_021",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_022",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_023",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_024",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_025",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_026",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_027",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_028",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_029",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_030",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_031",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_032",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_033",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_034",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_035",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_035",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B1_SA_036",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_037",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_038",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B1_SA_039",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_MC_029",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B2_MC_030",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B2_MC_031",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B2_MC_040",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B2_MC_046",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B2_SA_001",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_002",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_003",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_004",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_005",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_006",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_007",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_008",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_009",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_010",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_011",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_012",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_013",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_014",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_015",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_016",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_017",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_018",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_019",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_020",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_021",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_022",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_023",
+      "priority": "high",
+      "field": "correct_answer",
+      "reason": "Nguồn không cung cấp lời giải/đáp án; đáp án được tính từ biểu thức nguồn và cần giáo viên xác nhận."
+    },
+    {
+      "id": "C1_B2_SA_023",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (computed_high_review_recommended); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_024",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_025",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_026",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_027",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_028",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_029",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_030",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_031",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_031",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B2_SA_032",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_033",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_034",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_035",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_036",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_037",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_038",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_039",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_040",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_041",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_042",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_043",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B2_SA_044",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_MC_018",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_021",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_032",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_033",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_035",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_039",
+      "priority": "medium",
+      "field": "source_anomaly",
+      "reason": "Khối đồ thị/câu hỏi/phương án bị lặp một lần trong DOCX/Pandoc; JSON options đã de-duplicate, stem_md vẫn bảo toàn nguồn."
+    },
+    {
+      "id": "C1_B3_MC_041",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_042",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_043",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_045",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_046",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_048",
+      "priority": "medium",
+      "field": "source_anomaly",
+      "reason": "Phương án B xuất hiện lặp hai lần trong bản DOCX/Pandoc; JSON giữ một bản B và bảo toàn A/C/D."
+    },
+    {
+      "id": "C1_B3_MC_048",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_050",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_053",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_MC_055",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_060",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_061",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_062",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_063",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_064",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_065",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_066",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_067",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_068",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_069",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_070",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_071",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_072",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_073",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_074",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_075",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_076",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_077",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_078",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_079",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_080",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_081",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_TF_082",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_083",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_084",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_084",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_085",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_086",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_087",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_087",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_088",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_088",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_089",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_090",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_091",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_091",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_092",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_093",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_093",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_094",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_095",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_095",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_096",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_097",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_098",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_099",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_099",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_100",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_101",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_102",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_103",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_103",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_104",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_104",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_105",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_105",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_106",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_106",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_107",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_107",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_108",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_108",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_109",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_109",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_110",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_110",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_111",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_112",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_112",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_113",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_113",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_114",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_114",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_115",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_116",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_116",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_117",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_117",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_118",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_118",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_119",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_119",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_120",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_121",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_121",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_122",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_122",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_123",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_123",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_124",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_125",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_125",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B3_SA_126",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_127",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B3_SA_127",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_MC_082",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_MC_083",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_MC_084",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_MC_087",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_MC_088",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_MC_089",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_MC_102",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_MC_109",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_TF_116",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_TF_121",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_TF_123",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_SA_001",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_002",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_003",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_004",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_005",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_006",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_007",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_008",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_009",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_010",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_011",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_012",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_013",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_014",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_015",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_016",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_017",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_018",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_019",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_020",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_021",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_022",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_023",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_024",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_025",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_026",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_027",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_028",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_029",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_030",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_031",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_032",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_033",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_034",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_035",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_036",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_036",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_SA_037",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_038",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_038",
+      "priority": "low",
+      "field": "difficulty",
+      "reason": "Level là suy luận và confidence < 0.60."
+    },
+    {
+      "id": "C1_B4_SA_039",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_040",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_041",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_042",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_043",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_044",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_045",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_046",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_047",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_048",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_049",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_050",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_051",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_052",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_053",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_054",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_055",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_056",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_057",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_058",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_059",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_060",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_061",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_062",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_063",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_064",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_065",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_066",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_067",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    },
+    {
+      "id": "C1_B4_SA_068",
+      "priority": "medium",
+      "field": "correct_answer",
+      "reason": "Đáp án không phải key nguồn trực tiếp (medium_solution_derived); nên duyệt đối chiếu lời giải."
+    }
+  ]
+}
